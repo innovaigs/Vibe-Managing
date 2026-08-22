@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://vibemanaging.dev/schemas/business-memory.schema.json",
+  "title": "Business Memory",
+  "description": "Persistent, structured company knowledge. Full specification in BUSINESS_MEMORY_SCHEMA.md. Every record carries the _meta envelope.",
+  "type": "object",
+  "definitions": {
+    "meta": {
+      "type": "object",
+      "required": ["id", "source", "as_of", "sensitivity"],
+      "properties": {
+        "id": { "type": "string" },
+        "created_at": { "type": "string" }, "updated_at": { "type": "string" }, "version": { "type": "integer" },
+        "source": { "type": "string", "enum": ["integration", "founder_input", "agent_analysis", "document", "external"] },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "as_of": { "type": "string" },
+        "sensitivity": { "type": "string", "enum": ["public", "internal", "confidential", "restricted"] },
+        "verified_by": { "type": ["string", "null"] }
+      }
+    },
+    "metricPoint": {
+      "type": "object",
+      "required": ["key", "value", "period"],
+      "properties": {
+        "key": {"type":"string"}, "value": {"type":"number"}, "unit": {"type":"string"},
+        "period": {"type":"string"}, "target": {"type":"number"},
+        "status": {"type":"string","enum":["healthy","needs_attention","at_risk","critical"]},
+        "source": {"type":"string"}, "computed_by": {"type":"string"}
+      }
+    }
+  },
+  "properties": {
+    "company": { "type": "object" },
+    "founders": { "type": "array", "items": { "type": "object" } },
+    "customers": { "type": "object", "properties": { "icps": {"type":"array"}, "personas": {"type":"array"}, "segments": {"type":"array"}, "accounts": {"type":"array"}, "concentration": {"type":"object"} } },
+    "offerings": { "type": "array", "items": { "type": "object" } },
+    "finance": { "type": "object" },
+    "team": { "type": "object", "description": "sensitivity: restricted for individual records" },
+    "operations": { "type": "object" },
+    "market": { "type": "object" },
+    "strategy": { "type": "object" },
+    "metrics": { "type": "array", "items": { "$ref": "#/definitions/metricPoint" } },
+    "goals": { "type": "array", "items": { "type": "object" } },
+    "decisions": { "type": "array", "items": { "$ref": "https://vibemanaging.dev/schemas/decision-record.schema.json" } },
+    "risks": { "type": "array", "items": { "type": "object" } },
+    "integrations": { "type": "array", "items": { "type": "object" } }
+  }
+}

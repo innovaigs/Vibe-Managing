@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://vibemanaging.dev/schemas/integration.schema.json",
+  "title": "Integration Connector",
+  "description": "Uniform contract for any external business tool connector (MCP, REST, OAuth, file, webhook). See INTEGRATION_ARCHITECTURE.md.",
+  "type": "object",
+  "required": ["id", "category", "provider", "transport", "reads", "writes"],
+  "properties": {
+    "id": { "type": "string" },
+    "category": { "type": "string", "enum": ["finance", "crm_sales", "marketing", "people", "operations", "comms", "data", "documents"] },
+    "provider": { "type": "string" },
+    "transport": { "type": "string", "enum": ["mcp", "rest_api", "oauth_api", "file", "webhook"] },
+    "auth": { "type": "object", "properties": { "type": {"type":"string"}, "scopes_requested": {"type":"array","items":{"type":"string"}}, "credentials_ref": {"type":"string","description":"secret reference only — never plaintext"} } },
+    "reads": { "type": "array", "items": { "type": "object", "properties": { "entity": {"type":"string"}, "fields": {"type":"array","items":{"type":"string"}}, "freshness": {"type":"string"} } } },
+    "writes": { "type": "array", "items": { "type": "object", "properties": { "entity": {"type":"string"}, "fields": {"type":"array","items":{"type":"string"}}, "risk_tier": {"type":"string","enum":["LOW","MEDIUM","HIGH","CRITICAL"]}, "approval": {"type":"boolean"} } } },
+    "high_risk_actions": { "type": "array", "items": { "type": "object", "properties": { "action": {"type":"string"}, "risk_tier": {"type":"string"}, "approval": {"type":"boolean"}, "rollback": {"type":"string"} } } },
+    "rate_limits": { "type": "string" },
+    "audit": { "type": "boolean", "const": true },
+    "rollback": { "type": "object", "properties": { "supported": {"type":"boolean"}, "method": {"type":"string"} } },
+    "maps_to_memory": { "type": "array", "items": { "type": "string" } },
+    "maps_to_twin": { "type": "array", "items": { "type": "string" } }
+  }
+}

@@ -1,0 +1,34 @@
+# Vibe Managing — Operating cadence configuration. See OPERATING_CADENCE.md.
+version: 0.1.0
+timezone: "America/New_York"      # set per founder
+
+cycles:
+  continuous:
+    enabled: true
+    watch: [cash, covenants, irreversible_risk, anomalies]
+  daily:
+    enabled: true
+    time: "07:30"
+    sections: [alerts_since_yesterday, cash_position, approvals_pending, deadlines_today, autonomous_actions_log]
+    quiet_when_healthy: true
+  weekly:
+    enabled: true
+    day: "Mon"
+    time: "08:00"
+    sections: [scorecard, wins_regressions, pipeline_forecast, operations, people, initiatives, decisions_needed, next_best_actions]
+  monthly:
+    enabled: true
+    day_of_month: 3               # after prior-month close
+    sections: [financial_close, variance_analysis, ratio_health, kpi_dashboard, customers, marketing_sales, operations, learning, reforecast, reprioritize]
+    skill: monthly-business-review
+  quarterly:
+    enabled: true
+    sections: [strategy_review, growth_plan_refresh, reforecast_budget, market_update, org_capacity, risk_review, resource_allocation, decisions]
+  annual:
+    enabled: true
+    sections: [year_performance, vision_mission_check, next_year_plan, valuation_value_drivers, big_bets]
+
+delivery:
+  channel: founder_dashboard      # + optional email/chat via comms integration
+  format: ranked_attention_first  # findings → what was done → decisions needed
+  on_demand: true                 # founder can invoke any cycle or ask the underlying question directly

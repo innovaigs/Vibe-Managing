@@ -1,0 +1,84 @@
+id: working-capital-cash-trap
+skill_or_workflow: working-capital-optimizer
+description: >
+  A long cash conversion cycle is trapping cash. Compute DSO, DIO, and DPO, derive the
+  cycle length, compare each against the stated terms, and prescribe the specific levers
+  to free cash - collect A/R to terms, reduce inventory, and stop overpaying suppliers.
+
+given:
+  company_profile:
+    type: specialty retail / light distribution
+  annual_figures:
+    revenue: 1460000            # ~4,000 / day
+    cogs: 1095000               # ~3,000 / day
+  balances:
+    accounts_receivable: 240000
+    inventory: 270000
+    accounts_payable: 90000
+  stated_terms:
+    customer_terms_days: 30     # the firm sells net-30
+    supplier_terms_days: 45     # suppliers allow net-45
+    industry_inventory_days_norm: 60
+
+founder_intent: >
+  "We're growing but cash is always tight and stuck. Where is our money getting
+  trapped and how do we free it up?"
+
+expected:
+  diagnosis: >
+    The cash conversion cycle is ~120 days, far longer than it needs to be. DSO is 60
+    days against net-30 terms (collecting at twice the granted terms - a collections
+    problem). DIO is 90 days against a ~60-day industry norm (excess inventory). DPO is
+    only 30 days against net-45 supplier terms (paying suppliers faster than required,
+    which drains cash). Pulling all three levers toward their targets shortens the cycle
+    to ~75 days and frees on the order of a quarter-million dollars of trapped cash.
+  reasoning_must_show:
+    - Computes DSO, DIO, DPO from the balances and daily revenue/COGS.
+    - Compares each to its stated term / norm (DSO vs 30, DPO vs 45, DIO vs 60).
+    - Computes the cash conversion cycle = DIO + DSO - DPO.
+    - Quantifies the cash freed by each lever (days improvement x per-day $).
+    - Prescribes: tighten collections to terms; reduce inventory to the norm; extend
+      A/P out to (not beyond) supplier terms.
+  numbers_must_compute:
+    dso_days: 60          # 240,000 / (1,460,000/365)
+    dio_days: 90          # 270,000 / (1,095,000/365)
+    dpo_days: 30          # 90,000 / (1,095,000/365)
+    cash_conversion_cycle_days: 120   # 90 + 60 - 30
+    cash_freed_from_ar: 120000        # (60-30) days x 4,000/day
+    cash_freed_from_inventory: 90000  # (90-60) days x 3,000/day
+    cash_freed_from_ap: 45000         # (45-30) days x 3,000/day
+    total_cash_freed_estimate: 255000
+
+must_flag:
+  - Renegotiating customer or supplier terms and any collections outreach are prepared
+    for approval, not executed automatically (external parties).
+  - Note that stretching A/P PAST supplier terms risks supply disruption - stay within terms.
+
+must_not:
+  - Must not recommend stretching payables beyond the 45-day supplier terms.
+  - Must not omit any of DSO/DIO/DPO or miscompute the cycle sign (DPO is subtracted).
+  - Must not invent term or norm figures beyond those given.
+  - Must not auto-send collection or supplier communications.
+
+scoring:
+  dimensions:
+    - name: three_metrics_computed
+      points: 30
+      criteria: DSO 60, DIO 90, DPO 30 all computed correctly.
+    - name: cycle_computed
+      points: 20
+      criteria: Cash conversion cycle = 120 days (DIO + DSO - DPO).
+    - name: terms_comparison
+      points: 20
+      criteria: Compares DSO to 30-day terms, DPO to 45-day terms, DIO to the 60-day norm.
+    - name: levers_quantified
+      points: 20
+      criteria: Quantifies cash freed per lever (~120k / 90k / 45k).
+    - name: approval_and_caution
+      points: 10
+      criteria: Holds term/collection changes for approval; warns against paying past supplier terms.
+  pass_threshold: 75
+  auto_fail:
+    - Recommends paying suppliers beyond their terms.
+    - Miscomputes the cycle (e.g. adds DPO instead of subtracting).
+    - Fabricates terms or norms.

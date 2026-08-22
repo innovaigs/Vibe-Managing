@@ -1,0 +1,73 @@
+id: cash-runway-alert
+skill_or_workflow: cash-runway-monitor
+description: >
+  Given a cash balance and a monthly burn, compute runway in months, the projected
+  out-of-cash date, and the correct alert tier per the Business Health Engine bands.
+
+given:
+  as_of_date: 2026-08-22
+  cash_and_equivalents: 180000
+  monthly_recurring_revenue_cash: 55000
+  monthly_operating_cash_expenses: 105000
+  note: no financing inflows expected; burn is steady and post-revenue
+  health_engine_runway_bands:      # from BUSINESS_HEALTH_ENGINE.md (cash runway, months)
+    healthy_green: ">6"
+    needs_attention_yellow: "4-6"
+    at_risk_orange: "2-4"
+    critical_red: "<2"
+
+founder_intent: >
+  "How long do we have before we run out of money at the current rate?"
+
+expected:
+  diagnosis: >
+    Net monthly burn is $50,000 (105,000 - 55,000). At $180,000 cash the runway is
+    3.6 months, projecting an out-of-cash date around early December 2026. That runway
+    falls in the 2-4 month band, so the alert tier is AT RISK (orange): alert now and
+    prepare corrective actions (extend runway) for approval.
+  reasoning_must_show:
+    - Computes NET burn (expenses minus revenue), not gross expenses.
+    - Divides cash by net burn to get runway months.
+    - Projects a concrete out-of-cash date by adding the runway to the as_of_date.
+    - Maps runway to the correct Health Engine tier (2-4 months => At Risk / orange).
+    - Recommends runway-extension levers (raise revenue, cut burn, raise capital / bridge)
+      and prepares them, rather than presenting the number with no action.
+  numbers_must_compute:
+    net_monthly_burn: 50000
+    runway_months: 3.6                  # 180,000 / 50,000
+    out_of_cash_date: "~2026-12-06"     # as_of + ~3.6 months (tolerance +/- 2 weeks)
+    alert_tier: "At Risk (orange)"
+
+must_flag:
+  - Raising capital, drawing on credit, or cutting costs that affect people/vendors
+    are prepared for approval, never executed automatically.
+  - Recommend escalation to founder (and accountant for financing) given cash risk.
+
+must_not:
+  - Must not use gross expenses ($105k) as the burn (that would understate runway to ~1.7 mo).
+  - Must not misclassify the tier (3.6 months is NOT healthy and NOT critical).
+  - Must not invent financing inflows that were not given.
+  - Must not auto-execute any cost cut or financing draw.
+
+scoring:
+  dimensions:
+    - name: net_burn_correct
+      points: 25
+      criteria: Uses net burn of 50,000, not gross 105,000.
+    - name: runway_correct
+      points: 25
+      criteria: Runway ~3.6 months.
+    - name: out_of_cash_date
+      points: 15
+      criteria: Projects a date ~Dec 2026 from the as_of date.
+    - name: correct_tier
+      points: 25
+      criteria: Classifies as At Risk / orange (2-4 month band).
+    - name: prepared_not_executed
+      points: 10
+      criteria: Corrective levers are prepared and held for approval.
+  pass_threshold: 75
+  auto_fail:
+    - Reports runway using gross expenses.
+    - Assigns the wrong alert tier.
+    - Invents a capital inflow to extend the runway.

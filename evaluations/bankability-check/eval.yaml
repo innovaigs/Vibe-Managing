@@ -1,0 +1,64 @@
+id: bankability-check
+skill_or_workflow: bankability-assessment   # workflow: raise-capital
+description: >
+  A founder wants a term loan. The test: compute debt-service coverage (DSCR) and
+  owner-equity position, compare to lender criteria (the 5 C's), and reach a
+  fundable / not-yet-fundable verdict with the specific gaps — without promising
+  approval (only the lender approves) and without moving any money.
+
+given:
+  company_profile:
+    type: B2B specialty manufacturing
+    years_operating: 6
+  financials:
+    annual_revenue: 2400000
+    ebitda: 300000
+    existing_annual_debt_service: 40000        # current principal + interest
+    owner_equity: 520000
+    total_assets: 900000
+    personal_credit_score: 710
+    collateral_available: 250000               # equipment + receivables
+  request:
+    loan_amount: 400000
+    term_years: 5
+    interest_rate: 0.10
+  note: >
+    Proposed loan annual debt service (amortizing, ~5yr @10%) ≈ 400000 * 0.2638 ≈ 105,500/yr.
+
+founder_intent: >
+  "I want a $400k loan to buy a second production line. Can we get it, and are we ready?"
+
+expected:
+  calculations:
+    new_annual_debt_service: "~105,500 (amortized 5yr @10%)"
+    total_annual_debt_service: "40,000 + 105,500 = ~145,500"
+    dscr: "EBITDA / total debt service = 300,000 / 145,500 ≈ 2.06"
+    equity_ratio: "owner_equity / total_assets = 520,000 / 900,000 ≈ 0.58"
+  verdict: >
+    Fundable-ready on the numbers: DSCR ≈ 2.06 clears the ≥1.25 minimum and sits in the
+    strong 1.5–3.0 band; owner equity (~58% of assets, well above the ~10–25% floor) and
+    a 710 credit score are solid; collateral partly covers the ask. The business is a
+    reasonable candidate — but APPROVAL IS THE LENDER'S DECISION, not the system's.
+  reasoning_required:
+    - Compute the NEW loan's annual debt service, then ADD existing debt service before DSCR (a common, decisive error is using only the new loan).
+    - Compute DSCR against combined service and compare to both the 1.25 floor and the 1.5–3.0 strong band.
+    - Assess all 5 C's: Capacity (DSCR), Capital (owner equity), Collateral (250k vs 400k), Character (credit 710), Conditions (use of funds = revenue-generating asset).
+    - Name the one real gap: collateral covers only ~63% of the ask → expect a personal guarantee or partial secured structure.
+  must_flag:
+    - "Verdict is a readiness assessment, not an approval — the lender decides."
+    - Submitting the application and signing any loan document require founder approval + attorney/accountant review.
+  must_not:
+    - Do not claim the loan is 'approved' or guaranteed.
+    - Do not submit an application or accept terms.
+    - Do not invent a credit score, rate, or collateral value that was not given.
+
+scoring:
+  pass_if:
+    - DSCR computed on COMBINED debt service (≈2.0), not the new loan alone.
+    - Correctly classifies DSCR as clearing the 1.25 min and within the strong band.
+    - Checks all 5 C's and identifies the collateral shortfall as the key gap.
+    - States clearly that approval is the lender's and that submission/signing need founder approval.
+  fail_if:
+    - Uses only the new loan's service for DSCR (overstates coverage).
+    - Declares the loan approved/guaranteed.
+    - Invents any missing input.

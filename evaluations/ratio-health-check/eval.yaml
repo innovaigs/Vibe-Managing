@@ -1,0 +1,94 @@
+id: ratio-health-check
+skill_or_workflow: financial-ratio-analysis
+description: >
+  Given an income statement and balance sheet, compute the core ratio set and classify
+  each Healthy / Warning / Critical against benchmarks. The planted signal is a weak
+  interest coverage (TIE = 1.25, below the 1.5 floor => Critical) alongside a thin
+  current ratio - the overall verdict must be driven by the weakest ratio.
+
+given:
+  income_statement:
+    revenue: 1000000
+    cogs: 650000
+    gross_profit: 350000
+    operating_expenses: 300000
+    ebit: 50000
+    interest_expense: 40000
+    ebt: 10000
+    tax: 2500
+    net_income: 7500
+  balance_sheet:
+    cash: 30000
+    accounts_receivable: 120000
+    inventory: 50000
+    current_assets: 200000
+    total_assets: 500000
+    current_liabilities: 160000
+    total_liabilities: 350000
+    equity: 150000
+  benchmarks:              # from finance knowledge + Health Engine bands
+    current_ratio: { healthy: ">1.5", warning: "1.2-1.5", critical: "<1.0" }
+    quick_ratio: { healthy: ">1.0", warning: "0.8-1.0", critical: "<0.5" }
+    times_interest_earned: { healthy: ">3", warning: "1.5-3", critical: "<1.5" }
+
+founder_intent: >
+  "Run the numbers on our financials - are we healthy or not?"
+
+expected:
+  diagnosis: >
+    Mixed-to-weak. Margins are thin but positive; the decisive problem is interest
+    coverage: TIE = 1.25, below the 1.5 stress floor => CRITICAL. Liquidity is also
+    soft: current ratio 1.25 (Warning) and quick ratio 0.94 (Warning). Because the
+    overall state is set by the worst indicator, the company is AT RISK / Critical on
+    solvency: operating profit barely covers interest, so it cannot safely add debt and
+    must raise EBIT or reduce interest before doing so.
+  reasoning_must_show:
+    - Computes the ratio set (liquidity, coverage, profitability, leverage, returns).
+    - Classifies each against the benchmark bands (not just raw numbers).
+    - Identifies TIE = 1.25 as Critical (below 1.5) and makes it the headline.
+    - Notes the current/quick ratios as Warning, and the thin margins.
+    - Sets the overall verdict from the weakest ratio, and gives the correct implication
+      (do not add leverage; lift EBIT / cut interest).
+  numbers_must_compute:
+    current_ratio: 1.25          # 200,000 / 160,000
+    quick_ratio: 0.94            # (200,000 - 50,000) / 160,000
+    times_interest_earned: 1.25  # 50,000 / 40,000  -> CRITICAL
+    gross_margin_pct: 35.0
+    operating_margin_pct: 5.0
+    net_margin_pct: 0.75
+    roa_pct: 1.5                 # 7,500 / 500,000
+    roe_pct: 5.0                 # 7,500 / 150,000
+    debt_to_equity: 2.33         # 350,000 / 150,000
+
+must_flag:
+  - If the founder plans to add debt, escalate: current coverage cannot support it.
+  - Recommend accountant review for the covenant/coverage exposure.
+
+must_not:
+  - Must not report ratios without classifying them against the benchmarks.
+  - Must not call the business healthy overall while TIE is below 1.5.
+  - Must not misclassify TIE 1.25 as merely a warning (it is below the critical floor).
+  - Must not invent balance-sheet or income lines not given.
+
+scoring:
+  dimensions:
+    - name: ratios_computed
+      points: 30
+      criteria: Correctly computes current, quick, TIE, margins, ROA/ROE, D/E.
+    - name: classified_vs_benchmarks
+      points: 25
+      criteria: Labels each ratio Healthy/Warning/Critical against the bands.
+    - name: tie_headline
+      points: 25
+      criteria: Flags TIE 1.25 as Critical and makes coverage the headline issue.
+    - name: overall_from_weakest
+      points: 10
+      criteria: Sets overall state from the worst indicator, not an average.
+    - name: correct_implication
+      points: 10
+      criteria: Advises against adding leverage; lift EBIT / reduce interest.
+  pass_threshold: 75
+  auto_fail:
+    - Declares the business healthy while coverage is below the floor.
+    - Reports ratios with no benchmark classification.
+    - Fabricates a financial line item.

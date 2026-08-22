@@ -1,0 +1,21 @@
+# Marketing integration category (ads / email / analytics / social). Conforms to schemas/integration.schema.json.
+id: marketing
+category: marketing
+provider: "<bound at install: ad / email / analytics / social tool>"
+transport: oauth_api
+auth: { type: oauth, scopes_requested: [read_spend, read_performance, read_audience, write_draft_campaign, write_audience], credentials_ref: secret://marketing }
+reads:
+  - { entity: campaign_performance, fields: [spend, impressions, clicks, conversions, cac, roas], freshness: daily }
+  - { entity: web_analytics, fields: [sessions, sources, conversion_rate], freshness: daily }
+  - { entity: email_list, fields: [size, engagement], freshness: daily }
+writes:
+  - { entity: campaign_draft, fields: [channel, audience, creative], risk_tier: LOW, approval: false }
+  - { entity: audience, fields: [definition], risk_tier: MEDIUM, approval: false }
+high_risk_actions:
+  - { action: launch_paid_campaign, risk_tier: HIGH, approval: true, rollback: pause }
+  - { action: publish_public_content, risk_tier: HIGH, approval: true, rollback: unpublish }
+  - { action: send_email_blast, risk_tier: HIGH, approval: true, rollback: none }
+audit: true
+rollback: { supported: true, method: "pause/unpublish; sent email is irreversible" }
+maps_to_memory: [market, metrics]
+maps_to_twin: [Campaign, Channel]

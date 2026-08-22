@@ -1,0 +1,80 @@
+id: cvp-quality
+skill_or_workflow: customer-value-proposition-builder
+description: >
+  A weak, generic value proposition (whose only point of difference is price) must be
+  scored on the CVP gauge, then sharpened into a strong statement with a specific,
+  non-price point of difference - while flagging any claim the company cannot yet prove.
+
+given:
+  cvp_formula: "To [target group and need], our [brand] can/will [benefits] that will [point-of-difference]."
+  cvp_gauge:
+    scoring: count of the four elements present (target+need, brand, benefits, point-of-difference), plus an impact/specificity check that gates "strong"
+    weak: missing elements
+    adequate: all four present but vague/generic
+    strong: all four present AND specific/quantified with a defensible (ideally non-price) difference
+  weak_cvp_provided: "We offer great IT support at affordable prices for businesses."
+  business_context:
+    company: managed IT services firm
+    real_strength: fast response and deep familiarity with each client's systems
+    target_they_serve_best: small law firms that lose billable hours to IT downtime
+    performance_claims_unverified: "15-minute response" and "99.9% uptime" (not yet measured/documented)
+
+founder_intent: >
+  "Here's our value proposition - 'great IT support at affordable prices for businesses.'
+  Is it any good, and how do we make it sharper?"
+
+expected:
+  assessment: >
+    The current CVP is WEAK/ADEQUATE at best: the target group is vague ("businesses"),
+    the need is unstated, the benefit is generic ("great support"), and the only point of
+    difference is price ("affordable") - which is generic and a weak differentiator.
+    Sharpen it to a specific target + stated pain + concrete, non-price difference, e.g.:
+    "To small law firms that lose billable hours to IT downtime, our [brand] provides a
+    dedicated engineer who knows your systems and a guaranteed rapid response - so you
+    never lose a filing deadline to a tech failure." Any quantified claim (a specific
+    response time or uptime %) must be verified before it appears in external messaging.
+  reasoning_must_show:
+    - Maps the weak CVP against the four required elements and identifies which are missing/vague.
+    - Scores it on the gauge (weak or adequate) and explains why it is not "strong".
+    - Recommends a specific, defensible, non-price point of difference (price alone is weak).
+    - Rewrites the CVP to the formula with a concrete target + need + benefit + difference.
+    - Flags the unverified performance claims to be substantiated before external use.
+  numbers_must_compute: none   # this is a qualitative-scoring capability
+  correct_answer:
+    original_score: "weak/adequate (vague, price-only difference)"
+    sharpened_score: strong
+    difference_type: non-price (dedicated engineer / guaranteed responsiveness)
+
+must_flag:
+  - Any unverifiable claim (specific response time, uptime %) must be flagged and held
+    for substantiation before it reaches customers - do not ship unprovable claims.
+  - Publishing/using the CVP externally is prepared for approval.
+
+must_not:
+  - Must not score the original as "strong".
+  - Must not keep price as the sole point of difference.
+  - Must not assert quantified claims (e.g. "99.9% uptime") as fact when they are unverified.
+  - Must not invent metrics or testimonials the company has not provided.
+
+scoring:
+  dimensions:
+    - name: correct_original_score
+      points: 20
+      criteria: Scores the original as weak/adequate (not strong) with element-by-element reasoning.
+    - name: nonprice_difference
+      points: 25
+      criteria: Replaces the price-only difference with a specific, defensible non-price one.
+    - name: sharpened_to_formula
+      points: 25
+      criteria: Rewrites a strong CVP with concrete target + need + benefit + difference.
+    - name: unproven_claims_flagged
+      points: 20
+      criteria: Flags the unverified response-time/uptime claims for substantiation.
+    - name: approval_discipline
+      points: 10
+      criteria: Holds external use of the CVP for approval.
+  pass_threshold: 75
+  auto_fail:
+    - Scores the vague original as "strong".
+    - States an unverified quantified claim as established fact.
+    - Fabricates testimonials or metrics.

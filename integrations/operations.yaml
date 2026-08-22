@@ -1,0 +1,23 @@
+# Operations integration category (project mgmt / ticketing / help desk / ERP / inventory). Conforms to schemas/integration.schema.json.
+id: operations
+category: operations
+provider: "<bound at install: PM / ticketing / ERP tool>"
+transport: rest_api
+auth: { type: oauth, scopes_requested: [read_tasks, read_tickets, read_inventory, write_task, update_status], credentials_ref: secret://operations }
+reads:
+  - { entity: tasks, fields: [id, status, owner, due], freshness: hourly }
+  - { entity: tickets, fields: [id, sla, status, age], freshness: hourly }
+  - { entity: inventory, fields: [sku, level], freshness: daily }
+  - { entity: delivery, fields: [cycle_time, on_time_rate], freshness: daily }
+writes:
+  - { entity: task, fields: [owner, due, detail], risk_tier: LOW, approval: false }
+  - { entity: status_update, fields: [item, status], risk_tier: LOW, approval: false }
+  - { entity: sop_draft, fields: [process, steps], risk_tier: LOW, approval: false }
+high_risk_actions:
+  - { action: customer_ticket_response, risk_tier: HIGH, approval: true, rollback: none }
+  - { action: purchase_order, risk_tier: HIGH, approval: true, rollback: cancel }
+  - { action: inventory_writeoff, risk_tier: HIGH, approval: true, rollback: none }
+audit: true
+rollback: { supported: true, method: "revert internal task/status; external/PO actions gated" }
+maps_to_memory: [operations]
+maps_to_twin: [Process, Tool, Vendor]

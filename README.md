@@ -2,6 +2,14 @@
 
 ### Building the Lovable for Business Management
 
+> **This repository contains two things:** the **thesis** (below) — the vision for why managing a business should become as intuitive as vibe coding — and the **Vibe Managing Business Intelligence system**: an AI-native business operating system that turns *founder intent → business execution*.
+>
+> ➡️ **Start with [MANIFEST.md](MANIFEST.md)** for the complete system map, or [VIBE_MANAGING_ARCHITECTURE.md](VIBE_MANAGING_ARCHITECTURE.md) for the architecture. The system is a library of [skills](skills/), [agents](agents/), and [workflows](workflows/) grounded in a [business memory](BUSINESS_MEMORY_SCHEMA.md) and [digital twin](BUSINESS_DIGITAL_TWIN.md), governed by an [autonomy & approval model](AUTONOMY_AND_APPROVAL_MODEL.md) — installable into AI coding agents.
+
+---
+
+## Thesis
+
 Doing business is hard.
 
 Starting a business is one thing. Building one that survives, operates well, grows consistently, and eventually becomes a large company is something entirely different.

@@ -1,0 +1,19 @@
+# Documents integration category (drive / office suite / notes / wiki). Conforms to schemas/integration.schema.json.
+id: documents
+category: documents
+provider: "<bound at install: drive / office / wiki tool>"
+transport: oauth_api
+auth: { type: oauth, scopes_requested: [read_docs, write_internal_doc], credentials_ref: secret://documents }
+reads:
+  - { entity: document, fields: [title, content], freshness: on_demand }
+  - { entity: contract, fields: [title, terms], freshness: on_demand }
+writes:
+  - { entity: internal_doc, fields: [title, content], risk_tier: LOW, approval: false }
+  - { entity: plan_or_report, fields: [title, content], risk_tier: LOW, approval: false }
+high_risk_actions:
+  - { action: share_externally, risk_tier: HIGH, approval: true, rollback: revoke }
+  - { action: delete_or_overwrite_final, risk_tier: CRITICAL, approval: true, rollback: none }
+audit: true
+rollback: { supported: true, method: "versioned internal docs; external share/delete gated" }
+maps_to_memory: [company, strategy, operations]
+maps_to_twin: []

@@ -1,0 +1,23 @@
+# People integration category (HRIS / payroll / recruiting / scheduling). Conforms to schemas/integration.schema.json.
+id: people
+category: people
+provider: "<bound at install: HRIS / payroll / ATS tool>"
+transport: oauth_api
+auth: { type: oauth, scopes_requested: [read_roster, read_org, read_time_off, read_reqs, write_draft_jd, schedule_interview], credentials_ref: secret://people }
+reads:
+  - { entity: roster, fields: [id, role, function, reports_to, start_date], freshness: daily }
+  - { entity: comp_totals, fields: [function, total], freshness: monthly }   # individual comp = restricted
+  - { entity: open_reqs, fields: [id, title, status], freshness: daily }
+writes:
+  - { entity: jd_draft, fields: [role, tasks, competencies], risk_tier: LOW, approval: false }
+  - { entity: interview_schedule, fields: [candidate, slot], risk_tier: MEDIUM, approval: false }
+  - { entity: onboarding_tasks, fields: [hire, tasks], risk_tier: LOW, approval: false }
+high_risk_actions:
+  - { action: hire, risk_tier: CRITICAL, approval: true, rollback: none }
+  - { action: terminate, risk_tier: CRITICAL, approval: true, rollback: none }
+  - { action: change_compensation, risk_tier: CRITICAL, approval: true, rollback: none }
+  - { action: run_payroll, risk_tier: CRITICAL, approval: true, rollback: none }
+audit: true
+rollback: { supported: false, method: "employment actions are never auto-run; human + HR/legal only" }
+maps_to_memory: [team]
+maps_to_twin: [Employee, Role]

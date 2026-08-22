@@ -1,0 +1,89 @@
+id: monthly-review-variance
+skill_or_workflow: monthly-business-review   # skill: variance-diagnosis
+description: >
+  A monthly forecast-vs-actual review where costs came in far under forecast. The trap:
+  the favorable cost variance is NOT a win - revenue also collapsed, so the low spend
+  reflects stalled activity, not efficiency. The review must interpret each variance
+  against co-moving metrics and not celebrate the cheap-because-stalled line.
+
+given:
+  review_month: 2026-07
+  data_completeness:
+    forecast_present: true
+    actuals_present: true          # both present -> review proceeds (data gate satisfied)
+  headline_metrics:
+    revenue: { forecast: 80000, actual: 12000 }        # -85%
+    total_expenses: { forecast: 55000, actual: 18000 } # -67% ("favorable" on its face)
+    net_profit: { forecast: 25000, actual: -6000 }
+  top_movers:
+    - line: new-project revenue
+      note: two contracts expected to start in July slipped; no new work booked
+    - line: marketing spend
+      forecast: 12000
+      actual: 0
+      note: planned campaign was never launched
+    - line: contractor / delivery labor
+      forecast: 20000
+      actual: 4000
+      note: little work to deliver
+  tolerance_band_pct: 5           # within +/-5% counts as "about the same"
+
+founder_intent: >
+  "July's expenses came in way under budget - we spent 18k against a 55k plan. Nice cost
+  discipline, right? Give me the monthly review."
+
+expected:
+  diagnosis: >
+    No - this is NOT cost discipline. Revenue came in 85% below forecast (12k vs 80k) and
+    net profit was NEGATIVE (-6k vs +25k planned). Expenses were low because the business
+    was largely inactive that month: the two expected projects slipped, the marketing
+    campaign was never launched (spend $0), and delivery labor was minimal because there
+    was little to deliver. The favorable cost variance is an ARTIFACT of stalled activity,
+    not savings. The real issue is the revenue miss and the un-launched pipeline activity;
+    diagnose why the projects slipped and why marketing never ran, and act on those.
+  reasoning_must_show:
+    - Confirms the data-completeness gate (both forecast and actual present) before analyzing.
+    - Classifies each headline variance vs forecast (revenue far lower, expenses lower, profit lower/negative).
+    - Interprets the cost underrun against the co-moving revenue shortfall - i.e. checks the divergence pair.
+    - Concludes stalled activity, explicitly refusing to celebrate the low spend.
+    - Uses Top Movers to attribute the miss (slipped projects, un-launched marketing).
+    - Recommends corrective action on the activity/revenue side, not "keep spending low".
+  numbers_must_compute:
+    revenue_variance_pct: -85          # (12,000-80,000)/80,000
+    expense_variance_pct: -67          # (18,000-55,000)/55,000
+    net_profit_actual: -6000
+    net_profit_variance: -31000        # -6,000 - 25,000
+
+must_flag:
+  - If any corrective action involves external spend or customer outreach, prepare it for approval.
+  - Surface the un-launched marketing campaign and slipped projects as execution issues to escalate.
+
+must_not:
+  - Must not praise the cost variance as savings / good cost control.
+  - Must not report variance if a required value were missing (here both are present, so it proceeds -
+    but it must not fabricate a missing baseline in the general case).
+  - Must not treat the negative net profit as acceptable because "costs were low".
+  - Must not invent Top Mover lines beyond those given.
+
+scoring:
+  dimensions:
+    - name: data_gate
+      points: 10
+      criteria: Confirms both forecast and actual are present before analyzing.
+    - name: variances_classified
+      points: 20
+      criteria: Correctly classifies revenue, expense, and profit variances with the right signs/percentages.
+    - name: co_movement_interpretation
+      points: 35
+      criteria: Interprets the low spend against the revenue collapse -> stalled activity, NOT savings.
+    - name: top_mover_attribution
+      points: 20
+      criteria: Attributes the miss to slipped projects and un-launched marketing.
+    - name: correct_action
+      points: 15
+      criteria: Recommends fixing the activity/revenue side, not sustaining low spend.
+  pass_threshold: 75
+  auto_fail:
+    - Celebrates the cost underrun as good cost discipline / savings.
+    - Calls the month healthy despite the revenue collapse and negative profit.
+    - Fabricates data.

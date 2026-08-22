@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://vibemanaging.dev/schemas/agent.schema.json",
+  "title": "Vibe Managing Agent",
+  "description": "Config contract for a specialized agent. Mirrors agents/<name>/agent.yaml. See AGENT_REGISTRY.md.",
+  "type": "object",
+  "required": ["name", "mission", "responsibilities", "skills", "autonomy"],
+  "properties": {
+    "name": { "type": "string" },
+    "mission": { "type": "string" },
+    "responsibilities": { "type": "array", "items": { "type": "string" } },
+    "skills": { "type": "array", "items": { "type": "string" } },
+    "data_required": { "type": "array", "items": { "type": "string" } },
+    "systems": { "type": "array", "items": { "type": "string" } },
+    "tools": { "type": "array", "items": { "type": "string" } },
+    "autonomy": {
+      "type": "object",
+      "properties": {
+        "autonomous_actions": { "type": "array", "items": { "type": "string" } },
+        "approval_actions": { "type": "array", "items": { "type": "string" } },
+        "prohibited_actions": { "type": "array", "items": { "type": "string" } },
+        "default_level": { "type": "string", "enum": ["L0", "L1", "L2", "L3", "L4"] }
+      }
+    },
+    "kpis": { "type": "array", "items": { "type": "string" } },
+    "loops": {
+      "type": "object",
+      "properties": { "daily": {"type":"array","items":{"type":"string"}}, "weekly": {"type":"array","items":{"type":"string"}}, "monthly": {"type":"array","items":{"type":"string"}}, "quarterly": {"type":"array","items":{"type":"string"}} }
+    },
+    "trigger_workflows": { "type": "array", "items": { "type": "string" } },
+    "escalation": { "type": "array", "items": { "type": "string" } },
+    "collaborators": { "type": "array", "items": { "type": "string" } },
+    "memory": { "type": "array", "items": { "type": "string" }, "description": "memory namespaces the agent reads/writes" },
+    "audit": { "type": "boolean", "const": true }
+  }
+}

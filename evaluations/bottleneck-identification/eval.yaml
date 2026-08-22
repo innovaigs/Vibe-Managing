@@ -1,0 +1,89 @@
+id: bottleneck-identification
+skill_or_workflow: bottleneck-analysis
+description: >
+  Given per-step process timings, identify the throughput constraint (the slowest step),
+  quantify the capacity ceiling and the gap to demand, and recommend relief at that step.
+  A distractor step (a fast, expensive machine) must NOT be mistaken for the constraint.
+
+given:
+  process: custom-furniture build, 4 sequential steps
+  available_time_per_resource_hours_week: 40
+  target_demand_units_week: 12
+  steps:
+    - name: design
+      resources: 1 (person)
+      hours_per_unit: 2.0        # capacity 20/wk
+    - name: cutting_cnc
+      resources: 1 (machine)
+      hours_per_unit: 1.5        # capacity ~26.7/wk  (fast, recently upgraded)
+    - name: assembly
+      resources: 1 (person)
+      hours_per_unit: 5.0        # capacity 8/wk  <- slowest
+    - name: finishing
+      resources: 1 (person)
+      hours_per_unit: 3.0        # capacity ~13.3/wk
+  observed: work-in-progress piles up in front of assembly
+
+founder_intent: >
+  "We can't deliver fast enough to meet demand. Should I buy a second CNC machine to
+  speed things up?"
+
+expected:
+  diagnosis: >
+    The bottleneck is ASSEMBLY, not cutting/CNC. Assembly's capacity is 8 units/week -
+    the lowest of the four steps - so it sets the process ceiling at 8/week against
+    demand of 12/week, a shortfall of 4 units/week. WIP accumulating in front of assembly
+    confirms it. Takt time is 3.33 hrs/unit while assembly's cycle time is 5 hrs/unit.
+    Buying a second CNC would spend money on a step that already has spare capacity and
+    would not raise throughput. Relief belongs at assembly (add an assembler, offload
+    subtasks, or reduce assembly time); after that, finishing (~13.3/wk) becomes the next
+    constraint but still clears 12/week.
+  reasoning_must_show:
+    - Computes each step's capacity/week from hours-per-unit and available time.
+    - Identifies the minimum-capacity step as the bottleneck (assembly, 8/wk).
+    - Computes the ceiling and the gap to demand.
+    - Uses the WIP-queue signal as confirmation.
+    - Computes takt vs the constraint's cycle time.
+    - Recommends relief AT the constraint and names the next constraint after relief.
+    - Explicitly rejects the CNC purchase as relief for the wrong step.
+  numbers_must_compute:
+    capacity_design_per_week: 20        # 40 / 2
+    capacity_cnc_per_week: 26.7         # 40 / 1.5
+    capacity_assembly_per_week: 8       # 40 / 5
+    capacity_finishing_per_week: 13.3   # 40 / 3
+    process_ceiling_per_week: 8
+    gap_to_demand_per_week: 4           # 12 - 8
+    takt_time_hours_per_unit: 3.33      # 40 / 12
+    next_constraint_after_relief: finishing (~13.3/wk, still above 12)
+
+must_flag:
+  - Any capital spend (hiring an assembler, buying equipment) is prepared for approval.
+  - Recommendations that spend money are held until the constraint is confirmed with real measured throughput.
+
+must_not:
+  - Must not name cutting/CNC as the bottleneck or endorse buying a second CNC.
+  - Must not name the fastest step or an average as the constraint.
+  - Must not invent step timings or resource counts not given.
+
+scoring:
+  dimensions:
+    - name: constraint_identified
+      points: 35
+      criteria: Names assembly (8/wk) as the bottleneck via minimum capacity + WIP signal.
+    - name: ceiling_and_gap
+      points: 20
+      criteria: Ceiling 8/wk, gap 4/wk vs demand of 12; takt 3.33 vs cycle 5.
+    - name: rejects_distractor
+      points: 20
+      criteria: Explicitly rejects the second CNC (wrong step) as relief.
+    - name: correct_relief_and_next
+      points: 15
+      criteria: Puts relief at assembly and names finishing as the next constraint.
+    - name: approval_discipline
+      points: 10
+      criteria: Holds capital/hiring spend for approval; flags need for measured data.
+  pass_threshold: 75
+  auto_fail:
+    - Recommends buying a second CNC / relieving cutting.
+    - Identifies the wrong step as the constraint.
+    - Fabricates timings.

@@ -1,0 +1,58 @@
+# Vibe Managing — Business Health Engine thresholds. See BUSINESS_HEALTH_ENGINE.md.
+# States: healthy | needs_attention | at_risk | critical. Worst of {level, trend, anomaly} sets state.
+# All values overridable per company / industry benchmark.
+version: 0.1.0
+
+cash_liquidity:
+  cash_runway_months:      { healthy: ">6", needs_attention: "4-6", at_risk: "2-4", critical: "<2", priority: 1 }
+  current_ratio:           { healthy: ">1.5", needs_attention: "1.2-1.5", at_risk: "1.0-1.2", critical: "<1.0" }
+  quick_ratio:             { healthy: ">1.0", needs_attention: "0.8-1.0", at_risk: "0.5-0.8", critical: "<0.5" }
+  operating_cash_flow:     { rule: "positive_and_rising=healthy; sustained_negative=critical" }
+  cash_conversion_cycle:   { rule: "lengthening_trend=at_risk" }
+
+revenue_growth:
+  revenue_vs_forecast:     { healthy: ">=0.95", needs_attention: "0.90-0.95", at_risk: "0.80-0.90", critical: "<0.80" }
+  revenue_growth_rate:     { rule: "negative_or_decelerating_vs_plan=at_risk" }
+  pipeline_coverage:       { healthy: ">=3", needs_attention: "2-3", at_risk: "<2" }
+
+profitability:
+  gross_margin_pct:        { rule: "falling_trend=needs_attention" }
+  net_margin_pct:          { rule: "negative=at_risk" }
+  break_even_headroom_pct: { healthy: ">20", needs_attention: "10-20", at_risk: "<10" }
+
+customers:
+  customer_concentration:  { healthy: "<25", needs_attention: "25-40", at_risk: ">40" }   # % rev from top customer
+  churn_rate:              { rule: "rising_trend=at_risk" }
+  conversion_rate:         { rule: "drop_>=15pct_mom=at_risk" }
+  ltv_cac_ratio:           { healthy: ">=3", needs_attention: "1-3", critical: "<1" }
+
+receivables_payables:
+  dso_vs_terms:            { rule: "rising_above_terms=at_risk" }
+  ar_over_90d_pct:         { rule: "rising_trend=at_risk" }
+
+operations:
+  on_time_delivery_pct:    { healthy: ">=95", needs_attention: "85-95", at_risk: "<85" }
+  defect_rework_rate:      { rule: "rising_trend=at_risk" }
+  capacity_utilization_pct:{ healthy: "60-85", needs_attention: "85-90", at_risk: ">90" }
+
+people:
+  founder_load_index:      { rule: "high_share_delegable_work=at_risk" }
+  team_capacity_util_pct:  { healthy: "<85", needs_attention: "85-100", at_risk: ">100" }
+  key_person_dependency:   { rule: ">1_critical_single_owner=at_risk" }
+
+risk:
+  open_high_severity:      { rule: "any_open=at_risk" }
+  covenant_headroom:       { rule: "near_breach=at_risk; breach=critical" }
+
+strategy:
+  initiative_on_track_rate:{ healthy: ">=0.7", needs_attention: "<0.7" }
+  goal_pace:               { rule: "behind_pace=at_risk" }
+
+anomaly_detection:
+  method: rolling_mean_variance_bands
+  velocity_spike_sigma: 2.5
+  divergence_pairs:
+    - [revenue, accounts_receivable]     # revenue flat + AR rising = collection problem
+    - [net_income, cash]                 # profit up + cash down = working-capital drain
+    - [cost_variance_favorable, activity_level]  # cheap because stalled
+  explainable: true                       # every alert must be explainable; no black box

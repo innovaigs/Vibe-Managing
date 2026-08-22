@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://vibemanaging.dev/schemas/decision-record.schema.json",
+  "title": "Decision Record",
+  "description": "The learning substrate: every material decision, its expected outcome, and (later) its actual outcome and lesson.",
+  "type": "object",
+  "required": ["id", "date", "context", "decision", "authorized_by", "expected_outcome"],
+  "properties": {
+    "id": { "type": "string" },
+    "date": { "type": "string", "format": "date" },
+    "context": { "type": "string" },
+    "question": { "type": "string" },
+    "options_considered": {
+      "type": "array",
+      "items": { "type": "object", "properties": { "option": {"type":"string"}, "pros": {"type":"array","items":{"type":"string"}}, "cons": {"type":"array","items":{"type":"string"}}, "projected_outcome": {"type":"string"} } }
+    },
+    "assumptions": { "type": "array", "items": { "type": "string" } },
+    "decision": { "type": "string" },
+    "rationale": { "type": "string" },
+    "owner_id": { "type": "string" },
+    "authorized_by": { "type": "string", "description": "founder | agent-name + autonomy level" },
+    "expected_outcome": { "type": "object", "properties": { "metric_key": {"type":"string"}, "expected_value": {"type":"number"}, "by_date": {"type":"string","format":"date"} } },
+    "actual_outcome": { "type": "object", "properties": { "metric_key": {"type":"string"}, "actual_value": {"type":"number"}, "measured_at": {"type":"string","format":"date"} } },
+    "variance": { "type": "number" },
+    "lesson": { "type": "string" },
+    "linked_audit_ids": { "type": "array", "items": { "type": "string" } }
+  }
+}

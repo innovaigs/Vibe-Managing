@@ -1,0 +1,11 @@
+# Source curriculum material (internal reference only — not part of the shipped system)
+10kgsb/
+
+# OS / editor noise
+.DS_Store
+*.swp
+Thumbs.db
+
+# Scratch / build
+.scratch/
+node_modules/

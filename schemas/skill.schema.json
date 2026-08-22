@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://vibemanaging.dev/schemas/skill.schema.json",
+  "title": "Vibe Managing Skill",
+  "description": "Machine-readable contract for a Vibe Managing skill. Mirrors the SKILL.md frontmatter + I/O contract so any agent runtime can discover, validate, and invoke a skill.",
+  "type": "object",
+  "required": ["name", "domain", "version", "purpose", "autonomy_ceiling", "provenance", "inputs", "outputs"],
+  "properties": {
+    "name": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "domain": { "type": "string", "enum": ["strategy", "finance", "growth", "sales", "marketing", "operations", "people", "leadership", "risk", "legal"] },
+    "version": { "type": "string" },
+    "purpose": { "type": "string" },
+    "autonomy_ceiling": { "type": "string", "enum": ["L0", "L1", "L2", "L3"] },
+    "provenance": { "type": "string", "enum": ["SOURCE", "SYNTH", "CLAUDE"] },
+    "triggers": { "type": "array", "items": { "type": "string" }, "description": "Example founder phrasings / conditions" },
+    "reads": { "type": "array", "items": { "type": "string" }, "description": "Business Memory namespaces / twin views read" },
+    "writes": { "type": "array", "items": { "type": "string" }, "description": "Business Memory namespaces written" },
+    "inputs": { "type": "object", "description": "JSON Schema of the skill's input object" },
+    "outputs": { "type": "object", "description": "JSON Schema of the skill's output object" },
+    "decision_rules": { "type": "array", "items": { "type": "string" }, "description": "IF/THEN rules the skill applies" },
+    "calculations": { "type": "array", "items": { "type": "object", "properties": { "name": {"type": "string"}, "formula": {"type": "string"}, "threshold": {"type": "string"} } } },
+    "approval_required_actions": { "type": "array", "items": { "type": "string" } },
+    "escalation": { "type": "array", "items": { "type": "string", "enum": ["founder", "accountant", "attorney", "hr", "executive", "specialist"] } },
+    "kpis": { "type": "array", "items": { "type": "string" } },
+    "related_skills": { "type": "array", "items": { "type": "string" } },
+    "owned_by_agents": { "type": "array", "items": { "type": "string" } }
+  }
+}

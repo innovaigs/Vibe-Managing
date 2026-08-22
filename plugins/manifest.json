@@ -1,0 +1,699 @@
+{
+  "name": "vibe-managing",
+  "version": "0.1.0",
+  "description": "AI-native business operating system: founder intent -> business execution. Skills, agents, and workflows grounded in a business memory + digital twin, governed by an autonomy/approval control plane.",
+  "vendor_neutral": true,
+  "entrypoints": {
+    "orchestrator": "MASTER_ORCHESTRATOR.md",
+    "manifest_doc": "MANIFEST.md",
+    "architecture": "VIBE_MANAGING_ARCHITECTURE.md"
+  },
+  "schemas": {
+    "agent": "schemas/agent.schema.json",
+    "business-memory": "schemas/business-memory.schema.json",
+    "decision-record": "schemas/decision-record.schema.json",
+    "digital-twin": "schemas/digital-twin.schema.json",
+    "health-snapshot": "schemas/health-snapshot.schema.json",
+    "integration": "schemas/integration.schema.json",
+    "skill": "schemas/skill.schema.json"
+  },
+  "counts": {
+    "skills": 78,
+    "agents": 11,
+    "workflows": 10
+  },
+  "skill_domains": [
+    "finance",
+    "growth",
+    "leadership",
+    "legal",
+    "marketing",
+    "operations",
+    "people",
+    "risk",
+    "sales",
+    "strategy"
+  ],
+  "skills": [
+    {
+      "name": "bankability-assessment",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/finance/bankability-assessment/SKILL.md"
+    },
+    {
+      "name": "break-even-and-pricing-analysis",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/finance/break-even-and-pricing-analysis/SKILL.md"
+    },
+    {
+      "name": "budget-builder",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SYNTH",
+      "path": "skills/finance/budget-builder/SKILL.md"
+    },
+    {
+      "name": "business-valuation",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/finance/business-valuation/SKILL.md"
+    },
+    {
+      "name": "cash-flow-diagnostic",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/finance/cash-flow-diagnostic/SKILL.md"
+    },
+    {
+      "name": "cash-runway-monitor",
+      "domain": "finance",
+      "autonomy_ceiling": "L2",
+      "provenance": "SOURCE",
+      "path": "skills/finance/cash-runway-monitor/SKILL.md"
+    },
+    {
+      "name": "debt-service-and-covenant-analysis",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/finance/debt-service-and-covenant-analysis/SKILL.md"
+    },
+    {
+      "name": "financial-forecast-builder",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/finance/financial-forecast-builder/SKILL.md"
+    },
+    {
+      "name": "financial-ratio-analysis",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/finance/financial-ratio-analysis/SKILL.md"
+    },
+    {
+      "name": "financial-statement-analysis",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/finance/financial-statement-analysis/SKILL.md"
+    },
+    {
+      "name": "financing-options-analysis",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/finance/financing-options-analysis/SKILL.md"
+    },
+    {
+      "name": "scenario-and-sensitivity-analysis",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/finance/scenario-and-sensitivity-analysis/SKILL.md"
+    },
+    {
+      "name": "value-driver-analysis",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/finance/value-driver-analysis/SKILL.md"
+    },
+    {
+      "name": "working-capital-optimizer",
+      "domain": "finance",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/finance/working-capital-optimizer/SKILL.md"
+    },
+    {
+      "name": "executive-dashboard-builder",
+      "domain": "growth",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/growth/executive-dashboard-builder/SKILL.md"
+    },
+    {
+      "name": "growth-pitch-generator",
+      "domain": "growth",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/growth/growth-pitch-generator/SKILL.md"
+    },
+    {
+      "name": "growth-plan-builder",
+      "domain": "growth",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/growth/growth-plan-builder/SKILL.md"
+    },
+    {
+      "name": "kpi-design",
+      "domain": "growth",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/growth/kpi-design/SKILL.md"
+    },
+    {
+      "name": "monthly-business-review",
+      "domain": "growth",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/growth/monthly-business-review/SKILL.md"
+    },
+    {
+      "name": "variance-diagnosis",
+      "domain": "growth",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/growth/variance-diagnosis/SKILL.md"
+    },
+    {
+      "name": "delegation-readiness-audit",
+      "domain": "leadership",
+      "autonomy_ceiling": "L0",
+      "provenance": "SOURCE",
+      "path": "skills/leadership/delegation-readiness-audit/SKILL.md"
+    },
+    {
+      "name": "leadership-growth-planner",
+      "domain": "leadership",
+      "autonomy_ceiling": "L0",
+      "provenance": "SOURCE",
+      "path": "skills/leadership/leadership-growth-planner/SKILL.md"
+    },
+    {
+      "name": "leadership-style-assessment",
+      "domain": "leadership",
+      "autonomy_ceiling": "L0",
+      "provenance": "SOURCE",
+      "path": "skills/leadership/leadership-style-assessment/SKILL.md"
+    },
+    {
+      "name": "mission-vision-builder",
+      "domain": "leadership",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/leadership/mission-vision-builder/SKILL.md"
+    },
+    {
+      "name": "motivation-mapper",
+      "domain": "leadership",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/leadership/motivation-mapper/SKILL.md"
+    },
+    {
+      "name": "contract-review-triage",
+      "domain": "legal",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/legal/contract-review-triage/SKILL.md"
+    },
+    {
+      "name": "employment-compliance-scan",
+      "domain": "legal",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/legal/employment-compliance-scan/SKILL.md"
+    },
+    {
+      "name": "entity-structure-advisor",
+      "domain": "legal",
+      "autonomy_ceiling": "L0",
+      "provenance": "CLAUDE",
+      "path": "skills/legal/entity-structure-advisor/SKILL.md"
+    },
+    {
+      "name": "ip-protection-audit",
+      "domain": "legal",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/legal/ip-protection-audit/SKILL.md"
+    },
+    {
+      "name": "legal-escalation-router",
+      "domain": "legal",
+      "autonomy_ceiling": "L0",
+      "provenance": "SOURCE",
+      "path": "skills/legal/legal-escalation-router/SKILL.md"
+    },
+    {
+      "name": "buyers-journey-mapper",
+      "domain": "marketing",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/marketing/buyers-journey-mapper/SKILL.md"
+    },
+    {
+      "name": "buying-center-mapper",
+      "domain": "marketing",
+      "autonomy_ceiling": "L0",
+      "provenance": "SOURCE",
+      "path": "skills/marketing/buying-center-mapper/SKILL.md"
+    },
+    {
+      "name": "channel-selection",
+      "domain": "marketing",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/marketing/channel-selection/SKILL.md"
+    },
+    {
+      "name": "competitive-advantage-assessment",
+      "domain": "marketing",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/marketing/competitive-advantage-assessment/SKILL.md"
+    },
+    {
+      "name": "customer-persona-builder",
+      "domain": "marketing",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/marketing/customer-persona-builder/SKILL.md"
+    },
+    {
+      "name": "customer-value-proposition-builder",
+      "domain": "marketing",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/marketing/customer-value-proposition-builder/SKILL.md"
+    },
+    {
+      "name": "keyword-and-search-map",
+      "domain": "marketing",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/marketing/keyword-and-search-map/SKILL.md"
+    },
+    {
+      "name": "market-segmentation",
+      "domain": "marketing",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/marketing/market-segmentation/SKILL.md"
+    },
+    {
+      "name": "marketing-funnel-planner",
+      "domain": "marketing",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/marketing/marketing-funnel-planner/SKILL.md"
+    },
+    {
+      "name": "marketing-metrics-tracker",
+      "domain": "marketing",
+      "autonomy_ceiling": "L2",
+      "provenance": "SYNTH",
+      "path": "skills/marketing/marketing-metrics-tracker/SKILL.md"
+    },
+    {
+      "name": "marketing-strategy-builder",
+      "domain": "marketing",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/marketing/marketing-strategy-builder/SKILL.md"
+    },
+    {
+      "name": "social-content-planner",
+      "domain": "marketing",
+      "autonomy_ceiling": "L2",
+      "provenance": "SOURCE",
+      "path": "skills/marketing/social-content-planner/SKILL.md"
+    },
+    {
+      "name": "website-conversion-audit",
+      "domain": "marketing",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/marketing/website-conversion-audit/SKILL.md"
+    },
+    {
+      "name": "automation-triage",
+      "domain": "operations",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/operations/automation-triage/SKILL.md"
+    },
+    {
+      "name": "bottleneck-analysis",
+      "domain": "operations",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/operations/bottleneck-analysis/SKILL.md"
+    },
+    {
+      "name": "operational-audit",
+      "domain": "operations",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/operations/operational-audit/SKILL.md"
+    },
+    {
+      "name": "process-mapping",
+      "domain": "operations",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/operations/process-mapping/SKILL.md"
+    },
+    {
+      "name": "process-optimization",
+      "domain": "operations",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/operations/process-optimization/SKILL.md"
+    },
+    {
+      "name": "sop-writer",
+      "domain": "operations",
+      "autonomy_ceiling": "L2",
+      "provenance": "SOURCE",
+      "path": "skills/operations/sop-writer/SKILL.md"
+    },
+    {
+      "name": "technology-evaluation",
+      "domain": "operations",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/operations/technology-evaluation/SKILL.md"
+    },
+    {
+      "name": "culture-diagnostic",
+      "domain": "people",
+      "autonomy_ceiling": "L1",
+      "provenance": "SYNTH",
+      "path": "skills/people/culture-diagnostic/SKILL.md"
+    },
+    {
+      "name": "delegation-planner",
+      "domain": "people",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/people/delegation-planner/SKILL.md"
+    },
+    {
+      "name": "founder-capacity-diagnostic",
+      "domain": "people",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/people/founder-capacity-diagnostic/SKILL.md"
+    },
+    {
+      "name": "hiring-plan-builder",
+      "domain": "people",
+      "autonomy_ceiling": "L1",
+      "provenance": "SYNTH",
+      "path": "skills/people/hiring-plan-builder/SKILL.md"
+    },
+    {
+      "name": "hiring-scorecard-and-fit",
+      "domain": "people",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/people/hiring-scorecard-and-fit/SKILL.md"
+    },
+    {
+      "name": "hr-process-coverage-audit",
+      "domain": "people",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/people/hr-process-coverage-audit/SKILL.md"
+    },
+    {
+      "name": "interview-guide-and-scorecard",
+      "domain": "people",
+      "autonomy_ceiling": "L2",
+      "provenance": "SOURCE",
+      "path": "skills/people/interview-guide-and-scorecard/SKILL.md"
+    },
+    {
+      "name": "job-description-builder",
+      "domain": "people",
+      "autonomy_ceiling": "L2",
+      "provenance": "SOURCE",
+      "path": "skills/people/job-description-builder/SKILL.md"
+    },
+    {
+      "name": "onboarding-builder",
+      "domain": "people",
+      "autonomy_ceiling": "L2",
+      "provenance": "SOURCE",
+      "path": "skills/people/onboarding-builder/SKILL.md"
+    },
+    {
+      "name": "organizational-design",
+      "domain": "people",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/people/organizational-design/SKILL.md"
+    },
+    {
+      "name": "business-continuity-plan",
+      "domain": "risk",
+      "autonomy_ceiling": "L1",
+      "provenance": "SYNTH",
+      "path": "skills/risk/business-continuity-plan/SKILL.md"
+    },
+    {
+      "name": "crisis-response-planning",
+      "domain": "risk",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/risk/crisis-response-planning/SKILL.md"
+    },
+    {
+      "name": "risk-diagnostic",
+      "domain": "risk",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/risk/risk-diagnostic/SKILL.md"
+    },
+    {
+      "name": "negotiation-preparation",
+      "domain": "sales",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/sales/negotiation-preparation/SKILL.md"
+    },
+    {
+      "name": "pipeline-and-forecast-review",
+      "domain": "sales",
+      "autonomy_ceiling": "L1",
+      "provenance": "SYNTH",
+      "path": "skills/sales/pipeline-and-forecast-review/SKILL.md"
+    },
+    {
+      "name": "proposal-builder",
+      "domain": "sales",
+      "autonomy_ceiling": "L1",
+      "provenance": "SYNTH",
+      "path": "skills/sales/proposal-builder/SKILL.md"
+    },
+    {
+      "name": "sales-process-design",
+      "domain": "sales",
+      "autonomy_ceiling": "L1",
+      "provenance": "CLAUDE",
+      "path": "skills/sales/sales-process-design/SKILL.md"
+    },
+    {
+      "name": "business-health-diagnostic",
+      "domain": "strategy",
+      "autonomy_ceiling": "L1",
+      "provenance": "SYNTH",
+      "path": "skills/strategy/business-health-diagnostic/SKILL.md"
+    },
+    {
+      "name": "competitive-intelligence-analysis",
+      "domain": "strategy",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/strategy/competitive-intelligence-analysis/SKILL.md"
+    },
+    {
+      "name": "exit-readiness-analysis",
+      "domain": "strategy",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/strategy/exit-readiness-analysis/SKILL.md"
+    },
+    {
+      "name": "growth-lever-selector",
+      "domain": "strategy",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/strategy/growth-lever-selector/SKILL.md"
+    },
+    {
+      "name": "growth-pathway-classifier",
+      "domain": "strategy",
+      "autonomy_ceiling": "L0",
+      "provenance": "SOURCE",
+      "path": "skills/strategy/growth-pathway-classifier/SKILL.md"
+    },
+    {
+      "name": "idea-expansion",
+      "domain": "strategy",
+      "autonomy_ceiling": "L0",
+      "provenance": "SOURCE",
+      "path": "skills/strategy/idea-expansion/SKILL.md"
+    },
+    {
+      "name": "initiative-prioritization",
+      "domain": "strategy",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/strategy/initiative-prioritization/SKILL.md"
+    },
+    {
+      "name": "opportunity-feasibility-analysis",
+      "domain": "strategy",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/strategy/opportunity-feasibility-analysis/SKILL.md"
+    },
+    {
+      "name": "resource-gap-analysis",
+      "domain": "strategy",
+      "autonomy_ceiling": "L1",
+      "provenance": "SOURCE",
+      "path": "skills/strategy/resource-gap-analysis/SKILL.md"
+    },
+    {
+      "name": "social-value-designer",
+      "domain": "strategy",
+      "autonomy_ceiling": "L0",
+      "provenance": "SOURCE",
+      "path": "skills/strategy/social-value-designer/SKILL.md"
+    },
+    {
+      "name": "strategic-planning",
+      "domain": "strategy",
+      "autonomy_ceiling": "L1",
+      "provenance": "SYNTH",
+      "path": "skills/strategy/strategic-planning/SKILL.md"
+    }
+  ],
+  "agents": [
+    {
+      "name": "business-analyst-agent",
+      "config": "agents/business-analyst-agent/agent.yaml",
+      "spec": "agents/business-analyst-agent/AGENT.md"
+    },
+    {
+      "name": "cfo-agent",
+      "config": "agents/cfo-agent/agent.yaml",
+      "spec": "agents/cfo-agent/AGENT.md"
+    },
+    {
+      "name": "growth-agent",
+      "config": "agents/growth-agent/agent.yaml",
+      "spec": "agents/growth-agent/AGENT.md"
+    },
+    {
+      "name": "leadership-coach-agent",
+      "config": "agents/leadership-coach-agent/agent.yaml",
+      "spec": "agents/leadership-coach-agent/AGENT.md"
+    },
+    {
+      "name": "legal-liaison-agent",
+      "config": "agents/legal-liaison-agent/agent.yaml",
+      "spec": "agents/legal-liaison-agent/AGENT.md"
+    },
+    {
+      "name": "marketing-agent",
+      "config": "agents/marketing-agent/agent.yaml",
+      "spec": "agents/marketing-agent/AGENT.md"
+    },
+    {
+      "name": "operations-agent",
+      "config": "agents/operations-agent/agent.yaml",
+      "spec": "agents/operations-agent/AGENT.md"
+    },
+    {
+      "name": "people-agent",
+      "config": "agents/people-agent/agent.yaml",
+      "spec": "agents/people-agent/AGENT.md"
+    },
+    {
+      "name": "risk-agent",
+      "config": "agents/risk-agent/agent.yaml",
+      "spec": "agents/risk-agent/AGENT.md"
+    },
+    {
+      "name": "sales-agent",
+      "config": "agents/sales-agent/agent.yaml",
+      "spec": "agents/sales-agent/AGENT.md"
+    },
+    {
+      "name": "strategy-agent",
+      "config": "agents/strategy-agent/agent.yaml",
+      "spec": "agents/strategy-agent/AGENT.md"
+    }
+  ],
+  "workflows": [
+    {
+      "name": "evaluate-opportunity",
+      "path": "workflows/evaluate-opportunity/WORKFLOW.md"
+    },
+    {
+      "name": "fix-cash",
+      "path": "workflows/fix-cash/WORKFLOW.md"
+    },
+    {
+      "name": "grow-revenue",
+      "path": "workflows/grow-revenue/WORKFLOW.md"
+    },
+    {
+      "name": "manage-crisis",
+      "path": "workflows/manage-crisis/WORKFLOW.md"
+    },
+    {
+      "name": "monthly-review",
+      "path": "workflows/monthly-review/WORKFLOW.md"
+    },
+    {
+      "name": "prepare-negotiation",
+      "path": "workflows/prepare-negotiation/WORKFLOW.md"
+    },
+    {
+      "name": "raise-capital",
+      "path": "workflows/raise-capital/WORKFLOW.md"
+    },
+    {
+      "name": "reduce-spend",
+      "path": "workflows/reduce-spend/WORKFLOW.md"
+    },
+    {
+      "name": "scale-operations",
+      "path": "workflows/scale-operations/WORKFLOW.md"
+    },
+    {
+      "name": "should-we-hire",
+      "path": "workflows/should-we-hire/WORKFLOW.md"
+    }
+  ],
+  "integration_categories": [
+    "finance",
+    "crm_sales",
+    "marketing",
+    "people",
+    "operations",
+    "comms",
+    "data",
+    "documents"
+  ],
+  "policies": [
+    "policies/GUARDRAILS.md",
+    "policies/HUMAN_JUDGMENT_BOUNDARY.md",
+    "core/permissions/permissions.config.yaml"
+  ]
+}

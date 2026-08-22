@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://vibemanaging.dev/schemas/digital-twin.schema.json",
+  "title": "Business Digital Twin",
+  "description": "Graph model of the company: objects (nodes), relationships (edges), events, and derived views. See BUSINESS_DIGITAL_TWIN.md.",
+  "type": "object",
+  "required": ["objects", "relationships"],
+  "properties": {
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string", "enum": ["Company","Founder","Customer","Segment","Offering","RevenueStream","CostItem","CashAccount","Employee","Role","Process","Tool","Vendor","Pipeline","Deal","Campaign","Channel","Initiative","Goal","Risk","Decision"] },
+          "attributes": { "type": "object" },
+          "lifecycle_state": { "type": "string" },
+          "health_state": { "type": "string", "enum": ["Healthy","Needs Attention","At Risk","Critical"] },
+          "metrics": { "type": "object" },
+          "_meta": { "type": "object", "properties": { "source": {"type":"string"}, "as_of": {"type":"string"}, "confidence": {"type":"number"}, "sensitivity": {"type":"string","enum":["public","internal","confidential","restricted"]} } }
+        }
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "type", "to"],
+        "properties": {
+          "from": { "type": "string" },
+          "type": { "type": "string", "enum": ["generates","buys","contains","funds","drains","reports_to","owns","depends_on","delivers","converts_to","feeds","targets","affects","threatens","authorizes"] },
+          "to": { "type": "string" }
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "timestamp", "type", "object_ref"],
+        "properties": {
+          "id": {"type":"string"}, "timestamp": {"type":"string"}, "type": {"type":"string"},
+          "source": {"type":"string","enum":["integration","agent","founder"]},
+          "object_ref": {"type":"string"},
+          "change": {"type":"object","properties":{"attribute":{"type":"string"},"from":{},"to":{}}},
+          "caused_by": {"type":"string"}
+        }
+      }
+    },
+    "derived_views": {
+      "type": "object",
+      "description": "Computed, not stored: cash_runway, profitability_map, customer_concentration, capacity_bottlenecks, pipeline_coverage, founder_load, health_rollup, growth_plan_progress"
+    }
+  }
+}

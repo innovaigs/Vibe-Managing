@@ -1,0 +1,59 @@
+# Vibe Managing — Permissions & Autonomy configuration
+# Governs what each agent MAY attempt, per action-type. See AUTONOMY_AND_APPROVAL_MODEL.md.
+# Autonomy is per action-type, not per agent. Nothing here can authorize auto-execution of a CRITICAL action.
+
+version: 0.1.0
+
+# Global thresholds (overridable per company)
+thresholds:
+  money_auto_execute_max: 0            # never auto-move money; every $ requires approval
+  reversible_low_risk_auto: true       # L2 reversible low-risk actions may auto-execute
+  refund_approval_over: 0
+  data_freshness_budget_hours: 72      # data older than this is flagged stale
+  min_confidence_to_act: 0.7           # below this, flag + do not act silently
+
+# Action-type registry: risk tier + default autonomy + rollback
+action_types:
+  read_data:            { risk: LOW,      default_level: L3, rollback: n/a }
+  run_analysis:         { risk: LOW,      default_level: L3, rollback: n/a }
+  draft_document:       { risk: LOW,      default_level: L2, rollback: delete_draft }
+  create_internal_task: { risk: LOW,      default_level: L2, rollback: delete_task }
+  update_dashboard:     { risk: LOW,      default_level: L2, rollback: revert }
+  schedule_internal:    { risk: LOW,      default_level: L2, rollback: cancel }
+  send_internal_message:{ risk: MEDIUM,   default_level: L2, rollback: n/a }
+  update_crm_record:    { risk: MEDIUM,   default_level: L2, rollback: revert }
+  send_external_message:{ risk: HIGH,     default_level: L1, rollback: none }        # approval
+  publish_public:       { risk: HIGH,     default_level: L1, rollback: unpublish }   # approval
+  commit_ad_spend:      { risk: HIGH,     default_level: L1, rollback: none }        # approval
+  change_pricing:       { risk: HIGH,     default_level: L1, rollback: revert }      # approval
+  purchase_tool:        { risk: HIGH,     default_level: L1, rollback: cancel }      # approval
+  move_money:           { risk: CRITICAL, default_level: L0, rollback: none }        # never auto
+  sign_contract:        { risk: CRITICAL, default_level: L0, rollback: none }        # never auto
+  employment_action:    { risk: CRITICAL, default_level: L0, rollback: none }        # never auto
+  file_regulatory:      { risk: CRITICAL, default_level: L0, rollback: none }        # never auto
+  delete_records:       { risk: CRITICAL, default_level: L0, rollback: none }        # never auto
+  change_standing_config:{ risk: CRITICAL, default_level: L0, rollback: revert }     # never auto
+
+# Per-agent read scopes (memory namespaces) and elevated grants
+agents:
+  cfo-agent:            { reads: [finance, offerings, customers, metrics], writes: [finance, metrics, decisions] }
+  strategy-agent:       { reads: ["*"], writes: [strategy, goals, decisions] }
+  growth-agent:         { reads: [customers, market, metrics, strategy, offerings], writes: [strategy, metrics] }
+  sales-agent:          { reads: [customers, offerings, metrics], writes: [customers, metrics] }
+  marketing-agent:      { reads: [customers, market, metrics], writes: [market, metrics] }
+  operations-agent:     { reads: [operations, offerings, metrics], writes: [operations, metrics] }
+  people-agent:         { reads: [team, operations, finance.position], writes: [team], restricted_scope: true }
+  risk-agent:           { reads: ["*"], writes: [risks] }
+  business-analyst-agent:{ reads: ["*"], writes: [metrics] }
+  leadership-coach-agent:{ reads: [founders, team.culture], writes: [founders], restricted_scope: true }
+  legal-liaison-agent:  { reads: [company, operations.vendors, team], writes: [risks], restricted_scope: true }
+
+# Promotion criteria (earning higher autonomy per action-type)
+promotion:
+  min_executions_observed: 20
+  max_human_override_rate: 0.05
+  max_error_reversal_rate: 0.02
+  require_rollback: true
+  require_full_monitoring: true
+  founder_confirms_promotion: true
+  auto_demote_on_incident: true

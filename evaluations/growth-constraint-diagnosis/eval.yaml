@@ -1,0 +1,75 @@
+id: growth-constraint-diagnosis
+skill_or_workflow: growth-pathway-classifier   # workflow: grow-revenue
+description: >
+  Revenue has stalled. The funnel data shows traffic, leads, pricing, churn, and
+  delivery capacity are all healthy - but the opportunity-to-won conversion (win rate)
+  has collapsed. The correct diagnosis isolates the CONVERSION constraint, not a
+  demand-generation, pricing, retention, or capacity problem.
+
+given:
+  company_profile:
+    type: B2B professional-services firm
+    symptom: revenue flat for six months despite steady marketing spend
+  funnel_last_6_months:
+    website_traffic_monthly: { start: 9800, now: 10000, trend: "flat/+2%" }
+    leads_monthly: { start: 400, now: 405, trend: "flat" }
+    lead_to_opportunity_rate: { start: 0.30, now: 0.30, trend: "stable" }
+    opportunity_to_won_rate: { start: 0.25, now: 0.14, trend: "falling" }   # win rate collapsed
+    average_deal_size: { start: 12000, now: 12000, trend: "stable" }
+  retention_and_capacity:
+    monthly_churn: { value: 0.03, trend: "stable" }
+    delivery_capacity_utilization: 0.60      # plenty of slack
+    pricing: unchanged for 18 months
+  competitive_note: a new competitor began undercutting on proposals ~5 months ago
+
+founder_intent: >
+  "Sales have flatlined for half a year. Should we pour more money into ads to get
+  the top of the funnel moving again?"
+
+expected:
+  diagnosis: >
+    The binding constraint is CONVERSION, specifically the opportunity-to-won (win)
+    rate, which fell from 25% to 14% while traffic, leads, lead-to-opportunity rate,
+    deal size, churn, and capacity all held steady. Adding traffic would pour more
+    leads into a leaking conversion step and waste spend. Route to a
+    sales-process / proposal / competitive-differentiation review (and website-conversion
+    audit), likely tied to the new undercutting competitor.
+  reasoning_must_show:
+    - Walks the funnel stage by stage and shows which stages are healthy vs degraded.
+    - Isolates the win-rate drop as the single binding constraint using the numbers.
+    - Explicitly rules OUT demand-generation (traffic/leads fine), pricing (unchanged),
+      retention (churn stable), and capacity (60% utilization) as the constraint.
+    - Connects the win-rate drop to the competitive undercutting signal.
+    - Recommends conversion/sales-process fixes, NOT more ad spend.
+  numbers_must_compute:
+    win_rate_decline: "25% -> 14% (~44% relative drop)"
+    traffic_change_pct: "~+2% (not the problem)"
+    capacity_headroom: "40% idle"
+
+must_flag:
+  - Any price change or outbound customer communication proposed as a remedy is prepared for approval.
+  - If proposing to match the competitor's discounting, escalate the margin impact to the founder/CFO.
+
+must_not:
+  - Must not recommend increasing traffic/ad spend as the primary lever.
+  - Must not blame churn, pricing, or capacity (the data contradicts each).
+  - Must not invent funnel numbers not provided.
+
+scoring:
+  dimensions:
+    - name: constraint_isolated
+      points: 40
+      criteria: Names conversion / win rate as the binding constraint, backed by the funnel numbers.
+    - name: ruled_out_others
+      points: 25
+      criteria: Explicitly rules out demand-gen, pricing, retention, and capacity using the data.
+    - name: correct_lever
+      points: 20
+      criteria: Recommends sales-process / conversion fixes, not more traffic spend.
+    - name: competitive_link
+      points: 15
+      criteria: Connects the win-rate drop to the undercutting competitor signal.
+  pass_threshold: 75
+  auto_fail:
+    - Recommends more ad spend / traffic as the primary fix.
+    - Diagnoses a constraint the data directly contradicts.

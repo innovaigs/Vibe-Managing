@@ -1,0 +1,88 @@
+id: delegation-authority
+skill_or_workflow: delegation-planner
+description: >
+  Given a task and an employee profile, select the correct authority level (A-D) and
+  instruction type. The planted answer is a discriminating MIDDLE case: a competent-but-
+  not-yet-proven person on a low-risk task -> Level C with Requests, not the trivial
+  extremes of A (sign-off on everything) or D (fully hands-off).
+
+given:
+  task:
+    description: own the weekly client status reports and reprioritize the team task board
+    risk_importance: low
+    reversibility: reversible (internal, no external commitment, no money)
+    method_criticality: outcome matters more than method (means/ends = ends)
+    novelty: recurring, well-understood work
+  employee:
+    role: operations associate
+    tenure_months: 5
+    competence_on_this_task_type: "has done pieces competently, but not proven end-to-end"
+    trust: solid, reliable, no red flags
+    is_new_or_new_supervisor: false
+  authority_model:
+    A_none: nothing without sign-off; founder holds all authority (new person / high-risk task)
+    B_minimal: greater latitude; person has a say; founder stays informed and can intervene
+    C_medium: person makes some decisions autonomously, sets own plans, regular status reports, consults on hard problems
+    D_complete: runs the whole assignment independently, status report only (proven performers)
+  instruction_types:
+    orders: quick, no discussion, person already knows how (pairs with A)
+    requests: everyday, develops the team, invites initiative within control (pairs with B/C)
+    suggestions: for a developed/self-directed person, grows self-motivation (pairs with D; NOT for new/unproven)
+
+founder_intent: >
+  "I want to hand the weekly status reports and task-board triage to my ops associate.
+  How much rope should I give them, and how should I frame the handoff?"
+
+expected:
+  decision: >
+    Authority Level C (medium): the associate makes routine decisions and sets their own
+    plans/standards, gives regular status reports, and consults the founder only on a
+    genuinely hard call. Instruction type = Requests. The task is low-risk and reversible
+    with outcome (not method) as what matters, so Level A sign-off is overkill; but the
+    person is competent-not-yet-proven end to end, so full hands-off Level D (with
+    Suggestions) is premature. As competence is demonstrated, ladder up toward D next time.
+  reasoning_must_show:
+    - Sets authority as a function of BOTH task risk/novelty AND demonstrated competence.
+    - Justifies C over A (low risk, competent, reversible -> no need for sign-off on everything).
+    - Justifies C over D (not yet proven end-to-end -> not fully hands-off yet).
+    - Pairs the correct instruction type (Requests) and explains why NOT Suggestions.
+    - Specifies means-vs-ends handling (specify results, leave the how to the person).
+    - Notes the ladder: raise authority as competence is proven; sets a reporting cadence.
+  correct_answer:
+    authority_level: C
+    instruction_type: requests
+    means_or_ends: ends (specify the result, leave the method)
+
+must_flag:
+  - Anything touching the associate's employment status, title, or compensation is out of
+    scope for this skill and routes to founder + HR/legal.
+
+must_not:
+  - Must not grant a GLOBAL authority level - authority is per task-type.
+  - Must not pick Level A (over-controlling for a low-risk task and a competent person).
+  - Must not pick Level D / Suggestions (person is not yet proven; Suggestions is for
+    developed/self-directed people).
+  - Must not invent competence the profile did not state (do not assume "proven").
+
+scoring:
+  dimensions:
+    - name: correct_authority_level
+      points: 35
+      criteria: Selects Level C (not A, not D), justified by risk x competence.
+    - name: correct_instruction_type
+      points: 25
+      criteria: Selects Requests and explains why not Suggestions.
+    - name: means_vs_ends
+      points: 15
+      criteria: Specifies results, leaves method to the person (ends).
+    - name: ladder_and_cadence
+      points: 15
+      criteria: Sets a reporting cadence and a path to raise authority as competence is proven.
+    - name: scope_discipline
+      points: 10
+      criteria: Keeps authority per-task; routes any employment/comp change to HR.
+  pass_threshold: 75
+  auto_fail:
+    - Assumes proven competence not stated in the profile.
+    - Grants a global (all-tasks) authority level.
+    - Pairs Suggestions with an unproven person.

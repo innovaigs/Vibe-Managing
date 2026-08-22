@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://vibemanaging.dev/schemas/health-snapshot.schema.json",
+  "title": "Business Health Snapshot",
+  "description": "Output of the Business Health Engine each cycle. See BUSINESS_HEALTH_ENGINE.md.",
+  "type": "object",
+  "required": ["as_of", "overall", "categories", "attention_now"],
+  "properties": {
+    "as_of": { "type": "string", "format": "date-time" },
+    "overall": { "type": "string", "enum": ["Healthy", "Needs Attention", "At Risk", "Critical"] },
+    "categories": {
+      "type": "object",
+      "patternProperties": {
+        "^(cash_liquidity|revenue_growth|profitability|customers|receivables_payables|operations|people|risk|strategy)$": {
+          "type": "object",
+          "properties": {
+            "state": { "type": "string", "enum": ["Healthy", "Needs Attention", "At Risk", "Critical"] },
+            "top_indicator": { "type": "string" },
+            "value": {},
+            "threshold": {},
+            "trend": { "type": "string", "enum": ["improving", "stable", "worsening"] },
+            "anomaly": { "type": "boolean" },
+            "cause": { "type": "string" },
+            "recommended_skill": { "type": "string" },
+            "data_confidence": { "type": "number" },
+            "stale": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "attention_now": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "state", "why"],
+        "properties": {
+          "title": { "type": "string" },
+          "state": { "type": "string", "enum": ["Needs Attention", "At Risk", "Critical"] },
+          "why": { "type": "string" },
+          "recommended_action": { "type": "string" },
+          "approval_needed": { "type": "boolean" },
+          "rank": { "type": "integer" }
+        }
+      }
+    }
+  }
+}

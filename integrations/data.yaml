@@ -1,0 +1,19 @@
+# Data integration category (spreadsheets / databases / warehouses / BI). Conforms to schemas/integration.schema.json.
+id: data
+category: data
+provider: "<bound at install: spreadsheet / DB / warehouse / BI tool>"
+transport: rest_api
+auth: { type: oauth, scopes_requested: [read_datasets, run_query, write_metrics, write_dashboard], credentials_ref: secret://data }
+reads:
+  - { entity: dataset, fields: [rows], freshness: on_demand }
+  - { entity: query_result, fields: [columns], freshness: on_demand }
+writes:
+  - { entity: computed_metric, fields: [key, value], risk_tier: LOW, approval: false }
+  - { entity: dashboard, fields: [spec], risk_tier: LOW, approval: false }
+high_risk_actions:
+  - { action: schema_change, risk_tier: CRITICAL, approval: true, rollback: migrate }
+  - { action: delete_or_overwrite_source, risk_tier: CRITICAL, approval: true, rollback: none }
+audit: true
+rollback: { supported: true, method: "append-only writes; destructive ops gated" }
+maps_to_memory: [metrics]
+maps_to_twin: []

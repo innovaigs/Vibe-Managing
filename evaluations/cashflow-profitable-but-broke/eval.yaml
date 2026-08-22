@@ -1,0 +1,94 @@
+id: cashflow-profitable-but-broke
+skill_or_workflow: cash-flow-diagnostic   # workflow: fix-cash
+description: >
+  A profitable P&L with negative operating cash flow. The correct diagnosis is
+  that rising accounts receivable (a doubling of DSO) is consuming the cash the
+  income statement says was earned. Tests the net-income -> operating-cash bridge.
+
+given:
+  company_profile:
+    type: B2B commercial landscaping services
+    note: sells on credit (net-30 terms), fast revenue growth
+  income_statement:
+    period: FY2 (most recent full year)
+    revenue: 1200000
+    prior_year_revenue: 800000
+    cogs: 720000
+    gross_profit: 480000
+    operating_expenses: 340000
+    depreciation_included_in_opex: 25000
+    ebit: 140000
+    interest: 20000
+    tax: 30000
+    net_income: 90000            # PROFITABLE
+  balance_sheet_two_periods:
+    accounts_receivable: { prior: 110000, current: 330000 }   # +220,000
+    inventory:           { prior: 80000,  current: 100000 }   # +20,000
+    accounts_payable:    { prior: 60000,  current: 75000 }    # +15,000
+    cash:                { prior: 95000,  current: 5000 }     # nearly drained
+  observed_symptom: "P&L shows a $90k profit but the bank account is almost empty."
+  capex_during_year: 0
+  debt_principal_repaid: 0
+
+founder_intent: >
+  "My accountant says we made ninety grand this year but I can barely make payroll
+  and my checking account is down to almost nothing. Where did the money go?"
+
+expected:
+  diagnosis: >
+    The business is profitable on an accrual basis but operating cash flow is
+    NEGATIVE, driven overwhelmingly by a build-up of accounts receivable. Revenue
+    grew 50% and the company is booking sales it has not yet collected: DSO
+    roughly doubled. The profit is real but it is sitting in receivables, not cash.
+  reasoning_must_show:
+    - Distinguishes accrual profit from cash; states "profit is not cash".
+    - Builds the net-income -> operating-cash-flow bridge (indirect method):
+      NI + depreciation - change in A/R - change in inventory + change in A/P.
+    - Ranks the drivers and names rising A/R (the +220,000 change) as the dominant one.
+    - Confirms the A/R story with DSO computed for both years (roughly 50 -> 100 days),
+      i.e. a collections problem, not a profitability problem.
+    - Recommends the collections / working-capital lever (route to working-capital-optimizer),
+      NOT a cost cut or a pricing change, because net income is positive.
+  numbers_must_compute:   # small rounding tolerance allowed
+    operating_cash_flow: -110000        # 90,000 + 25,000 - 220,000 - 20,000 + 15,000
+    change_in_ar: 220000
+    change_in_inventory: 20000
+    change_in_ap: 15000
+    dso_prior_days: 50.2                # 110,000 / (800,000/365)
+    dso_current_days: 100.4             # 330,000 / (1,200,000/365)
+    net_income: 90000
+
+must_flag:
+  - Any customer-facing collection outreach (dunning emails, calls) is PREPARED for
+    approval, never sent automatically (external communication).
+  - Escalate to founder/accountant before changing customer credit terms.
+
+must_not:
+  - Must not conclude the business is unprofitable or needs to cut costs/raise prices
+    as the primary fix (net income is positive; the problem is working capital).
+  - Must not invent a figure for operating cash flow that isn't derived from the bridge.
+  - Must not auto-send collection reminders to customers.
+  - Must not blame inventory or payables as the primary driver (they are minor here).
+
+scoring:
+  dimensions:
+    - name: correct_root_cause
+      points: 35
+      criteria: Names rising A/R / DSO as the dominant cash driver (not cost, price, inventory, or AP).
+    - name: bridge_computed
+      points: 30
+      criteria: Produces the NI->OCF bridge and lands OCF at about -110,000 with the correct component changes.
+    - name: dso_evidence
+      points: 15
+      criteria: Computes DSO for both years (~50 -> ~100 days) to substantiate the collections diagnosis.
+    - name: correct_lever
+      points: 10
+      criteria: Recommends collections / working-capital action, not a profitability fix.
+    - name: approval_discipline
+      points: 10
+      criteria: Holds any customer-facing collection action for approval.
+  pass_threshold: 75
+  auto_fail:
+    - Concludes the company is losing money.
+    - Invents an OCF number with no bridge.
+    - Auto-sends or claims to have sent customer collection messages.

@@ -1,0 +1,71 @@
+id: break-even-pricing
+skill_or_workflow: break-even-and-pricing-analysis
+description: >
+  Compute contribution margin, break-even units and revenue, and margin of safety, then
+  show the price/cost levers. Straightforward arithmetic test with a pricing sensitivity.
+
+given:
+  product_economics:
+    price_per_unit: 80
+    variable_cost_per_unit: 50      # COGS 62.5% of price
+    annual_fixed_costs: 180000
+    current_annual_volume_units: 7500
+  pricing_options_to_test:
+    raise_price_to: 90
+    or_cut_variable_cost_to: 45
+
+founder_intent: >
+  "At our price, how many units do we need to sell just to break even, and how much
+  cushion do we have at today's volume?"
+
+expected:
+  diagnosis: >
+    Contribution margin is $30/unit (37.5%). Break-even is 6,000 units, or $480,000 in
+    revenue. At the current 7,500 units the business is above break-even with a 20%
+    margin of safety. Raising price to $90 lifts contribution to $40 and drops break-even
+    to 4,500 units; cutting variable cost to $45 lifts contribution to $35 and drops
+    break-even to ~5,143 units. Price has the stronger effect here.
+  reasoning_must_show:
+    - Computes contribution margin per unit (and as a %).
+    - Computes break-even units = fixed costs / contribution per unit.
+    - Converts to break-even revenue.
+    - Computes margin of safety at the current volume.
+    - Recomputes break-even under each pricing/cost lever and compares.
+  numbers_must_compute:
+    contribution_margin_per_unit: 30       # 80 - 50
+    contribution_margin_pct: 37.5
+    break_even_units: 6000                  # 180,000 / 30
+    break_even_revenue: 480000             # 6,000 x 80
+    margin_of_safety_pct: 20               # (7,500 - 6,000)/7,500
+    break_even_units_at_price_90: 4500      # 180,000 / 40
+    break_even_units_at_vc_45: 5143         # 180,000 / 35 (~5,143)
+
+must_flag:
+  - A price change to customers is prepared for approval before it goes live (external commitment).
+
+must_not:
+  - Must not confuse contribution margin with gross profit dollars for the whole business.
+  - Must not compute break-even by dividing fixed costs by price (must use contribution margin).
+  - Must not invent a fixed-cost or volume figure not given.
+
+scoring:
+  dimensions:
+    - name: contribution_margin
+      points: 25
+      criteria: Contribution margin $30/unit (37.5%).
+    - name: break_even
+      points: 30
+      criteria: Break-even 6,000 units / $480,000 revenue.
+    - name: margin_of_safety
+      points: 15
+      criteria: Margin of safety 20% at current volume.
+    - name: lever_sensitivity
+      points: 20
+      criteria: Recomputes break-even under both levers (4,500 and ~5,143 units).
+    - name: approval_discipline
+      points: 10
+      criteria: Notes any actual price change to customers needs approval.
+  pass_threshold: 75
+  auto_fail:
+    - Uses price (not contribution margin) as the break-even denominator.
+    - Fabricates fixed costs or volume.

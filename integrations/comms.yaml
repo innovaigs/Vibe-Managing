@@ -1,0 +1,18 @@
+# Communications integration category (email / chat). Conforms to schemas/integration.schema.json.
+id: comms
+category: comms
+provider: "<bound at install: email / chat tool>"
+transport: oauth_api
+auth: { type: oauth, scopes_requested: [read_scoped_threads, write_draft], credentials_ref: secret://comms }
+reads:
+  - { entity: threads, fields: [subject, participants, snippet], freshness: on_demand }   # scoped to task; privacy-tiered
+writes:
+  - { entity: draft_reply, fields: [to, body], risk_tier: LOW, approval: false }
+  - { entity: internal_message_draft, fields: [channel, body], risk_tier: LOW, approval: false }
+high_risk_actions:
+  - { action: send_external_message, risk_tier: HIGH, approval: true, rollback: none }
+  - { action: send_on_behalf_of_founder, risk_tier: HIGH, approval: true, rollback: none }
+audit: true
+rollback: { supported: false, method: "sent messages are irreversible; only drafts auto-created" }
+maps_to_memory: []
+maps_to_twin: []

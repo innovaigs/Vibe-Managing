@@ -1,0 +1,121 @@
+# Machine-readable intent routing table. Full detail: INTENT_LIBRARY.md
+# Each intent: phrasings → domain → skills → agent → workflow → approvals → monitor
+version: 0.1.0
+
+intents:
+  - id: grow-revenue
+    phrasings: ["grow revenue", "need more customers", "sales slowed", "why did growth stop", "grow 20% this quarter"]
+    domain: growth
+    skills: [growth-pathway-classifier, variance-diagnosis, marketing-funnel-planner, sales-process-design, break-even-and-pricing-analysis]
+    agent: growth-agent
+    workflow: grow-revenue
+    approvals: [ad_spend, pricing_change, public_content, customer_outreach]
+    monitor: [traffic, leads, conversion, pipeline_coverage, revenue, cac, churn, margin]
+
+  - id: fix-cash
+    phrasings: ["running out of cash", "profitable but no money", "cash is tight", "will we make payroll"]
+    domain: finance
+    skills: [cash-runway-monitor, cash-flow-diagnostic, working-capital-optimizer, scenario-and-sensitivity-analysis]
+    agent: cfo-agent
+    workflow: fix-cash
+    approvals: [money_movement, term_change, customer_comms, cost_cuts, financing]
+    monitor: [cash, runway, dso, ar_aging, burn, covenant_headroom]
+
+  - id: reduce-spend
+    phrasings: ["spending too much", "where's the money going", "cut costs", "reduce burn"]
+    domain: finance
+    skills: [financial-statement-analysis, variance-diagnosis]
+    agent: cfo-agent
+    workflow: reduce-spend
+    approvals: [vendor_changes, people_cost_changes]
+    monitor: [opex_pct, category_spend, payroll_to_revenue]
+
+  - id: should-we-hire
+    phrasings: ["can we hire", "should I hire", "need to hire", "what roles next year", "I'm doing too much"]
+    domain: people
+    skills: [founder-capacity-diagnostic, hiring-plan-builder, financial-forecast-builder, automation-triage]
+    agent: people-agent
+    workflow: should-we-hire
+    approvals: [hire_decision, offers, compensation]  # always
+    monitor: [ramp, capacity_relief, runway_impact, pipeline_coverage]
+
+  - id: evaluate-opportunity
+    phrasings: ["should we launch", "should we enter this market", "is this worth pursuing", "new product idea"]
+    domain: strategy
+    skills: [opportunity-feasibility-analysis, resource-gap-analysis, financial-forecast-builder, risk-diagnostic]
+    agent: strategy-agent
+    workflow: evaluate-opportunity
+    approvals: [commitment, spend, hire, launch]
+    monitor: [validation_milestones, spend_vs_budget, demand_signals]
+
+  - id: scale-operations
+    phrasings: ["can't scale", "delivery too slow", "too many mistakes", "document this process", "automate this"]
+    domain: operations
+    skills: [operational-audit, bottleneck-analysis, process-mapping, process-optimization, automation-triage, technology-evaluation]
+    agent: operations-agent
+    workflow: scale-operations
+    approvals: [tool_purchase, vendor_commitment, customer_affecting_change]
+    monitor: [cycle_time, throughput, on_time_delivery, defect_rate, capacity_utilization]
+
+  - id: raise-capital
+    phrasings: ["we need funding", "prepare to raise", "should we get a loan", "are we fundable"]
+    domain: finance
+    skills: [bankability-assessment, financing-options-analysis, financial-forecast-builder, business-valuation]
+    agent: cfo-agent
+    workflow: raise-capital
+    approvals: [application_submit, term_sheet, debt, equity_issuance]  # always + professional review
+    monitor: [fundability_metrics, application_status, covenant_impact]
+
+  - id: manage-crisis
+    phrasings: ["lost our biggest client", "emergency", "major disruption", "we're in trouble"]
+    domain: risk
+    skills: [cash-runway-monitor, crisis-response-planning, business-continuity-plan, risk-diagnostic]
+    agent: risk-agent
+    workflow: manage-crisis
+    approvals: [external_comms, financial_moves, legal_actions, people_actions]
+    monitor: [cash, obligation_deadlines, recovery_milestones]
+
+  - id: marketing
+    phrasings: ["who is our customer", "sharpen value prop", "where to market", "visitors don't convert", "plan content", "build marketing plan"]
+    domain: marketing
+    skills: [market-segmentation, customer-persona-builder, customer-value-proposition-builder, channel-selection, website-conversion-audit, marketing-strategy-builder]
+    agent: marketing-agent
+    workflow: null
+    approvals: [ad_spend, public_publishing, email_blast]
+    monitor: [traffic, engagement, conversion, cac, roas]
+
+  - id: prepare-negotiation
+    phrasings: ["prepare me for this negotiation", "negotiation coming up", "help me negotiate"]
+    domain: sales
+    skills: [negotiation-preparation]
+    agent: sales-agent
+    workflow: prepare-negotiation
+    approvals: [any_binding_terms]  # human negotiates & signs
+    monitor: [outcome_vs_target]
+
+  - id: legal-question
+    phrasings: ["review this contract", "do we need an NDA", "contractor or employee", "are we compliant", "protect our IP"]
+    domain: legal
+    skills: [contract-review-triage, employment-compliance-scan, ip-protection-audit, legal-escalation-router, entity-structure-advisor]
+    agent: legal-liaison-agent
+    workflow: null
+    approvals: [attorney_review]  # always; guidance not legal advice
+    monitor: [open_compliance_gaps]
+
+  - id: leadership
+    phrasings: ["my leadership style", "work with this person", "ready to delegate", "mission and vision", "grow as a leader", "motivate my people"]
+    domain: leadership
+    skills: [leadership-style-assessment, delegation-readiness-audit, motivation-mapper, mission-vision-builder, leadership-growth-planner]
+    agent: leadership-coach-agent
+    workflow: null
+    approvals: []
+    monitor: []
+
+  - id: cadence-focus
+    phrasings: ["what should I focus on today", "what changed this week", "how are we doing", "monthly review", "are we executing strategy", "what needs my approval"]
+    domain: cross
+    skills: [business-health-diagnostic, monthly-business-review, variance-diagnosis]
+    agent: business-analyst-agent
+    workflow: monthly-review
+    approvals: [pending_queue]
+    monitor: [all_health_categories]

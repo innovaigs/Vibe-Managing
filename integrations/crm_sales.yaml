@@ -1,0 +1,35 @@
+# CRM / Sales integration category
+# Provider-neutral. Conforms to schemas/integration.schema.json.
+id: crm_sales
+category: crm_sales
+provider: "<bound at install: CRM tool>"
+transport: oauth_api
+auth:
+  type: oauth
+  scopes_requested: [read_contacts, read_accounts, read_deals, read_activities, write_contact, write_activity, write_task, move_stage]
+  credentials_ref: secret://crm
+
+reads:
+  - { entity: contacts,   fields: [id, name, account, role], freshness: hourly }
+  - { entity: accounts,   fields: [id, name, segment, status], freshness: daily }
+  - { entity: deals,      fields: [id, account, stage, value, probability, close_date], freshness: hourly }
+  - { entity: activities, fields: [id, deal, type, date, outcome], freshness: hourly }
+  - { entity: win_loss,   fields: [deal, result, reason], freshness: daily }
+
+writes:
+  - { entity: contact,   fields: [name, email, role, account], risk_tier: MEDIUM, approval: false }
+  - { entity: activity,  fields: [deal, type, note],           risk_tier: LOW,    approval: false }
+  - { entity: task,      fields: [owner, due_date, detail],    risk_tier: LOW,    approval: false }
+  - { entity: deal_stage,fields: [deal, stage],                risk_tier: MEDIUM, approval: false }   # internal stage only
+
+high_risk_actions:
+  - { action: send_customer_email, risk_tier: HIGH, approval: true, rollback: none }
+  - { action: send_quote,          risk_tier: HIGH, approval: true, rollback: none }
+  - { action: commit_pricing,      risk_tier: HIGH, approval: true, rollback: revert }
+  - { action: delete_record,       risk_tier: CRITICAL, approval: true, rollback: none }
+
+rate_limits: "per provider"
+audit: true
+rollback: { supported: true, method: "revert internal fields; external sends are irreversible and never auto-run" }
+maps_to_memory: [customers, strategy]
+maps_to_twin: [Pipeline, Deal, Customer]

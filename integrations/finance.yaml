@@ -1,0 +1,38 @@
+# Finance integration category (bookkeeping / banking / payments / billing)
+# Provider-neutral. Bind to a concrete tool at install time. Conforms to schemas/integration.schema.json.
+id: finance
+category: finance
+provider: "<bound at install: bookkeeping/bank/payments/billing tool>"
+transport: mcp            # or rest_api / oauth_api
+auth:
+  type: oauth
+  scopes_requested: [read_transactions, read_statements, read_balances, read_invoices, read_bills, write_draft_invoice, categorize_transaction]
+  credentials_ref: secret://finance   # reference only
+
+reads:
+  - { entity: transactions, fields: [date, amount, category, counterparty], freshness: daily }
+  - { entity: invoices,     fields: [id, customer, amount, due_date, status], freshness: daily }
+  - { entity: bills,        fields: [id, vendor, amount, due_date, status], freshness: daily }
+  - { entity: balances,     fields: [account, balance], freshness: daily }
+  - { entity: pnl,          fields: [period, revenue, cogs, opex, net_income], freshness: monthly }
+  - { entity: balance_sheet,fields: [period, assets, liabilities, equity], freshness: monthly }
+  - { entity: ar_aging,     fields: [bucket, amount], freshness: weekly }
+  - { entity: ap_aging,     fields: [bucket, amount], freshness: weekly }
+
+writes:
+  - { entity: invoice_draft,        fields: [customer, lines, amount], risk_tier: LOW,    approval: false }
+  - { entity: transaction_category, fields: [txn_id, category],        risk_tier: LOW,    approval: false }
+  - { entity: bill_draft,           fields: [vendor, amount, due_date], risk_tier: MEDIUM, approval: false }
+
+high_risk_actions:
+  - { action: send_payment,   risk_tier: CRITICAL, approval: true, rollback: none }
+  - { action: pay_bill,       risk_tier: CRITICAL, approval: true, rollback: none }
+  - { action: run_payroll,    risk_tier: CRITICAL, approval: true, rollback: none }
+  - { action: issue_refund,   risk_tier: HIGH,     approval: true, rollback: none }
+  - { action: connect_bank,   risk_tier: CRITICAL, approval: true, rollback: revert }
+
+rate_limits: "per provider"
+audit: true
+rollback: { supported: true, method: "reverse draft / recategorize; money moves are irreversible and never auto-run" }
+maps_to_memory: [finance]
+maps_to_twin: [CashAccount, RevenueStream, CostItem]
