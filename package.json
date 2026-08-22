@@ -2,6 +2,9 @@
   "name": "vibe-managing",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "site"
+  ],
   "engines": {
     "node": ">=22.13.0"
   },
