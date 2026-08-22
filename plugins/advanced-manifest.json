@@ -1,0 +1,824 @@
+{
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "portfolio-strategy",
+      "domain": "strategy",
+      "title": "Portfolio Strategy",
+      "purpose": "Choose, fund, sequence, pause, or stop the company's portfolio of businesses, products, markets, and initiatives.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/strategy/portfolio-strategy/SKILL.md"
+    },
+    {
+      "name": "business-model-design",
+      "domain": "strategy",
+      "title": "Business Model Design",
+      "purpose": "Design or redesign how value is created, delivered, monetized, and defended.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/strategy/business-model-design/SKILL.md"
+    },
+    {
+      "name": "strategic-scenario-planning",
+      "domain": "strategy",
+      "title": "Strategic Scenario Planning",
+      "purpose": "Prepare decisions that remain robust across plausible market, technology, regulatory, and competitive futures.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/strategy/strategic-scenario-planning/SKILL.md"
+    },
+    {
+      "name": "unit-economics-engine",
+      "domain": "finance",
+      "title": "Unit Economics Engine",
+      "purpose": "Model the economics of each customer, order, product, location, project, contract, or capacity unit.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/finance/unit-economics-engine/SKILL.md"
+    },
+    {
+      "name": "capital-allocation",
+      "domain": "finance",
+      "title": "Capital Allocation",
+      "purpose": "Allocate cash and capacity among operations, debt, reserves, growth, acquisitions, and owner distributions for maximum risk-adjusted value.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/finance/capital-allocation/SKILL.md"
+    },
+    {
+      "name": "treasury-management",
+      "domain": "finance",
+      "title": "Treasury Management",
+      "purpose": "Protect liquidity and control cash movement across accounts, entities, currencies, and time horizons.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/finance/treasury-management/SKILL.md"
+    },
+    {
+      "name": "growth-modeling",
+      "domain": "growth",
+      "title": "Growth Modeling",
+      "purpose": "Build a quantified growth equation that explains how acquisition, conversion, retention, price, mix, and capacity create growth.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/growth/growth-modeling/SKILL.md"
+    },
+    {
+      "name": "experiment-portfolio",
+      "domain": "growth",
+      "title": "Growth Experiment Portfolio",
+      "purpose": "Run a balanced portfolio of growth experiments with explicit hypotheses, economics, guardrails, and stopping rules.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/growth/experiment-portfolio/SKILL.md"
+    },
+    {
+      "name": "expansion-readiness",
+      "domain": "growth",
+      "title": "Expansion Readiness",
+      "purpose": "Determine whether the company is ready to expand into a new channel, segment, product, or geography without breaking the core.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/growth/expansion-readiness/SKILL.md"
+    },
+    {
+      "name": "territory-and-quota-design",
+      "domain": "sales",
+      "title": "Territory & Quota Design",
+      "purpose": "Design fair, attainable territories and quotas from market potential, capacity, ramp, and strategy.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sales/territory-and-quota-design/SKILL.md"
+    },
+    {
+      "name": "sales-compensation-design",
+      "domain": "sales",
+      "title": "Sales Compensation Design",
+      "purpose": "Create incentives that reward profitable, durable revenue without creating harmful selling behavior.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sales/sales-compensation-design/SKILL.md"
+    },
+    {
+      "name": "enterprise-deal-strategy",
+      "domain": "sales",
+      "title": "Enterprise Deal Strategy",
+      "purpose": "Coordinate complex, multi-stakeholder deals while protecting margin, delivery feasibility, risk, and relationship value.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sales/enterprise-deal-strategy/SKILL.md"
+    },
+    {
+      "name": "brand-strategy",
+      "domain": "marketing",
+      "title": "Brand Strategy",
+      "purpose": "Define the distinctive promise, evidence, memory structures, and experience that create preference and pricing power.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/marketing/brand-strategy/SKILL.md"
+    },
+    {
+      "name": "lifecycle-marketing",
+      "domain": "marketing",
+      "title": "Lifecycle Marketing",
+      "purpose": "Coordinate communication across acquisition, onboarding, activation, retention, expansion, and win-back.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/marketing/lifecycle-marketing/SKILL.md"
+    },
+    {
+      "name": "marketing-mix-model",
+      "domain": "marketing",
+      "title": "Marketing Mix Model",
+      "purpose": "Allocate marketing investment across channels using incrementality, saturation, lag, margin, and strategic effects.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/marketing/marketing-mix-model/SKILL.md"
+    },
+    {
+      "name": "capacity-planning",
+      "domain": "operations",
+      "title": "Capacity Planning",
+      "purpose": "Match demand to people, equipment, space, inventory, and partner capacity at the required service and cost level.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/operations/capacity-planning/SKILL.md"
+    },
+    {
+      "name": "service-delivery-control",
+      "domain": "operations",
+      "title": "Service Delivery Control",
+      "purpose": "Control the complete promise-to-delivery system for consistent scope, quality, time, margin, and customer outcomes.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/operations/service-delivery-control/SKILL.md"
+    },
+    {
+      "name": "multi-location-operations",
+      "domain": "operations",
+      "title": "Multi-location Operations",
+      "purpose": "Standardize what must be common while preserving local responsiveness across sites, branches, stores, or franchises.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/operations/multi-location-operations/SKILL.md"
+    },
+    {
+      "name": "workforce-planning",
+      "domain": "people",
+      "title": "Workforce Planning",
+      "purpose": "Translate strategy and demand into the roles, capacity, skills, location, and labor model required over time.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/people/workforce-planning/SKILL.md"
+    },
+    {
+      "name": "compensation-and-rewards",
+      "domain": "people",
+      "title": "Compensation & Rewards",
+      "purpose": "Design equitable, affordable rewards that attract, motivate, retain, and align people with outcomes.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/people/compensation-and-rewards/SKILL.md"
+    },
+    {
+      "name": "performance-management",
+      "domain": "people",
+      "title": "Performance Management",
+      "purpose": "Create a fair operating system for expectations, feedback, development, accountability, and performance decisions.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/people/performance-management/SKILL.md"
+    },
+    {
+      "name": "executive-decision-system",
+      "domain": "leadership",
+      "title": "Executive Decision System",
+      "purpose": "Improve the speed, quality, ownership, and learning of consequential leadership decisions.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/leadership/executive-decision-system/SKILL.md"
+    },
+    {
+      "name": "change-management",
+      "domain": "leadership",
+      "title": "Change Management",
+      "purpose": "Move a business from current to desired behavior while protecting continuity, trust, and adoption.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/leadership/change-management/SKILL.md"
+    },
+    {
+      "name": "succession-planning",
+      "domain": "leadership",
+      "title": "Succession Planning",
+      "purpose": "Reduce dependency on key people and build credible successors for critical leadership and specialist roles.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/leadership/succession-planning/SKILL.md"
+    },
+    {
+      "name": "enterprise-risk-management",
+      "domain": "risk",
+      "title": "Enterprise Risk Management",
+      "purpose": "Connect strategic, financial, operational, cyber, legal, people, and external risks to objectives and decisions.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/risk/enterprise-risk-management/SKILL.md"
+    },
+    {
+      "name": "insurance-coverage-analysis",
+      "domain": "risk",
+      "title": "Insurance Coverage Analysis",
+      "purpose": "Identify insurable exposures, coverage gaps, limits, exclusions, retentions, and transfer decisions for specialist review.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/risk/insurance-coverage-analysis/SKILL.md"
+    },
+    {
+      "name": "fraud-control-design",
+      "domain": "risk",
+      "title": "Fraud Control Design",
+      "purpose": "Prevent and detect theft, manipulation, conflicts, and unauthorized transactions without paralyzing operations.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/risk/fraud-control-design/SKILL.md"
+    },
+    {
+      "name": "regulatory-obligation-mapping",
+      "domain": "legal",
+      "title": "Regulatory Obligation Mapping",
+      "purpose": "Create a jurisdiction- and activity-specific inventory of obligations, owners, evidence, deadlines, and counsel questions.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/legal/regulatory-obligation-mapping/SKILL.md"
+    },
+    {
+      "name": "contract-lifecycle-management",
+      "domain": "legal",
+      "title": "Contract Lifecycle Management",
+      "purpose": "Control requests, drafting, review, approval, signature, obligations, renewal, and termination across contracts.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/legal/contract-lifecycle-management/SKILL.md"
+    },
+    {
+      "name": "records-retention",
+      "domain": "legal",
+      "title": "Records Retention",
+      "purpose": "Classify records and manage retention, holds, access, disposal, and evidence under approved legal policy.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/legal/records-retention/SKILL.md"
+    },
+    {
+      "name": "product-strategy",
+      "domain": "product",
+      "title": "Product Strategy",
+      "purpose": "Choose the customer, problem, differentiated value, business outcome, and capabilities that define a winning product direction.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/product/product-strategy/SKILL.md"
+    },
+    {
+      "name": "continuous-product-discovery",
+      "domain": "product",
+      "title": "Continuous Product Discovery",
+      "purpose": "Continuously reduce customer, solution, usability, feasibility, and viability uncertainty before large commitments.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/product/continuous-product-discovery/SKILL.md"
+    },
+    {
+      "name": "product-roadmap",
+      "domain": "product",
+      "title": "Product Roadmap",
+      "purpose": "Sequence product outcomes and bets around evidence, dependencies, capacity, risk, and strategic value rather than feature promises.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/product/product-roadmap/SKILL.md"
+    },
+    {
+      "name": "product-portfolio-management",
+      "domain": "product",
+      "title": "Product Portfolio Management",
+      "purpose": "Manage offerings across lifecycle, strategic role, economics, customer value, and investment need.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/product/product-portfolio-management/SKILL.md"
+    },
+    {
+      "name": "customer-onboarding-system",
+      "domain": "customer-success",
+      "title": "Customer Onboarding System",
+      "purpose": "Move each customer from signed agreement to first verified value quickly, reliably, and at sustainable cost.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/customer-success/customer-onboarding-system/SKILL.md"
+    },
+    {
+      "name": "customer-health-scoring",
+      "domain": "customer-success",
+      "title": "Customer Health Scoring",
+      "purpose": "Combine product, service, relationship, financial, and outcome signals into an actionable customer risk and opportunity model.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/customer-success/customer-health-scoring/SKILL.md"
+    },
+    {
+      "name": "retention-and-expansion",
+      "domain": "customer-success",
+      "title": "Retention & Expansion",
+      "purpose": "Diagnose and improve renewal, repeat purchase, expansion, advocacy, and lifetime economics.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/customer-success/retention-and-expansion/SKILL.md"
+    },
+    {
+      "name": "voice-of-customer-system",
+      "domain": "customer-success",
+      "title": "Voice of Customer System",
+      "purpose": "Turn feedback, behavior, support, sales, and outcome data into prioritized company decisions and closed-loop communication.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/customer-success/voice-of-customer-system/SKILL.md"
+    },
+    {
+      "name": "demand-planning",
+      "domain": "supply-chain",
+      "title": "Demand Planning",
+      "purpose": "Create a consensus demand view by item, location, channel, customer, and horizon with quantified uncertainty.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/supply-chain/demand-planning/SKILL.md"
+    },
+    {
+      "name": "supplier-portfolio-management",
+      "domain": "supply-chain",
+      "title": "Supplier Portfolio Management",
+      "purpose": "Segment, select, develop, monitor, and diversify suppliers based on value, risk, quality, capacity, and total cost.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/supply-chain/supplier-portfolio-management/SKILL.md"
+    },
+    {
+      "name": "inventory-policy",
+      "domain": "supply-chain",
+      "title": "Inventory Policy",
+      "purpose": "Set replenishment, safety stock, reorder, service, and disposition policies by economic and risk segment.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/supply-chain/inventory-policy/SKILL.md"
+    },
+    {
+      "name": "logistics-network-design",
+      "domain": "supply-chain",
+      "title": "Logistics Network Design",
+      "purpose": "Design flows, nodes, modes, partners, and buffers that achieve service at lowest risk-adjusted landed cost.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/supply-chain/logistics-network-design/SKILL.md"
+    },
+    {
+      "name": "technology-architecture",
+      "domain": "technology",
+      "title": "Technology Architecture",
+      "purpose": "Design a secure, scalable, supportable technology blueprint aligned to business capabilities and constraints.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/technology/technology-architecture/SKILL.md"
+    },
+    {
+      "name": "technology-vendor-selection",
+      "domain": "technology",
+      "title": "Technology Vendor Selection",
+      "purpose": "Select systems and vendors through requirements, total cost, risk, interoperability, adoption, and exit analysis.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/technology/technology-vendor-selection/SKILL.md"
+    },
+    {
+      "name": "automation-portfolio-management",
+      "domain": "technology",
+      "title": "Automation Portfolio Management",
+      "purpose": "Select and govern automation and AI opportunities based on value, feasibility, control, adoption, and maintenance burden.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/technology/automation-portfolio-management/SKILL.md"
+    },
+    {
+      "name": "technology-reliability-management",
+      "domain": "technology",
+      "title": "Technology Reliability Management",
+      "purpose": "Define service objectives and operate incident, problem, change, capacity, and continuity controls for critical systems.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/technology/technology-reliability-management/SKILL.md"
+    },
+    {
+      "name": "metric-governance",
+      "domain": "data-analytics",
+      "title": "Metric Governance",
+      "purpose": "Create one trusted definition, owner, source, lineage, target, and decision use for every material business metric.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/data-analytics/metric-governance/SKILL.md"
+    },
+    {
+      "name": "data-quality-management",
+      "domain": "data-analytics",
+      "title": "Data Quality Management",
+      "purpose": "Measure and improve data completeness, validity, consistency, uniqueness, timeliness, and lineage according to decision risk.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/data-analytics/data-quality-management/SKILL.md"
+    },
+    {
+      "name": "causal-decision-analysis",
+      "domain": "data-analytics",
+      "title": "Causal Decision Analysis",
+      "purpose": "Distinguish correlation from likely causal impact using appropriate experiments, quasi-experiments, and uncertainty reporting.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/data-analytics/causal-decision-analysis/SKILL.md"
+    },
+    {
+      "name": "decision-intelligence",
+      "domain": "data-analytics",
+      "title": "Decision Intelligence",
+      "purpose": "Turn a consequential decision into explicit objectives, options, evidence, uncertainty, tradeoffs, and learning commitments.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/data-analytics/decision-intelligence/SKILL.md"
+    },
+    {
+      "name": "security-posture-assessment",
+      "domain": "security-privacy",
+      "title": "Security Posture Assessment",
+      "purpose": "Prioritize cyber risk using assets, threats, vulnerabilities, controls, business impact, and exposure paths.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/security-privacy/security-posture-assessment/SKILL.md"
+    },
+    {
+      "name": "identity-access-governance",
+      "domain": "security-privacy",
+      "title": "Identity & Access Governance",
+      "purpose": "Ensure each human and machine identity has minimum justified access with timely approval, review, and removal.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/security-privacy/identity-access-governance/SKILL.md"
+    },
+    {
+      "name": "security-incident-response",
+      "domain": "security-privacy",
+      "title": "Security Incident Response",
+      "purpose": "Contain, investigate, recover from, communicate, and learn from a suspected security or privacy incident.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/security-privacy/security-incident-response/SKILL.md"
+    },
+    {
+      "name": "privacy-impact-assessment",
+      "domain": "security-privacy",
+      "title": "Privacy Impact Assessment",
+      "purpose": "Evaluate proposed data processing for necessity, proportionality, rights, security, retention, sharing, and jurisdictional obligations.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/security-privacy/privacy-impact-assessment/SKILL.md"
+    },
+    {
+      "name": "quality-management-system",
+      "domain": "quality",
+      "title": "Quality Management System",
+      "purpose": "Create an evidence-based system of standards, controls, records, audits, improvement, and accountability appropriate to the business.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/quality/quality-management-system/SKILL.md"
+    },
+    {
+      "name": "root-cause-analysis",
+      "domain": "quality",
+      "title": "Root Cause Analysis",
+      "purpose": "Find and verify the controllable system causes of recurring failures instead of treating symptoms.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/quality/root-cause-analysis/SKILL.md"
+    },
+    {
+      "name": "statistical-process-control",
+      "domain": "quality",
+      "title": "Statistical Process Control",
+      "purpose": "Distinguish common-cause from special-cause variation and control processes without tampering.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/quality/statistical-process-control/SKILL.md"
+    },
+    {
+      "name": "corrective-preventive-action",
+      "domain": "quality",
+      "title": "Corrective & Preventive Action",
+      "purpose": "Control containment, correction, root cause, corrective action, effectiveness verification, and systemic prevention.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/quality/corrective-preventive-action/SKILL.md"
+    },
+    {
+      "name": "project-charter",
+      "domain": "projects-programs",
+      "title": "Project Charter",
+      "purpose": "Turn an approved outcome into a bounded project with value, scope, owner, resources, governance, risks, and success measures.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/projects-programs/project-charter/SKILL.md"
+    },
+    {
+      "name": "schedule-and-dependency-risk",
+      "domain": "projects-programs",
+      "title": "Schedule & Dependency Risk",
+      "purpose": "Build and control a dependency-aware schedule with confidence ranges, critical path, buffers, and recovery options.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/projects-programs/schedule-and-dependency-risk/SKILL.md"
+    },
+    {
+      "name": "program-governance",
+      "domain": "projects-programs",
+      "title": "Program Governance",
+      "purpose": "Coordinate related projects, shared resources, dependencies, risks, and decisions around a strategic outcome.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/projects-programs/program-governance/SKILL.md"
+    },
+    {
+      "name": "benefits-realization",
+      "domain": "projects-programs",
+      "title": "Benefits Realization",
+      "purpose": "Ensure completed initiatives produce the financial, customer, operational, people, or risk outcomes that justified them.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/projects-programs/benefits-realization/SKILL.md"
+    },
+    {
+      "name": "board-operating-cadence",
+      "domain": "governance",
+      "title": "Board Operating Cadence",
+      "purpose": "Run a decision-focused board cadence with timely information, strategic depth, risk oversight, and accountable follow-through.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/governance/board-operating-cadence/SKILL.md"
+    },
+    {
+      "name": "decision-rights-design",
+      "domain": "governance",
+      "title": "Decision Rights Design",
+      "purpose": "Clarify who proposes, provides input, decides, executes, and reviews each recurring class of business decision.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/governance/decision-rights-design/SKILL.md"
+    },
+    {
+      "name": "policy-management",
+      "domain": "governance",
+      "title": "Policy Management",
+      "purpose": "Create, approve, communicate, attest, monitor, and retire policies as executable controls rather than static documents.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/governance/policy-management/SKILL.md"
+    },
+    {
+      "name": "stakeholder-accountability",
+      "domain": "governance",
+      "title": "Stakeholder Accountability",
+      "purpose": "Map material stakeholders, commitments, tradeoffs, impacts, and communication responsibilities into decisions.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/governance/stakeholder-accountability/SKILL.md"
+    },
+    {
+      "name": "international-market-entry",
+      "domain": "international",
+      "title": "International Market Entry",
+      "purpose": "Choose whether, where, when, and how to enter a foreign market using demand, economics, capability, regulation, and reversibility.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/international/international-market-entry/SKILL.md"
+    },
+    {
+      "name": "localization-strategy",
+      "domain": "international",
+      "title": "Localization Strategy",
+      "purpose": "Adapt product, experience, language, pricing, channels, support, and operations to local customer and regulatory context.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/international/localization-strategy/SKILL.md"
+    },
+    {
+      "name": "cross-border-economics",
+      "domain": "international",
+      "title": "Cross-Border Economics",
+      "purpose": "Model taxes, duties, freight, currency, payments, returns, service, and working capital to reveal true cross-border contribution.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/international/cross-border-economics/SKILL.md"
+    },
+    {
+      "name": "jurisdiction-risk",
+      "domain": "international",
+      "title": "Jurisdiction Risk",
+      "purpose": "Compare country and region exposures across legal, political, currency, labor, data, supply, and operational dimensions.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/international/jurisdiction-risk/SKILL.md"
+    },
+    {
+      "name": "sustainability-materiality",
+      "domain": "sustainability",
+      "title": "Sustainability Materiality",
+      "purpose": "Identify environmental and social issues that are material to enterprise value and affected stakeholders without making unsupported claims.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sustainability/sustainability-materiality/SKILL.md"
+    },
+    {
+      "name": "resource-efficiency",
+      "domain": "sustainability",
+      "title": "Resource Efficiency",
+      "purpose": "Reduce energy, water, material, waste, and emissions intensity while improving cost, resilience, and operational performance.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sustainability/resource-efficiency/SKILL.md"
+    },
+    {
+      "name": "impact-measurement",
+      "domain": "sustainability",
+      "title": "Impact Measurement",
+      "purpose": "Define a defensible chain from activity to output, outcome, and impact with baselines, attribution limits, and evidence.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sustainability/impact-measurement/SKILL.md"
+    },
+    {
+      "name": "climate-and-resource-resilience",
+      "domain": "sustainability",
+      "title": "Climate & Resource Resilience",
+      "purpose": "Assess physical and transition exposures that could disrupt sites, supply, demand, insurance, or economics and plan adaptive responses.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sustainability/climate-and-resource-resilience/SKILL.md"
+    },
+    {
+      "name": "business-archetype-classifier",
+      "domain": "adaptation",
+      "title": "Business Archetype Classifier",
+      "purpose": "Classify how the company creates and delivers value so every downstream skill uses the right operating logic.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/business-archetype-classifier/SKILL.md"
+    },
+    {
+      "name": "industry-operating-profile",
+      "domain": "adaptation",
+      "title": "Industry Operating Profile",
+      "purpose": "Load industry-specific economics, constraints, metrics, risks, cadence, and specialist boundaries without hard-coding one-size-fits-all advice.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/industry-operating-profile/SKILL.md"
+    },
+    {
+      "name": "stage-and-maturity-assessment",
+      "domain": "adaptation",
+      "title": "Stage & Maturity Assessment",
+      "purpose": "Assess lifecycle stage and functional maturity so recommendations match what the company can absorb now.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/stage-and-maturity-assessment/SKILL.md"
+    },
+    {
+      "name": "regulatory-intensity-classifier",
+      "domain": "adaptation",
+      "title": "Regulatory Intensity Classifier",
+      "purpose": "Determine how strongly legal, safety, financial, clinical, employment, privacy, or sector rules should constrain routing and autonomy.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/regulatory-intensity-classifier/SKILL.md"
+    },
+    {
+      "name": "operating-model-fit",
+      "domain": "adaptation",
+      "title": "Operating Model Fit",
+      "purpose": "Select the right balance of centralization, standardization, autonomy, specialization, and coordination for the company's context.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/operating-model-fit/SKILL.md"
+    },
+    {
+      "name": "benchmark-calibration",
+      "domain": "adaptation",
+      "title": "Benchmark Calibration",
+      "purpose": "Use external or internal benchmarks responsibly by normalizing definitions, cohorts, scale, maturity, and business model.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/benchmark-calibration/SKILL.md"
+    },
+    {
+      "name": "dynamic-skill-routing",
+      "domain": "adaptation",
+      "title": "Dynamic Skill Routing",
+      "purpose": "Select the smallest sufficient set and sequence of skills, agents, tools, approvals, and monitoring for a founder intent.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/dynamic-skill-routing/SKILL.md"
+    },
+    {
+      "name": "outcome-optimization",
+      "domain": "adaptation",
+      "title": "Outcome Optimization",
+      "purpose": "Choose the highest-value feasible action portfolio across financial, customer, operational, people, risk, and strategic outcomes.",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/outcome-optimization/SKILL.md"
+    }
+  ],
+  "new_agents": [
+    "adaptation-agent",
+    "customer-success-agent",
+    "data-agent",
+    "governance-agent",
+    "international-agent",
+    "pmo-agent",
+    "product-agent",
+    "quality-agent",
+    "security-agent",
+    "supply-chain-agent",
+    "sustainability-agent",
+    "technology-agent"
+  ],
+  "domains": [
+    "adaptation",
+    "customer-success",
+    "data-analytics",
+    "finance",
+    "governance",
+    "growth",
+    "international",
+    "leadership",
+    "legal",
+    "marketing",
+    "operations",
+    "people",
+    "product",
+    "projects-programs",
+    "quality",
+    "risk",
+    "sales",
+    "security-privacy",
+    "strategy",
+    "supply-chain",
+    "sustainability",
+    "technology"
+  ],
+  "industry_profiles": [
+    "agency",
+    "agriculture",
+    "construction",
+    "ecommerce",
+    "education",
+    "energy-utilities",
+    "financial-services",
+    "healthcare",
+    "hospitality",
+    "logistics",
+    "manufacturing",
+    "marketplace",
+    "media-creator",
+    "nonprofit",
+    "professional-services",
+    "public-sector",
+    "real-estate",
+    "restaurant",
+    "retail",
+    "saas"
+  ],
+  "business_model_profiles": [
+    "advertising",
+    "asset-rental",
+    "donation-grant",
+    "franchise",
+    "hybrid",
+    "licensing",
+    "marketplace",
+    "project-based",
+    "retainer",
+    "subscription",
+    "transactional",
+    "usage-based"
+  ],
+  "counts": {
+    "advanced_skills": 82,
+    "domains": 22,
+    "new_agents": 12,
+    "industry_profiles": 20,
+    "business_model_profiles": 12
+  }
+}

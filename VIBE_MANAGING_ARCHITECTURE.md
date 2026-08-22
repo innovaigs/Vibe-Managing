@@ -5,7 +5,7 @@
 Vibe Managing is an AI-native business operating system. A founder expresses intent in natural language; the system understands the business, diagnoses the situation, plans, executes what it is authorized to execute, coordinates specialized agents and tools, asks for approval where required, monitors results, and learns.
 
 ```
-Founder Intent  ─▶  Understanding  ─▶  Diagnosis  ─▶  Planning  ─▶  Execution  ─▶  Monitoring  ─▶  Learning
+Founder Intent  ─▶  Adaptation  ─▶  Understanding  ─▶  Diagnosis  ─▶  Planning  ─▶  Execution  ─▶  Monitoring  ─▶  Learning
       ▲                                                                                                │
       └────────────────────────────  next-best-action recommendations  ◀───────────────────────────┘
 ```
@@ -14,7 +14,10 @@ The intelligence that fills these layers is extracted from real small-business m
 
 ---
 
-## The six layers
+## The seven layers
+
+### Layer 0 — Business Adaptation
+The system first configures itself for the actual company: business archetype, industry and subindustry, business model(s), lifecycle stage, functional maturity, geography, regulatory intensity, ownership, strategy, and risk appetite. It composes multiple profiles for mixed businesses and records verified local overrides. Baseline profiles are never treated as company facts. See `UNIVERSAL_BUSINESS_ADAPTATION.md`.
 
 ### Layer 1 — Business Understanding
 The system maintains a live, structured model of the company so agents reason about *this* business, not businesses in general.
@@ -69,9 +72,11 @@ vibe-managing/
 │   ├── learning/         Layer 6: variance diagnosis + assumption updates
 │   └── cadence/          Layer 5/6: daily/weekly/monthly/quarterly/annual loops
 │
-├── skills/               Discrete AI capabilities, grouped by function
-│   ├── strategy/  finance/  growth/  sales/  marketing/
-│   └── operations/  people/  leadership/  risk/  legal/
+├── skills/               160 discrete AI capabilities across 22 domains
+│   ├── strategy/ finance/ growth/ sales/ marketing/ operations/
+│   ├── people/ leadership/ risk/ legal/ product/ customer-success/
+│   ├── supply-chain/ technology/ data-analytics/ security-privacy/
+│   └── quality/ projects-programs/ governance/ international/ sustainability/ adaptation/
 │
 ├── agents/               Specialized workers that compose skills over time
 ├── workflows/            End-to-end orchestrations for major founder intents
@@ -90,7 +95,8 @@ vibe-managing/
 ## How a request flows (summary)
 
 1. Founder states intent (natural language).
-2. **Orchestrator** classifies intent, loads required context from **memory + twin**, and detects missing information.
+2. **Orchestrator** classifies intent and composes the company's adaptation context.
+3. It loads required context from **memory + twin** and detects missing information.
 3. Orchestrator invokes the relevant **diagnostic skills** and **agents**.
 4. Agents form hypotheses and validate them against business data.
 5. A **plan** is produced with risk-classified actions.
@@ -106,7 +112,9 @@ Detailed specs for each component live in their respective deliverables:
 
 ## Design principles
 
+- **Adapt before advising.** Industry and business-model profiles configure decisions, but verified local evidence always wins.
 - **Skills are the atom.** Everything an agent does resolves to a skill call with typed inputs and outputs. Skills are modular, self-contained, deterministic where possible, and independently testable.
+- **Optimize the enterprise.** No function may improve its metric by exporting unacceptable cost or harm to cash, customers, workers, suppliers, quality, safety, security, society, or future capability.
 - **The twin is the single source of truth** agents reason over — not raw dashboards.
 - **Autonomy is earned, not assumed.** Actions default to the lowest autonomy that gets the job done; higher autonomy is unlocked per action-type as reliability is proven.
 - **Human judgment is a first-class boundary,** not an afterthought — encoded in every skill's escalation and approval sections.

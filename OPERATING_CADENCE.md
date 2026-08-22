@@ -10,6 +10,8 @@ Home: `core/cadence/`. Cadence cycles are scheduled jobs that call the Business 
 
 ## The rhythm
 
+Every cadence is configured by the adaptation layer. A high-volume restaurant may inspect labor, waste, cash, service, and safety daily; a project-services firm may center weekly capacity, backlog, realization, scope, and receivables; a SaaS company may center product reliability, activation, retention, recurring revenue, and acquisition economics. The cadence engine composes the active industry and business-model profiles instead of forcing one universal dashboard.
+
 | Cadence | Question it answers | Who assembles | Founder time |
 |---|---|---|---|
 | **Continuous** | "Did something just break?" | Health Engine | only when alerted |
@@ -106,3 +108,4 @@ scheduled trigger → Business Analyst pulls health_snapshot + relevant twin vie
 - Cadence times, timezone, and which sections appear are set in `core/cadence/cadence.config.yaml`.
 - A founder can invoke any cadence on demand ("give me the weekly now") or ask the underlying question directly ("what should I focus on today?").
 - Quiet by default: cycles with nothing material to report collapse to a one-line "all healthy" so the rhythm never becomes noise.
+- At least quarterly—and whenever the model, geography, ownership, regulation, or lifecycle changes—the Adaptation Agent revalidates the company archetype, profiles, maturity, jurisdictions, metric definitions, specialist gates, and autonomy limits.

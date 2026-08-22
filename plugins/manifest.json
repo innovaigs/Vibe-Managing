@@ -1,40 +1,170 @@
 {
   "name": "vibe-managing",
-  "version": "0.1.0",
-  "description": "AI-native business operating system: founder intent -> business execution. Skills, agents, and workflows grounded in a business memory + digital twin, governed by an autonomy/approval control plane.",
+  "version": "1.0.0",
+  "description": "Universal AI-native business operating system: founder intent to governed, context-adapted business execution.",
   "vendor_neutral": true,
   "entrypoints": {
     "orchestrator": "MASTER_ORCHESTRATOR.md",
     "manifest_doc": "MANIFEST.md",
-    "architecture": "VIBE_MANAGING_ARCHITECTURE.md"
+    "architecture": "VIBE_MANAGING_ARCHITECTURE.md",
+    "adaptation": "UNIVERSAL_BUSINESS_ADAPTATION.md"
   },
   "schemas": {
+    "adaptation-context": "schemas/adaptation-context.schema.json",
     "agent": "schemas/agent.schema.json",
     "business-memory": "schemas/business-memory.schema.json",
     "decision-record": "schemas/decision-record.schema.json",
     "digital-twin": "schemas/digital-twin.schema.json",
     "health-snapshot": "schemas/health-snapshot.schema.json",
     "integration": "schemas/integration.schema.json",
+    "outcome-portfolio": "schemas/outcome-portfolio.schema.json",
     "skill": "schemas/skill.schema.json"
   },
   "counts": {
-    "skills": 78,
-    "agents": 11,
-    "workflows": 10
+    "skills": 160,
+    "agents": 23,
+    "workflows": 32,
+    "evaluations": 36,
+    "industry_profiles": 20,
+    "business_model_profiles": 12
   },
   "skill_domains": [
+    "adaptation",
+    "customer-success",
+    "data-analytics",
     "finance",
+    "governance",
     "growth",
+    "international",
     "leadership",
     "legal",
     "marketing",
     "operations",
     "people",
+    "product",
+    "projects-programs",
+    "quality",
     "risk",
     "sales",
-    "strategy"
+    "security-privacy",
+    "strategy",
+    "supply-chain",
+    "sustainability",
+    "technology"
   ],
   "skills": [
+    {
+      "name": "benchmark-calibration",
+      "domain": "adaptation",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/benchmark-calibration/SKILL.md"
+    },
+    {
+      "name": "business-archetype-classifier",
+      "domain": "adaptation",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/business-archetype-classifier/SKILL.md"
+    },
+    {
+      "name": "dynamic-skill-routing",
+      "domain": "adaptation",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/dynamic-skill-routing/SKILL.md"
+    },
+    {
+      "name": "industry-operating-profile",
+      "domain": "adaptation",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/industry-operating-profile/SKILL.md"
+    },
+    {
+      "name": "operating-model-fit",
+      "domain": "adaptation",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/operating-model-fit/SKILL.md"
+    },
+    {
+      "name": "outcome-optimization",
+      "domain": "adaptation",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/outcome-optimization/SKILL.md"
+    },
+    {
+      "name": "regulatory-intensity-classifier",
+      "domain": "adaptation",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/regulatory-intensity-classifier/SKILL.md"
+    },
+    {
+      "name": "stage-and-maturity-assessment",
+      "domain": "adaptation",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/adaptation/stage-and-maturity-assessment/SKILL.md"
+    },
+    {
+      "name": "customer-health-scoring",
+      "domain": "customer-success",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/customer-success/customer-health-scoring/SKILL.md"
+    },
+    {
+      "name": "customer-onboarding-system",
+      "domain": "customer-success",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/customer-success/customer-onboarding-system/SKILL.md"
+    },
+    {
+      "name": "retention-and-expansion",
+      "domain": "customer-success",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/customer-success/retention-and-expansion/SKILL.md"
+    },
+    {
+      "name": "voice-of-customer-system",
+      "domain": "customer-success",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/customer-success/voice-of-customer-system/SKILL.md"
+    },
+    {
+      "name": "causal-decision-analysis",
+      "domain": "data-analytics",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/data-analytics/causal-decision-analysis/SKILL.md"
+    },
+    {
+      "name": "data-quality-management",
+      "domain": "data-analytics",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/data-analytics/data-quality-management/SKILL.md"
+    },
+    {
+      "name": "decision-intelligence",
+      "domain": "data-analytics",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/data-analytics/decision-intelligence/SKILL.md"
+    },
+    {
+      "name": "metric-governance",
+      "domain": "data-analytics",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/data-analytics/metric-governance/SKILL.md"
+    },
     {
       "name": "bankability-assessment",
       "domain": "finance",
@@ -62,6 +192,13 @@
       "autonomy_ceiling": "L1",
       "provenance": "SOURCE",
       "path": "skills/finance/business-valuation/SKILL.md"
+    },
+    {
+      "name": "capital-allocation",
+      "domain": "finance",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/finance/capital-allocation/SKILL.md"
     },
     {
       "name": "cash-flow-diagnostic",
@@ -120,6 +257,20 @@
       "path": "skills/finance/scenario-and-sensitivity-analysis/SKILL.md"
     },
     {
+      "name": "treasury-management",
+      "domain": "finance",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/finance/treasury-management/SKILL.md"
+    },
+    {
+      "name": "unit-economics-engine",
+      "domain": "finance",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/finance/unit-economics-engine/SKILL.md"
+    },
+    {
       "name": "value-driver-analysis",
       "domain": "finance",
       "autonomy_ceiling": "L1",
@@ -134,11 +285,60 @@
       "path": "skills/finance/working-capital-optimizer/SKILL.md"
     },
     {
+      "name": "board-operating-cadence",
+      "domain": "governance",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/governance/board-operating-cadence/SKILL.md"
+    },
+    {
+      "name": "decision-rights-design",
+      "domain": "governance",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/governance/decision-rights-design/SKILL.md"
+    },
+    {
+      "name": "policy-management",
+      "domain": "governance",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/governance/policy-management/SKILL.md"
+    },
+    {
+      "name": "stakeholder-accountability",
+      "domain": "governance",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/governance/stakeholder-accountability/SKILL.md"
+    },
+    {
       "name": "executive-dashboard-builder",
       "domain": "growth",
       "autonomy_ceiling": "L1",
       "provenance": "SOURCE",
       "path": "skills/growth/executive-dashboard-builder/SKILL.md"
+    },
+    {
+      "name": "expansion-readiness",
+      "domain": "growth",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/growth/expansion-readiness/SKILL.md"
+    },
+    {
+      "name": "experiment-portfolio",
+      "domain": "growth",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/growth/experiment-portfolio/SKILL.md"
+    },
+    {
+      "name": "growth-modeling",
+      "domain": "growth",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/growth/growth-modeling/SKILL.md"
     },
     {
       "name": "growth-pitch-generator",
@@ -176,11 +376,53 @@
       "path": "skills/growth/variance-diagnosis/SKILL.md"
     },
     {
+      "name": "cross-border-economics",
+      "domain": "international",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/international/cross-border-economics/SKILL.md"
+    },
+    {
+      "name": "international-market-entry",
+      "domain": "international",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/international/international-market-entry/SKILL.md"
+    },
+    {
+      "name": "jurisdiction-risk",
+      "domain": "international",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/international/jurisdiction-risk/SKILL.md"
+    },
+    {
+      "name": "localization-strategy",
+      "domain": "international",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/international/localization-strategy/SKILL.md"
+    },
+    {
+      "name": "change-management",
+      "domain": "leadership",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/leadership/change-management/SKILL.md"
+    },
+    {
       "name": "delegation-readiness-audit",
       "domain": "leadership",
       "autonomy_ceiling": "L0",
       "provenance": "SOURCE",
       "path": "skills/leadership/delegation-readiness-audit/SKILL.md"
+    },
+    {
+      "name": "executive-decision-system",
+      "domain": "leadership",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/leadership/executive-decision-system/SKILL.md"
     },
     {
       "name": "leadership-growth-planner",
@@ -209,6 +451,20 @@
       "autonomy_ceiling": "L1",
       "provenance": "SOURCE",
       "path": "skills/leadership/motivation-mapper/SKILL.md"
+    },
+    {
+      "name": "succession-planning",
+      "domain": "leadership",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/leadership/succession-planning/SKILL.md"
+    },
+    {
+      "name": "contract-lifecycle-management",
+      "domain": "legal",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/legal/contract-lifecycle-management/SKILL.md"
     },
     {
       "name": "contract-review-triage",
@@ -244,6 +500,27 @@
       "autonomy_ceiling": "L0",
       "provenance": "SOURCE",
       "path": "skills/legal/legal-escalation-router/SKILL.md"
+    },
+    {
+      "name": "records-retention",
+      "domain": "legal",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/legal/records-retention/SKILL.md"
+    },
+    {
+      "name": "regulatory-obligation-mapping",
+      "domain": "legal",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/legal/regulatory-obligation-mapping/SKILL.md"
+    },
+    {
+      "name": "brand-strategy",
+      "domain": "marketing",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/marketing/brand-strategy/SKILL.md"
     },
     {
       "name": "buyers-journey-mapper",
@@ -295,6 +572,13 @@
       "path": "skills/marketing/keyword-and-search-map/SKILL.md"
     },
     {
+      "name": "lifecycle-marketing",
+      "domain": "marketing",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/marketing/lifecycle-marketing/SKILL.md"
+    },
+    {
       "name": "market-segmentation",
       "domain": "marketing",
       "autonomy_ceiling": "L1",
@@ -314,6 +598,13 @@
       "autonomy_ceiling": "L2",
       "provenance": "SYNTH",
       "path": "skills/marketing/marketing-metrics-tracker/SKILL.md"
+    },
+    {
+      "name": "marketing-mix-model",
+      "domain": "marketing",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/marketing/marketing-mix-model/SKILL.md"
     },
     {
       "name": "marketing-strategy-builder",
@@ -351,6 +642,20 @@
       "path": "skills/operations/bottleneck-analysis/SKILL.md"
     },
     {
+      "name": "capacity-planning",
+      "domain": "operations",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/operations/capacity-planning/SKILL.md"
+    },
+    {
+      "name": "multi-location-operations",
+      "domain": "operations",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/operations/multi-location-operations/SKILL.md"
+    },
+    {
       "name": "operational-audit",
       "domain": "operations",
       "autonomy_ceiling": "L1",
@@ -372,6 +677,13 @@
       "path": "skills/operations/process-optimization/SKILL.md"
     },
     {
+      "name": "service-delivery-control",
+      "domain": "operations",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/operations/service-delivery-control/SKILL.md"
+    },
+    {
       "name": "sop-writer",
       "domain": "operations",
       "autonomy_ceiling": "L2",
@@ -384,6 +696,13 @@
       "autonomy_ceiling": "L1",
       "provenance": "SOURCE",
       "path": "skills/operations/technology-evaluation/SKILL.md"
+    },
+    {
+      "name": "compensation-and-rewards",
+      "domain": "people",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/people/compensation-and-rewards/SKILL.md"
     },
     {
       "name": "culture-diagnostic",
@@ -456,6 +775,104 @@
       "path": "skills/people/organizational-design/SKILL.md"
     },
     {
+      "name": "performance-management",
+      "domain": "people",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/people/performance-management/SKILL.md"
+    },
+    {
+      "name": "workforce-planning",
+      "domain": "people",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/people/workforce-planning/SKILL.md"
+    },
+    {
+      "name": "continuous-product-discovery",
+      "domain": "product",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/product/continuous-product-discovery/SKILL.md"
+    },
+    {
+      "name": "product-portfolio-management",
+      "domain": "product",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/product/product-portfolio-management/SKILL.md"
+    },
+    {
+      "name": "product-roadmap",
+      "domain": "product",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/product/product-roadmap/SKILL.md"
+    },
+    {
+      "name": "product-strategy",
+      "domain": "product",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/product/product-strategy/SKILL.md"
+    },
+    {
+      "name": "benefits-realization",
+      "domain": "projects-programs",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/projects-programs/benefits-realization/SKILL.md"
+    },
+    {
+      "name": "program-governance",
+      "domain": "projects-programs",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/projects-programs/program-governance/SKILL.md"
+    },
+    {
+      "name": "project-charter",
+      "domain": "projects-programs",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/projects-programs/project-charter/SKILL.md"
+    },
+    {
+      "name": "schedule-and-dependency-risk",
+      "domain": "projects-programs",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/projects-programs/schedule-and-dependency-risk/SKILL.md"
+    },
+    {
+      "name": "corrective-preventive-action",
+      "domain": "quality",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/quality/corrective-preventive-action/SKILL.md"
+    },
+    {
+      "name": "quality-management-system",
+      "domain": "quality",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/quality/quality-management-system/SKILL.md"
+    },
+    {
+      "name": "root-cause-analysis",
+      "domain": "quality",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/quality/root-cause-analysis/SKILL.md"
+    },
+    {
+      "name": "statistical-process-control",
+      "domain": "quality",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/quality/statistical-process-control/SKILL.md"
+    },
+    {
       "name": "business-continuity-plan",
       "domain": "risk",
       "autonomy_ceiling": "L1",
@@ -470,11 +887,39 @@
       "path": "skills/risk/crisis-response-planning/SKILL.md"
     },
     {
+      "name": "enterprise-risk-management",
+      "domain": "risk",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/risk/enterprise-risk-management/SKILL.md"
+    },
+    {
+      "name": "fraud-control-design",
+      "domain": "risk",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/risk/fraud-control-design/SKILL.md"
+    },
+    {
+      "name": "insurance-coverage-analysis",
+      "domain": "risk",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/risk/insurance-coverage-analysis/SKILL.md"
+    },
+    {
       "name": "risk-diagnostic",
       "domain": "risk",
       "autonomy_ceiling": "L1",
       "provenance": "SOURCE",
       "path": "skills/risk/risk-diagnostic/SKILL.md"
+    },
+    {
+      "name": "enterprise-deal-strategy",
+      "domain": "sales",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sales/enterprise-deal-strategy/SKILL.md"
     },
     {
       "name": "negotiation-preparation",
@@ -498,6 +943,13 @@
       "path": "skills/sales/proposal-builder/SKILL.md"
     },
     {
+      "name": "sales-compensation-design",
+      "domain": "sales",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sales/sales-compensation-design/SKILL.md"
+    },
+    {
       "name": "sales-process-design",
       "domain": "sales",
       "autonomy_ceiling": "L1",
@@ -505,11 +957,53 @@
       "path": "skills/sales/sales-process-design/SKILL.md"
     },
     {
+      "name": "territory-and-quota-design",
+      "domain": "sales",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sales/territory-and-quota-design/SKILL.md"
+    },
+    {
+      "name": "identity-access-governance",
+      "domain": "security-privacy",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/security-privacy/identity-access-governance/SKILL.md"
+    },
+    {
+      "name": "privacy-impact-assessment",
+      "domain": "security-privacy",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/security-privacy/privacy-impact-assessment/SKILL.md"
+    },
+    {
+      "name": "security-incident-response",
+      "domain": "security-privacy",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/security-privacy/security-incident-response/SKILL.md"
+    },
+    {
+      "name": "security-posture-assessment",
+      "domain": "security-privacy",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/security-privacy/security-posture-assessment/SKILL.md"
+    },
+    {
       "name": "business-health-diagnostic",
       "domain": "strategy",
       "autonomy_ceiling": "L1",
       "provenance": "SYNTH",
       "path": "skills/strategy/business-health-diagnostic/SKILL.md"
+    },
+    {
+      "name": "business-model-design",
+      "domain": "strategy",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/strategy/business-model-design/SKILL.md"
     },
     {
       "name": "competitive-intelligence-analysis",
@@ -561,6 +1055,13 @@
       "path": "skills/strategy/opportunity-feasibility-analysis/SKILL.md"
     },
     {
+      "name": "portfolio-strategy",
+      "domain": "strategy",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/strategy/portfolio-strategy/SKILL.md"
+    },
+    {
       "name": "resource-gap-analysis",
       "domain": "strategy",
       "autonomy_ceiling": "L1",
@@ -580,9 +1081,105 @@
       "autonomy_ceiling": "L1",
       "provenance": "SYNTH",
       "path": "skills/strategy/strategic-planning/SKILL.md"
+    },
+    {
+      "name": "strategic-scenario-planning",
+      "domain": "strategy",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/strategy/strategic-scenario-planning/SKILL.md"
+    },
+    {
+      "name": "demand-planning",
+      "domain": "supply-chain",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/supply-chain/demand-planning/SKILL.md"
+    },
+    {
+      "name": "inventory-policy",
+      "domain": "supply-chain",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/supply-chain/inventory-policy/SKILL.md"
+    },
+    {
+      "name": "logistics-network-design",
+      "domain": "supply-chain",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/supply-chain/logistics-network-design/SKILL.md"
+    },
+    {
+      "name": "supplier-portfolio-management",
+      "domain": "supply-chain",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/supply-chain/supplier-portfolio-management/SKILL.md"
+    },
+    {
+      "name": "climate-and-resource-resilience",
+      "domain": "sustainability",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sustainability/climate-and-resource-resilience/SKILL.md"
+    },
+    {
+      "name": "impact-measurement",
+      "domain": "sustainability",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sustainability/impact-measurement/SKILL.md"
+    },
+    {
+      "name": "resource-efficiency",
+      "domain": "sustainability",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sustainability/resource-efficiency/SKILL.md"
+    },
+    {
+      "name": "sustainability-materiality",
+      "domain": "sustainability",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/sustainability/sustainability-materiality/SKILL.md"
+    },
+    {
+      "name": "automation-portfolio-management",
+      "domain": "technology",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/technology/automation-portfolio-management/SKILL.md"
+    },
+    {
+      "name": "technology-architecture",
+      "domain": "technology",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/technology/technology-architecture/SKILL.md"
+    },
+    {
+      "name": "technology-reliability-management",
+      "domain": "technology",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/technology/technology-reliability-management/SKILL.md"
+    },
+    {
+      "name": "technology-vendor-selection",
+      "domain": "technology",
+      "autonomy_ceiling": "L2",
+      "provenance": "CLAUDE",
+      "path": "skills/technology/technology-vendor-selection/SKILL.md"
     }
   ],
   "agents": [
+    {
+      "name": "adaptation-agent",
+      "config": "agents/adaptation-agent/agent.yaml",
+      "spec": "agents/adaptation-agent/AGENT.md"
+    },
     {
       "name": "business-analyst-agent",
       "config": "agents/business-analyst-agent/agent.yaml",
@@ -594,9 +1191,29 @@
       "spec": "agents/cfo-agent/AGENT.md"
     },
     {
+      "name": "customer-success-agent",
+      "config": "agents/customer-success-agent/agent.yaml",
+      "spec": "agents/customer-success-agent/AGENT.md"
+    },
+    {
+      "name": "data-agent",
+      "config": "agents/data-agent/agent.yaml",
+      "spec": "agents/data-agent/AGENT.md"
+    },
+    {
+      "name": "governance-agent",
+      "config": "agents/governance-agent/agent.yaml",
+      "spec": "agents/governance-agent/AGENT.md"
+    },
+    {
       "name": "growth-agent",
       "config": "agents/growth-agent/agent.yaml",
       "spec": "agents/growth-agent/AGENT.md"
+    },
+    {
+      "name": "international-agent",
+      "config": "agents/international-agent/agent.yaml",
+      "spec": "agents/international-agent/AGENT.md"
     },
     {
       "name": "leadership-coach-agent",
@@ -624,6 +1241,21 @@
       "spec": "agents/people-agent/AGENT.md"
     },
     {
+      "name": "pmo-agent",
+      "config": "agents/pmo-agent/agent.yaml",
+      "spec": "agents/pmo-agent/AGENT.md"
+    },
+    {
+      "name": "product-agent",
+      "config": "agents/product-agent/agent.yaml",
+      "spec": "agents/product-agent/AGENT.md"
+    },
+    {
+      "name": "quality-agent",
+      "config": "agents/quality-agent/agent.yaml",
+      "spec": "agents/quality-agent/AGENT.md"
+    },
+    {
       "name": "risk-agent",
       "config": "agents/risk-agent/agent.yaml",
       "spec": "agents/risk-agent/AGENT.md"
@@ -634,9 +1266,29 @@
       "spec": "agents/sales-agent/AGENT.md"
     },
     {
+      "name": "security-agent",
+      "config": "agents/security-agent/agent.yaml",
+      "spec": "agents/security-agent/AGENT.md"
+    },
+    {
       "name": "strategy-agent",
       "config": "agents/strategy-agent/agent.yaml",
       "spec": "agents/strategy-agent/AGENT.md"
+    },
+    {
+      "name": "supply-chain-agent",
+      "config": "agents/supply-chain-agent/agent.yaml",
+      "spec": "agents/supply-chain-agent/AGENT.md"
+    },
+    {
+      "name": "sustainability-agent",
+      "config": "agents/sustainability-agent/agent.yaml",
+      "spec": "agents/sustainability-agent/AGENT.md"
+    },
+    {
+      "name": "technology-agent",
+      "config": "agents/technology-agent/agent.yaml",
+      "spec": "agents/technology-agent/AGENT.md"
     }
   ],
   "workflows": [
@@ -661,6 +1313,94 @@
       "path": "workflows/monthly-review/WORKFLOW.md"
     },
     {
+      "name": "optimize-adaptation",
+      "path": "workflows/optimize-adaptation/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-customer-success",
+      "path": "workflows/optimize-customer-success/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-data-analytics",
+      "path": "workflows/optimize-data-analytics/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-finance",
+      "path": "workflows/optimize-finance/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-governance",
+      "path": "workflows/optimize-governance/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-growth",
+      "path": "workflows/optimize-growth/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-international",
+      "path": "workflows/optimize-international/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-leadership",
+      "path": "workflows/optimize-leadership/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-legal",
+      "path": "workflows/optimize-legal/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-marketing",
+      "path": "workflows/optimize-marketing/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-operations",
+      "path": "workflows/optimize-operations/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-people",
+      "path": "workflows/optimize-people/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-product",
+      "path": "workflows/optimize-product/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-projects-programs",
+      "path": "workflows/optimize-projects-programs/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-quality",
+      "path": "workflows/optimize-quality/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-risk",
+      "path": "workflows/optimize-risk/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-sales",
+      "path": "workflows/optimize-sales/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-security-privacy",
+      "path": "workflows/optimize-security-privacy/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-strategy",
+      "path": "workflows/optimize-strategy/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-supply-chain",
+      "path": "workflows/optimize-supply-chain/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-sustainability",
+      "path": "workflows/optimize-sustainability/WORKFLOW.md"
+    },
+    {
+      "name": "optimize-technology",
+      "path": "workflows/optimize-technology/WORKFLOW.md"
+    },
+    {
       "name": "prepare-negotiation",
       "path": "workflows/prepare-negotiation/WORKFLOW.md"
     },
@@ -681,15 +1421,56 @@
       "path": "workflows/should-we-hire/WORKFLOW.md"
     }
   ],
+  "industry_profiles": [
+    "agency",
+    "agriculture",
+    "construction",
+    "ecommerce",
+    "education",
+    "energy-utilities",
+    "financial-services",
+    "healthcare",
+    "hospitality",
+    "logistics",
+    "manufacturing",
+    "marketplace",
+    "media-creator",
+    "nonprofit",
+    "professional-services",
+    "public-sector",
+    "real-estate",
+    "restaurant",
+    "retail",
+    "saas"
+  ],
+  "business_model_profiles": [
+    "advertising",
+    "asset-rental",
+    "donation-grant",
+    "franchise",
+    "hybrid",
+    "licensing",
+    "marketplace",
+    "project-based",
+    "retainer",
+    "subscription",
+    "transactional",
+    "usage-based"
+  ],
   "integration_categories": [
-    "finance",
-    "crm_sales",
-    "marketing",
-    "people",
-    "operations",
     "comms",
+    "crm_sales",
     "data",
-    "documents"
+    "documents",
+    "finance",
+    "governance_external",
+    "marketing",
+    "operations",
+    "people",
+    "product_customer",
+    "quality_projects",
+    "supply_chain",
+    "technology_security"
   ],
   "policies": [
     "policies/GUARDRAILS.md",

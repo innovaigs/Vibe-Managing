@@ -1,0 +1,1232 @@
+[
+  {
+    "intent": "Help me with portfolio strategy.",
+    "domain": "strategy",
+    "skill": "portfolio-strategy"
+  },
+  {
+    "intent": "Diagnose our portfolio strategy and build the best plan.",
+    "domain": "strategy",
+    "skill": "portfolio-strategy"
+  },
+  {
+    "intent": "Monitor and improve portfolio strategy within our constraints.",
+    "domain": "strategy",
+    "skill": "portfolio-strategy"
+  },
+  {
+    "intent": "Help me with business model design.",
+    "domain": "strategy",
+    "skill": "business-model-design"
+  },
+  {
+    "intent": "Diagnose our business model design and build the best plan.",
+    "domain": "strategy",
+    "skill": "business-model-design"
+  },
+  {
+    "intent": "Monitor and improve business model design within our constraints.",
+    "domain": "strategy",
+    "skill": "business-model-design"
+  },
+  {
+    "intent": "Help me with strategic scenario planning.",
+    "domain": "strategy",
+    "skill": "strategic-scenario-planning"
+  },
+  {
+    "intent": "Diagnose our strategic scenario planning and build the best plan.",
+    "domain": "strategy",
+    "skill": "strategic-scenario-planning"
+  },
+  {
+    "intent": "Monitor and improve strategic scenario planning within our constraints.",
+    "domain": "strategy",
+    "skill": "strategic-scenario-planning"
+  },
+  {
+    "intent": "Help me with unit economics engine.",
+    "domain": "finance",
+    "skill": "unit-economics-engine"
+  },
+  {
+    "intent": "Diagnose our unit economics engine and build the best plan.",
+    "domain": "finance",
+    "skill": "unit-economics-engine"
+  },
+  {
+    "intent": "Monitor and improve unit economics engine within our constraints.",
+    "domain": "finance",
+    "skill": "unit-economics-engine"
+  },
+  {
+    "intent": "Help me with capital allocation.",
+    "domain": "finance",
+    "skill": "capital-allocation"
+  },
+  {
+    "intent": "Diagnose our capital allocation and build the best plan.",
+    "domain": "finance",
+    "skill": "capital-allocation"
+  },
+  {
+    "intent": "Monitor and improve capital allocation within our constraints.",
+    "domain": "finance",
+    "skill": "capital-allocation"
+  },
+  {
+    "intent": "Help me with treasury management.",
+    "domain": "finance",
+    "skill": "treasury-management"
+  },
+  {
+    "intent": "Diagnose our treasury management and build the best plan.",
+    "domain": "finance",
+    "skill": "treasury-management"
+  },
+  {
+    "intent": "Monitor and improve treasury management within our constraints.",
+    "domain": "finance",
+    "skill": "treasury-management"
+  },
+  {
+    "intent": "Help me with growth modeling.",
+    "domain": "growth",
+    "skill": "growth-modeling"
+  },
+  {
+    "intent": "Diagnose our growth modeling and build the best plan.",
+    "domain": "growth",
+    "skill": "growth-modeling"
+  },
+  {
+    "intent": "Monitor and improve growth modeling within our constraints.",
+    "domain": "growth",
+    "skill": "growth-modeling"
+  },
+  {
+    "intent": "Help me with growth experiment portfolio.",
+    "domain": "growth",
+    "skill": "experiment-portfolio"
+  },
+  {
+    "intent": "Diagnose our growth experiment portfolio and build the best plan.",
+    "domain": "growth",
+    "skill": "experiment-portfolio"
+  },
+  {
+    "intent": "Monitor and improve growth experiment portfolio within our constraints.",
+    "domain": "growth",
+    "skill": "experiment-portfolio"
+  },
+  {
+    "intent": "Help me with expansion readiness.",
+    "domain": "growth",
+    "skill": "expansion-readiness"
+  },
+  {
+    "intent": "Diagnose our expansion readiness and build the best plan.",
+    "domain": "growth",
+    "skill": "expansion-readiness"
+  },
+  {
+    "intent": "Monitor and improve expansion readiness within our constraints.",
+    "domain": "growth",
+    "skill": "expansion-readiness"
+  },
+  {
+    "intent": "Help me with territory & quota design.",
+    "domain": "sales",
+    "skill": "territory-and-quota-design"
+  },
+  {
+    "intent": "Diagnose our territory & quota design and build the best plan.",
+    "domain": "sales",
+    "skill": "territory-and-quota-design"
+  },
+  {
+    "intent": "Monitor and improve territory & quota design within our constraints.",
+    "domain": "sales",
+    "skill": "territory-and-quota-design"
+  },
+  {
+    "intent": "Help me with sales compensation design.",
+    "domain": "sales",
+    "skill": "sales-compensation-design"
+  },
+  {
+    "intent": "Diagnose our sales compensation design and build the best plan.",
+    "domain": "sales",
+    "skill": "sales-compensation-design"
+  },
+  {
+    "intent": "Monitor and improve sales compensation design within our constraints.",
+    "domain": "sales",
+    "skill": "sales-compensation-design"
+  },
+  {
+    "intent": "Help me with enterprise deal strategy.",
+    "domain": "sales",
+    "skill": "enterprise-deal-strategy"
+  },
+  {
+    "intent": "Diagnose our enterprise deal strategy and build the best plan.",
+    "domain": "sales",
+    "skill": "enterprise-deal-strategy"
+  },
+  {
+    "intent": "Monitor and improve enterprise deal strategy within our constraints.",
+    "domain": "sales",
+    "skill": "enterprise-deal-strategy"
+  },
+  {
+    "intent": "Help me with brand strategy.",
+    "domain": "marketing",
+    "skill": "brand-strategy"
+  },
+  {
+    "intent": "Diagnose our brand strategy and build the best plan.",
+    "domain": "marketing",
+    "skill": "brand-strategy"
+  },
+  {
+    "intent": "Monitor and improve brand strategy within our constraints.",
+    "domain": "marketing",
+    "skill": "brand-strategy"
+  },
+  {
+    "intent": "Help me with lifecycle marketing.",
+    "domain": "marketing",
+    "skill": "lifecycle-marketing"
+  },
+  {
+    "intent": "Diagnose our lifecycle marketing and build the best plan.",
+    "domain": "marketing",
+    "skill": "lifecycle-marketing"
+  },
+  {
+    "intent": "Monitor and improve lifecycle marketing within our constraints.",
+    "domain": "marketing",
+    "skill": "lifecycle-marketing"
+  },
+  {
+    "intent": "Help me with marketing mix model.",
+    "domain": "marketing",
+    "skill": "marketing-mix-model"
+  },
+  {
+    "intent": "Diagnose our marketing mix model and build the best plan.",
+    "domain": "marketing",
+    "skill": "marketing-mix-model"
+  },
+  {
+    "intent": "Monitor and improve marketing mix model within our constraints.",
+    "domain": "marketing",
+    "skill": "marketing-mix-model"
+  },
+  {
+    "intent": "Help me with capacity planning.",
+    "domain": "operations",
+    "skill": "capacity-planning"
+  },
+  {
+    "intent": "Diagnose our capacity planning and build the best plan.",
+    "domain": "operations",
+    "skill": "capacity-planning"
+  },
+  {
+    "intent": "Monitor and improve capacity planning within our constraints.",
+    "domain": "operations",
+    "skill": "capacity-planning"
+  },
+  {
+    "intent": "Help me with service delivery control.",
+    "domain": "operations",
+    "skill": "service-delivery-control"
+  },
+  {
+    "intent": "Diagnose our service delivery control and build the best plan.",
+    "domain": "operations",
+    "skill": "service-delivery-control"
+  },
+  {
+    "intent": "Monitor and improve service delivery control within our constraints.",
+    "domain": "operations",
+    "skill": "service-delivery-control"
+  },
+  {
+    "intent": "Help me with multi-location operations.",
+    "domain": "operations",
+    "skill": "multi-location-operations"
+  },
+  {
+    "intent": "Diagnose our multi-location operations and build the best plan.",
+    "domain": "operations",
+    "skill": "multi-location-operations"
+  },
+  {
+    "intent": "Monitor and improve multi-location operations within our constraints.",
+    "domain": "operations",
+    "skill": "multi-location-operations"
+  },
+  {
+    "intent": "Help me with workforce planning.",
+    "domain": "people",
+    "skill": "workforce-planning"
+  },
+  {
+    "intent": "Diagnose our workforce planning and build the best plan.",
+    "domain": "people",
+    "skill": "workforce-planning"
+  },
+  {
+    "intent": "Monitor and improve workforce planning within our constraints.",
+    "domain": "people",
+    "skill": "workforce-planning"
+  },
+  {
+    "intent": "Help me with compensation & rewards.",
+    "domain": "people",
+    "skill": "compensation-and-rewards"
+  },
+  {
+    "intent": "Diagnose our compensation & rewards and build the best plan.",
+    "domain": "people",
+    "skill": "compensation-and-rewards"
+  },
+  {
+    "intent": "Monitor and improve compensation & rewards within our constraints.",
+    "domain": "people",
+    "skill": "compensation-and-rewards"
+  },
+  {
+    "intent": "Help me with performance management.",
+    "domain": "people",
+    "skill": "performance-management"
+  },
+  {
+    "intent": "Diagnose our performance management and build the best plan.",
+    "domain": "people",
+    "skill": "performance-management"
+  },
+  {
+    "intent": "Monitor and improve performance management within our constraints.",
+    "domain": "people",
+    "skill": "performance-management"
+  },
+  {
+    "intent": "Help me with executive decision system.",
+    "domain": "leadership",
+    "skill": "executive-decision-system"
+  },
+  {
+    "intent": "Diagnose our executive decision system and build the best plan.",
+    "domain": "leadership",
+    "skill": "executive-decision-system"
+  },
+  {
+    "intent": "Monitor and improve executive decision system within our constraints.",
+    "domain": "leadership",
+    "skill": "executive-decision-system"
+  },
+  {
+    "intent": "Help me with change management.",
+    "domain": "leadership",
+    "skill": "change-management"
+  },
+  {
+    "intent": "Diagnose our change management and build the best plan.",
+    "domain": "leadership",
+    "skill": "change-management"
+  },
+  {
+    "intent": "Monitor and improve change management within our constraints.",
+    "domain": "leadership",
+    "skill": "change-management"
+  },
+  {
+    "intent": "Help me with succession planning.",
+    "domain": "leadership",
+    "skill": "succession-planning"
+  },
+  {
+    "intent": "Diagnose our succession planning and build the best plan.",
+    "domain": "leadership",
+    "skill": "succession-planning"
+  },
+  {
+    "intent": "Monitor and improve succession planning within our constraints.",
+    "domain": "leadership",
+    "skill": "succession-planning"
+  },
+  {
+    "intent": "Help me with enterprise risk management.",
+    "domain": "risk",
+    "skill": "enterprise-risk-management"
+  },
+  {
+    "intent": "Diagnose our enterprise risk management and build the best plan.",
+    "domain": "risk",
+    "skill": "enterprise-risk-management"
+  },
+  {
+    "intent": "Monitor and improve enterprise risk management within our constraints.",
+    "domain": "risk",
+    "skill": "enterprise-risk-management"
+  },
+  {
+    "intent": "Help me with insurance coverage analysis.",
+    "domain": "risk",
+    "skill": "insurance-coverage-analysis"
+  },
+  {
+    "intent": "Diagnose our insurance coverage analysis and build the best plan.",
+    "domain": "risk",
+    "skill": "insurance-coverage-analysis"
+  },
+  {
+    "intent": "Monitor and improve insurance coverage analysis within our constraints.",
+    "domain": "risk",
+    "skill": "insurance-coverage-analysis"
+  },
+  {
+    "intent": "Help me with fraud control design.",
+    "domain": "risk",
+    "skill": "fraud-control-design"
+  },
+  {
+    "intent": "Diagnose our fraud control design and build the best plan.",
+    "domain": "risk",
+    "skill": "fraud-control-design"
+  },
+  {
+    "intent": "Monitor and improve fraud control design within our constraints.",
+    "domain": "risk",
+    "skill": "fraud-control-design"
+  },
+  {
+    "intent": "Help me with regulatory obligation mapping.",
+    "domain": "legal",
+    "skill": "regulatory-obligation-mapping"
+  },
+  {
+    "intent": "Diagnose our regulatory obligation mapping and build the best plan.",
+    "domain": "legal",
+    "skill": "regulatory-obligation-mapping"
+  },
+  {
+    "intent": "Monitor and improve regulatory obligation mapping within our constraints.",
+    "domain": "legal",
+    "skill": "regulatory-obligation-mapping"
+  },
+  {
+    "intent": "Help me with contract lifecycle management.",
+    "domain": "legal",
+    "skill": "contract-lifecycle-management"
+  },
+  {
+    "intent": "Diagnose our contract lifecycle management and build the best plan.",
+    "domain": "legal",
+    "skill": "contract-lifecycle-management"
+  },
+  {
+    "intent": "Monitor and improve contract lifecycle management within our constraints.",
+    "domain": "legal",
+    "skill": "contract-lifecycle-management"
+  },
+  {
+    "intent": "Help me with records retention.",
+    "domain": "legal",
+    "skill": "records-retention"
+  },
+  {
+    "intent": "Diagnose our records retention and build the best plan.",
+    "domain": "legal",
+    "skill": "records-retention"
+  },
+  {
+    "intent": "Monitor and improve records retention within our constraints.",
+    "domain": "legal",
+    "skill": "records-retention"
+  },
+  {
+    "intent": "Help me with product strategy.",
+    "domain": "product",
+    "skill": "product-strategy"
+  },
+  {
+    "intent": "Diagnose our product strategy and build the best plan.",
+    "domain": "product",
+    "skill": "product-strategy"
+  },
+  {
+    "intent": "Monitor and improve product strategy within our constraints.",
+    "domain": "product",
+    "skill": "product-strategy"
+  },
+  {
+    "intent": "Help me with continuous product discovery.",
+    "domain": "product",
+    "skill": "continuous-product-discovery"
+  },
+  {
+    "intent": "Diagnose our continuous product discovery and build the best plan.",
+    "domain": "product",
+    "skill": "continuous-product-discovery"
+  },
+  {
+    "intent": "Monitor and improve continuous product discovery within our constraints.",
+    "domain": "product",
+    "skill": "continuous-product-discovery"
+  },
+  {
+    "intent": "Help me with product roadmap.",
+    "domain": "product",
+    "skill": "product-roadmap"
+  },
+  {
+    "intent": "Diagnose our product roadmap and build the best plan.",
+    "domain": "product",
+    "skill": "product-roadmap"
+  },
+  {
+    "intent": "Monitor and improve product roadmap within our constraints.",
+    "domain": "product",
+    "skill": "product-roadmap"
+  },
+  {
+    "intent": "Help me with product portfolio management.",
+    "domain": "product",
+    "skill": "product-portfolio-management"
+  },
+  {
+    "intent": "Diagnose our product portfolio management and build the best plan.",
+    "domain": "product",
+    "skill": "product-portfolio-management"
+  },
+  {
+    "intent": "Monitor and improve product portfolio management within our constraints.",
+    "domain": "product",
+    "skill": "product-portfolio-management"
+  },
+  {
+    "intent": "Help me with customer onboarding system.",
+    "domain": "customer-success",
+    "skill": "customer-onboarding-system"
+  },
+  {
+    "intent": "Diagnose our customer onboarding system and build the best plan.",
+    "domain": "customer-success",
+    "skill": "customer-onboarding-system"
+  },
+  {
+    "intent": "Monitor and improve customer onboarding system within our constraints.",
+    "domain": "customer-success",
+    "skill": "customer-onboarding-system"
+  },
+  {
+    "intent": "Help me with customer health scoring.",
+    "domain": "customer-success",
+    "skill": "customer-health-scoring"
+  },
+  {
+    "intent": "Diagnose our customer health scoring and build the best plan.",
+    "domain": "customer-success",
+    "skill": "customer-health-scoring"
+  },
+  {
+    "intent": "Monitor and improve customer health scoring within our constraints.",
+    "domain": "customer-success",
+    "skill": "customer-health-scoring"
+  },
+  {
+    "intent": "Help me with retention & expansion.",
+    "domain": "customer-success",
+    "skill": "retention-and-expansion"
+  },
+  {
+    "intent": "Diagnose our retention & expansion and build the best plan.",
+    "domain": "customer-success",
+    "skill": "retention-and-expansion"
+  },
+  {
+    "intent": "Monitor and improve retention & expansion within our constraints.",
+    "domain": "customer-success",
+    "skill": "retention-and-expansion"
+  },
+  {
+    "intent": "Help me with voice of customer system.",
+    "domain": "customer-success",
+    "skill": "voice-of-customer-system"
+  },
+  {
+    "intent": "Diagnose our voice of customer system and build the best plan.",
+    "domain": "customer-success",
+    "skill": "voice-of-customer-system"
+  },
+  {
+    "intent": "Monitor and improve voice of customer system within our constraints.",
+    "domain": "customer-success",
+    "skill": "voice-of-customer-system"
+  },
+  {
+    "intent": "Help me with demand planning.",
+    "domain": "supply-chain",
+    "skill": "demand-planning"
+  },
+  {
+    "intent": "Diagnose our demand planning and build the best plan.",
+    "domain": "supply-chain",
+    "skill": "demand-planning"
+  },
+  {
+    "intent": "Monitor and improve demand planning within our constraints.",
+    "domain": "supply-chain",
+    "skill": "demand-planning"
+  },
+  {
+    "intent": "Help me with supplier portfolio management.",
+    "domain": "supply-chain",
+    "skill": "supplier-portfolio-management"
+  },
+  {
+    "intent": "Diagnose our supplier portfolio management and build the best plan.",
+    "domain": "supply-chain",
+    "skill": "supplier-portfolio-management"
+  },
+  {
+    "intent": "Monitor and improve supplier portfolio management within our constraints.",
+    "domain": "supply-chain",
+    "skill": "supplier-portfolio-management"
+  },
+  {
+    "intent": "Help me with inventory policy.",
+    "domain": "supply-chain",
+    "skill": "inventory-policy"
+  },
+  {
+    "intent": "Diagnose our inventory policy and build the best plan.",
+    "domain": "supply-chain",
+    "skill": "inventory-policy"
+  },
+  {
+    "intent": "Monitor and improve inventory policy within our constraints.",
+    "domain": "supply-chain",
+    "skill": "inventory-policy"
+  },
+  {
+    "intent": "Help me with logistics network design.",
+    "domain": "supply-chain",
+    "skill": "logistics-network-design"
+  },
+  {
+    "intent": "Diagnose our logistics network design and build the best plan.",
+    "domain": "supply-chain",
+    "skill": "logistics-network-design"
+  },
+  {
+    "intent": "Monitor and improve logistics network design within our constraints.",
+    "domain": "supply-chain",
+    "skill": "logistics-network-design"
+  },
+  {
+    "intent": "Help me with technology architecture.",
+    "domain": "technology",
+    "skill": "technology-architecture"
+  },
+  {
+    "intent": "Diagnose our technology architecture and build the best plan.",
+    "domain": "technology",
+    "skill": "technology-architecture"
+  },
+  {
+    "intent": "Monitor and improve technology architecture within our constraints.",
+    "domain": "technology",
+    "skill": "technology-architecture"
+  },
+  {
+    "intent": "Help me with technology vendor selection.",
+    "domain": "technology",
+    "skill": "technology-vendor-selection"
+  },
+  {
+    "intent": "Diagnose our technology vendor selection and build the best plan.",
+    "domain": "technology",
+    "skill": "technology-vendor-selection"
+  },
+  {
+    "intent": "Monitor and improve technology vendor selection within our constraints.",
+    "domain": "technology",
+    "skill": "technology-vendor-selection"
+  },
+  {
+    "intent": "Help me with automation portfolio management.",
+    "domain": "technology",
+    "skill": "automation-portfolio-management"
+  },
+  {
+    "intent": "Diagnose our automation portfolio management and build the best plan.",
+    "domain": "technology",
+    "skill": "automation-portfolio-management"
+  },
+  {
+    "intent": "Monitor and improve automation portfolio management within our constraints.",
+    "domain": "technology",
+    "skill": "automation-portfolio-management"
+  },
+  {
+    "intent": "Help me with technology reliability management.",
+    "domain": "technology",
+    "skill": "technology-reliability-management"
+  },
+  {
+    "intent": "Diagnose our technology reliability management and build the best plan.",
+    "domain": "technology",
+    "skill": "technology-reliability-management"
+  },
+  {
+    "intent": "Monitor and improve technology reliability management within our constraints.",
+    "domain": "technology",
+    "skill": "technology-reliability-management"
+  },
+  {
+    "intent": "Help me with metric governance.",
+    "domain": "data-analytics",
+    "skill": "metric-governance"
+  },
+  {
+    "intent": "Diagnose our metric governance and build the best plan.",
+    "domain": "data-analytics",
+    "skill": "metric-governance"
+  },
+  {
+    "intent": "Monitor and improve metric governance within our constraints.",
+    "domain": "data-analytics",
+    "skill": "metric-governance"
+  },
+  {
+    "intent": "Help me with data quality management.",
+    "domain": "data-analytics",
+    "skill": "data-quality-management"
+  },
+  {
+    "intent": "Diagnose our data quality management and build the best plan.",
+    "domain": "data-analytics",
+    "skill": "data-quality-management"
+  },
+  {
+    "intent": "Monitor and improve data quality management within our constraints.",
+    "domain": "data-analytics",
+    "skill": "data-quality-management"
+  },
+  {
+    "intent": "Help me with causal decision analysis.",
+    "domain": "data-analytics",
+    "skill": "causal-decision-analysis"
+  },
+  {
+    "intent": "Diagnose our causal decision analysis and build the best plan.",
+    "domain": "data-analytics",
+    "skill": "causal-decision-analysis"
+  },
+  {
+    "intent": "Monitor and improve causal decision analysis within our constraints.",
+    "domain": "data-analytics",
+    "skill": "causal-decision-analysis"
+  },
+  {
+    "intent": "Help me with decision intelligence.",
+    "domain": "data-analytics",
+    "skill": "decision-intelligence"
+  },
+  {
+    "intent": "Diagnose our decision intelligence and build the best plan.",
+    "domain": "data-analytics",
+    "skill": "decision-intelligence"
+  },
+  {
+    "intent": "Monitor and improve decision intelligence within our constraints.",
+    "domain": "data-analytics",
+    "skill": "decision-intelligence"
+  },
+  {
+    "intent": "Help me with security posture assessment.",
+    "domain": "security-privacy",
+    "skill": "security-posture-assessment"
+  },
+  {
+    "intent": "Diagnose our security posture assessment and build the best plan.",
+    "domain": "security-privacy",
+    "skill": "security-posture-assessment"
+  },
+  {
+    "intent": "Monitor and improve security posture assessment within our constraints.",
+    "domain": "security-privacy",
+    "skill": "security-posture-assessment"
+  },
+  {
+    "intent": "Help me with identity & access governance.",
+    "domain": "security-privacy",
+    "skill": "identity-access-governance"
+  },
+  {
+    "intent": "Diagnose our identity & access governance and build the best plan.",
+    "domain": "security-privacy",
+    "skill": "identity-access-governance"
+  },
+  {
+    "intent": "Monitor and improve identity & access governance within our constraints.",
+    "domain": "security-privacy",
+    "skill": "identity-access-governance"
+  },
+  {
+    "intent": "Help me with security incident response.",
+    "domain": "security-privacy",
+    "skill": "security-incident-response"
+  },
+  {
+    "intent": "Diagnose our security incident response and build the best plan.",
+    "domain": "security-privacy",
+    "skill": "security-incident-response"
+  },
+  {
+    "intent": "Monitor and improve security incident response within our constraints.",
+    "domain": "security-privacy",
+    "skill": "security-incident-response"
+  },
+  {
+    "intent": "Help me with privacy impact assessment.",
+    "domain": "security-privacy",
+    "skill": "privacy-impact-assessment"
+  },
+  {
+    "intent": "Diagnose our privacy impact assessment and build the best plan.",
+    "domain": "security-privacy",
+    "skill": "privacy-impact-assessment"
+  },
+  {
+    "intent": "Monitor and improve privacy impact assessment within our constraints.",
+    "domain": "security-privacy",
+    "skill": "privacy-impact-assessment"
+  },
+  {
+    "intent": "Help me with quality management system.",
+    "domain": "quality",
+    "skill": "quality-management-system"
+  },
+  {
+    "intent": "Diagnose our quality management system and build the best plan.",
+    "domain": "quality",
+    "skill": "quality-management-system"
+  },
+  {
+    "intent": "Monitor and improve quality management system within our constraints.",
+    "domain": "quality",
+    "skill": "quality-management-system"
+  },
+  {
+    "intent": "Help me with root cause analysis.",
+    "domain": "quality",
+    "skill": "root-cause-analysis"
+  },
+  {
+    "intent": "Diagnose our root cause analysis and build the best plan.",
+    "domain": "quality",
+    "skill": "root-cause-analysis"
+  },
+  {
+    "intent": "Monitor and improve root cause analysis within our constraints.",
+    "domain": "quality",
+    "skill": "root-cause-analysis"
+  },
+  {
+    "intent": "Help me with statistical process control.",
+    "domain": "quality",
+    "skill": "statistical-process-control"
+  },
+  {
+    "intent": "Diagnose our statistical process control and build the best plan.",
+    "domain": "quality",
+    "skill": "statistical-process-control"
+  },
+  {
+    "intent": "Monitor and improve statistical process control within our constraints.",
+    "domain": "quality",
+    "skill": "statistical-process-control"
+  },
+  {
+    "intent": "Help me with corrective & preventive action.",
+    "domain": "quality",
+    "skill": "corrective-preventive-action"
+  },
+  {
+    "intent": "Diagnose our corrective & preventive action and build the best plan.",
+    "domain": "quality",
+    "skill": "corrective-preventive-action"
+  },
+  {
+    "intent": "Monitor and improve corrective & preventive action within our constraints.",
+    "domain": "quality",
+    "skill": "corrective-preventive-action"
+  },
+  {
+    "intent": "Help me with project charter.",
+    "domain": "projects-programs",
+    "skill": "project-charter"
+  },
+  {
+    "intent": "Diagnose our project charter and build the best plan.",
+    "domain": "projects-programs",
+    "skill": "project-charter"
+  },
+  {
+    "intent": "Monitor and improve project charter within our constraints.",
+    "domain": "projects-programs",
+    "skill": "project-charter"
+  },
+  {
+    "intent": "Help me with schedule & dependency risk.",
+    "domain": "projects-programs",
+    "skill": "schedule-and-dependency-risk"
+  },
+  {
+    "intent": "Diagnose our schedule & dependency risk and build the best plan.",
+    "domain": "projects-programs",
+    "skill": "schedule-and-dependency-risk"
+  },
+  {
+    "intent": "Monitor and improve schedule & dependency risk within our constraints.",
+    "domain": "projects-programs",
+    "skill": "schedule-and-dependency-risk"
+  },
+  {
+    "intent": "Help me with program governance.",
+    "domain": "projects-programs",
+    "skill": "program-governance"
+  },
+  {
+    "intent": "Diagnose our program governance and build the best plan.",
+    "domain": "projects-programs",
+    "skill": "program-governance"
+  },
+  {
+    "intent": "Monitor and improve program governance within our constraints.",
+    "domain": "projects-programs",
+    "skill": "program-governance"
+  },
+  {
+    "intent": "Help me with benefits realization.",
+    "domain": "projects-programs",
+    "skill": "benefits-realization"
+  },
+  {
+    "intent": "Diagnose our benefits realization and build the best plan.",
+    "domain": "projects-programs",
+    "skill": "benefits-realization"
+  },
+  {
+    "intent": "Monitor and improve benefits realization within our constraints.",
+    "domain": "projects-programs",
+    "skill": "benefits-realization"
+  },
+  {
+    "intent": "Help me with board operating cadence.",
+    "domain": "governance",
+    "skill": "board-operating-cadence"
+  },
+  {
+    "intent": "Diagnose our board operating cadence and build the best plan.",
+    "domain": "governance",
+    "skill": "board-operating-cadence"
+  },
+  {
+    "intent": "Monitor and improve board operating cadence within our constraints.",
+    "domain": "governance",
+    "skill": "board-operating-cadence"
+  },
+  {
+    "intent": "Help me with decision rights design.",
+    "domain": "governance",
+    "skill": "decision-rights-design"
+  },
+  {
+    "intent": "Diagnose our decision rights design and build the best plan.",
+    "domain": "governance",
+    "skill": "decision-rights-design"
+  },
+  {
+    "intent": "Monitor and improve decision rights design within our constraints.",
+    "domain": "governance",
+    "skill": "decision-rights-design"
+  },
+  {
+    "intent": "Help me with policy management.",
+    "domain": "governance",
+    "skill": "policy-management"
+  },
+  {
+    "intent": "Diagnose our policy management and build the best plan.",
+    "domain": "governance",
+    "skill": "policy-management"
+  },
+  {
+    "intent": "Monitor and improve policy management within our constraints.",
+    "domain": "governance",
+    "skill": "policy-management"
+  },
+  {
+    "intent": "Help me with stakeholder accountability.",
+    "domain": "governance",
+    "skill": "stakeholder-accountability"
+  },
+  {
+    "intent": "Diagnose our stakeholder accountability and build the best plan.",
+    "domain": "governance",
+    "skill": "stakeholder-accountability"
+  },
+  {
+    "intent": "Monitor and improve stakeholder accountability within our constraints.",
+    "domain": "governance",
+    "skill": "stakeholder-accountability"
+  },
+  {
+    "intent": "Help me with international market entry.",
+    "domain": "international",
+    "skill": "international-market-entry"
+  },
+  {
+    "intent": "Diagnose our international market entry and build the best plan.",
+    "domain": "international",
+    "skill": "international-market-entry"
+  },
+  {
+    "intent": "Monitor and improve international market entry within our constraints.",
+    "domain": "international",
+    "skill": "international-market-entry"
+  },
+  {
+    "intent": "Help me with localization strategy.",
+    "domain": "international",
+    "skill": "localization-strategy"
+  },
+  {
+    "intent": "Diagnose our localization strategy and build the best plan.",
+    "domain": "international",
+    "skill": "localization-strategy"
+  },
+  {
+    "intent": "Monitor and improve localization strategy within our constraints.",
+    "domain": "international",
+    "skill": "localization-strategy"
+  },
+  {
+    "intent": "Help me with cross-border economics.",
+    "domain": "international",
+    "skill": "cross-border-economics"
+  },
+  {
+    "intent": "Diagnose our cross-border economics and build the best plan.",
+    "domain": "international",
+    "skill": "cross-border-economics"
+  },
+  {
+    "intent": "Monitor and improve cross-border economics within our constraints.",
+    "domain": "international",
+    "skill": "cross-border-economics"
+  },
+  {
+    "intent": "Help me with jurisdiction risk.",
+    "domain": "international",
+    "skill": "jurisdiction-risk"
+  },
+  {
+    "intent": "Diagnose our jurisdiction risk and build the best plan.",
+    "domain": "international",
+    "skill": "jurisdiction-risk"
+  },
+  {
+    "intent": "Monitor and improve jurisdiction risk within our constraints.",
+    "domain": "international",
+    "skill": "jurisdiction-risk"
+  },
+  {
+    "intent": "Help me with sustainability materiality.",
+    "domain": "sustainability",
+    "skill": "sustainability-materiality"
+  },
+  {
+    "intent": "Diagnose our sustainability materiality and build the best plan.",
+    "domain": "sustainability",
+    "skill": "sustainability-materiality"
+  },
+  {
+    "intent": "Monitor and improve sustainability materiality within our constraints.",
+    "domain": "sustainability",
+    "skill": "sustainability-materiality"
+  },
+  {
+    "intent": "Help me with resource efficiency.",
+    "domain": "sustainability",
+    "skill": "resource-efficiency"
+  },
+  {
+    "intent": "Diagnose our resource efficiency and build the best plan.",
+    "domain": "sustainability",
+    "skill": "resource-efficiency"
+  },
+  {
+    "intent": "Monitor and improve resource efficiency within our constraints.",
+    "domain": "sustainability",
+    "skill": "resource-efficiency"
+  },
+  {
+    "intent": "Help me with impact measurement.",
+    "domain": "sustainability",
+    "skill": "impact-measurement"
+  },
+  {
+    "intent": "Diagnose our impact measurement and build the best plan.",
+    "domain": "sustainability",
+    "skill": "impact-measurement"
+  },
+  {
+    "intent": "Monitor and improve impact measurement within our constraints.",
+    "domain": "sustainability",
+    "skill": "impact-measurement"
+  },
+  {
+    "intent": "Help me with climate & resource resilience.",
+    "domain": "sustainability",
+    "skill": "climate-and-resource-resilience"
+  },
+  {
+    "intent": "Diagnose our climate & resource resilience and build the best plan.",
+    "domain": "sustainability",
+    "skill": "climate-and-resource-resilience"
+  },
+  {
+    "intent": "Monitor and improve climate & resource resilience within our constraints.",
+    "domain": "sustainability",
+    "skill": "climate-and-resource-resilience"
+  },
+  {
+    "intent": "Help me with business archetype classifier.",
+    "domain": "adaptation",
+    "skill": "business-archetype-classifier"
+  },
+  {
+    "intent": "Diagnose our business archetype classifier and build the best plan.",
+    "domain": "adaptation",
+    "skill": "business-archetype-classifier"
+  },
+  {
+    "intent": "Monitor and improve business archetype classifier within our constraints.",
+    "domain": "adaptation",
+    "skill": "business-archetype-classifier"
+  },
+  {
+    "intent": "Help me with industry operating profile.",
+    "domain": "adaptation",
+    "skill": "industry-operating-profile"
+  },
+  {
+    "intent": "Diagnose our industry operating profile and build the best plan.",
+    "domain": "adaptation",
+    "skill": "industry-operating-profile"
+  },
+  {
+    "intent": "Monitor and improve industry operating profile within our constraints.",
+    "domain": "adaptation",
+    "skill": "industry-operating-profile"
+  },
+  {
+    "intent": "Help me with stage & maturity assessment.",
+    "domain": "adaptation",
+    "skill": "stage-and-maturity-assessment"
+  },
+  {
+    "intent": "Diagnose our stage & maturity assessment and build the best plan.",
+    "domain": "adaptation",
+    "skill": "stage-and-maturity-assessment"
+  },
+  {
+    "intent": "Monitor and improve stage & maturity assessment within our constraints.",
+    "domain": "adaptation",
+    "skill": "stage-and-maturity-assessment"
+  },
+  {
+    "intent": "Help me with regulatory intensity classifier.",
+    "domain": "adaptation",
+    "skill": "regulatory-intensity-classifier"
+  },
+  {
+    "intent": "Diagnose our regulatory intensity classifier and build the best plan.",
+    "domain": "adaptation",
+    "skill": "regulatory-intensity-classifier"
+  },
+  {
+    "intent": "Monitor and improve regulatory intensity classifier within our constraints.",
+    "domain": "adaptation",
+    "skill": "regulatory-intensity-classifier"
+  },
+  {
+    "intent": "Help me with operating model fit.",
+    "domain": "adaptation",
+    "skill": "operating-model-fit"
+  },
+  {
+    "intent": "Diagnose our operating model fit and build the best plan.",
+    "domain": "adaptation",
+    "skill": "operating-model-fit"
+  },
+  {
+    "intent": "Monitor and improve operating model fit within our constraints.",
+    "domain": "adaptation",
+    "skill": "operating-model-fit"
+  },
+  {
+    "intent": "Help me with benchmark calibration.",
+    "domain": "adaptation",
+    "skill": "benchmark-calibration"
+  },
+  {
+    "intent": "Diagnose our benchmark calibration and build the best plan.",
+    "domain": "adaptation",
+    "skill": "benchmark-calibration"
+  },
+  {
+    "intent": "Monitor and improve benchmark calibration within our constraints.",
+    "domain": "adaptation",
+    "skill": "benchmark-calibration"
+  },
+  {
+    "intent": "Help me with dynamic skill routing.",
+    "domain": "adaptation",
+    "skill": "dynamic-skill-routing"
+  },
+  {
+    "intent": "Diagnose our dynamic skill routing and build the best plan.",
+    "domain": "adaptation",
+    "skill": "dynamic-skill-routing"
+  },
+  {
+    "intent": "Monitor and improve dynamic skill routing within our constraints.",
+    "domain": "adaptation",
+    "skill": "dynamic-skill-routing"
+  },
+  {
+    "intent": "Help me with outcome optimization.",
+    "domain": "adaptation",
+    "skill": "outcome-optimization"
+  },
+  {
+    "intent": "Diagnose our outcome optimization and build the best plan.",
+    "domain": "adaptation",
+    "skill": "outcome-optimization"
+  },
+  {
+    "intent": "Monitor and improve outcome optimization within our constraints.",
+    "domain": "adaptation",
+    "skill": "outcome-optimization"
+  }
+]

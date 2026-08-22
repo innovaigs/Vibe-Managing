@@ -1,0 +1,15 @@
+id: governance_external
+category: governance_external
+provider: "<bound at install: board / policy / compliance / ESG / international platform>"
+transport: oauth_api
+reads:
+  - {entity: obligation_and_policy, fields: [jurisdiction, obligation, owner, due, evidence, status], freshness: daily}
+  - {entity: board_and_stakeholder, fields: [decision, action, owner, due, commitment], freshness: daily}
+writes:
+  - {entity: internal_governance_draft, fields: [decision_brief, policy, action], risk_tier: LOW, approval: false}
+high_risk_actions:
+  - {action: regulatory_submission, risk_tier: CRITICAL, approval: true, rollback: none}
+  - {action: publish_claim_or_board_material, risk_tier: CRITICAL, approval: true, rollback: none}
+audit: true
+maps_to_memory: [governance, international, sustainability, legal, risks]
+maps_to_twin: [Policy, BoardAction, Jurisdiction, SustainabilityImpact]

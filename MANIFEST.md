@@ -3,7 +3,7 @@
 The complete map of the Vibe Managing Business Intelligence system: an AI-native business operating system that turns **founder intent → business execution**. This manifest indexes every part and every deliverable.
 
 ## What this is
-A library of **skills** (discrete AI capabilities), composed by **agents** (specialized workers), orchestrated by **workflows**, governed by a **control plane**, and grounded in **business memory** + a **business digital twin** — all vendor-neutral and installable into AI coding/agent runtimes.
+A library of **160 skills across 22 domains**, composed by **23 agents**, orchestrated by **32 workflows**, governed by a **control plane**, adapted through **20 industry profiles + 12 business-model profiles**, and grounded in **business memory** + a **business digital twin** — all vendor-neutral and installable into AI coding/agent runtimes.
 
 The business intelligence was extracted from real small-business management practice and rewritten as operational intelligence for AI execution. It carries no source-program branding (see `internal/PROVENANCE_MAP.md`).
 
@@ -30,6 +30,10 @@ The business intelligence was extracted from real small-business management prac
 | 17 | Master orchestrator | [MASTER_ORCHESTRATOR.md](MASTER_ORCHESTRATOR.md) |
 | 18 | Human-judgment boundary | [policies/HUMAN_JUDGMENT_BOUNDARY.md](policies/HUMAN_JUDGMENT_BOUNDARY.md) |
 | 19 | Provenance map (internal) | [internal/PROVENANCE_MAP.md](internal/PROVENANCE_MAP.md) |
+| 20 | Universal business adaptation | [UNIVERSAL_BUSINESS_ADAPTATION.md](UNIVERSAL_BUSINESS_ADAPTATION.md) |
+| 21 | Advanced skill registry | [ADVANCED_SKILL_REGISTRY.md](ADVANCED_SKILL_REGISTRY.md) |
+| 22 | Advanced agent registry | [ADVANCED_AGENT_REGISTRY.md](ADVANCED_AGENT_REGISTRY.md) |
+| 23 | Advanced workflow registry | [ADVANCED_WORKFLOW_REGISTRY.md](ADVANCED_WORKFLOW_REGISTRY.md) |
 
 ## Repository layout
 ```
@@ -41,8 +45,8 @@ vibe-managing/
 ├── AUTONOMY_AND_APPROVAL_MODEL.md · INTEGRATION_ARCHITECTURE.md
 ├── BUSINESS_HEALTH_ENGINE.md · OPERATING_CADENCE.md
 ├── core/          # orchestrator, memory, twin, permissions, approvals, monitoring, learning, cadence
-├── skills/        # 10 domains + template; each skill = a full SKILL.md
-├── agents/        # 11 specialized agents (agent.yaml + AGENT.md)
+├── skills/        # 22 domains + template; 160 skills, each a full SKILL.md
+├── agents/        # 23 specialized agents (agent.yaml + AGENT.md)
 ├── workflows/     # end-to-end orchestrations
 ├── intents/       # intent library assets
 ├── schemas/       # JSON Schemas: skill, agent, memory, twin, decision, integration, health
@@ -51,6 +55,10 @@ vibe-managing/
 ├── prompts/       # reusable system prompts
 ├── policies/      # guardrails + human-judgment boundary
 ├── evaluations/   # scenario test suite
+├── industry-profiles/       # 20 composable operating profiles
+├── business-model-profiles/ # 12 monetization/economic profiles
+├── references/domain-playbooks/ # advanced domain adaptation references
+├── site/          # published visual system overview
 ├── examples/      # worked end-to-end traces
 └── internal/      # provenance map (not user-facing)
 ```

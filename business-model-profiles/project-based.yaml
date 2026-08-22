@@ -1,0 +1,12 @@
+id: project-based
+type: business_model_profile
+version: 1.0.0
+value_exchange: "bounded custom delivery"
+primary_economic_metrics: ["backlog", "realization", "project margin", "cash timing"]
+required_analysis: [economic_unit, revenue_recognition, contribution, cash_timing, capacity, retention_or_repeat, risk, lifecycle]
+rules:
+  - Combine this profile with the active industry profile; neither is sufficient alone.
+  - Calculate economics by customer, offering, channel, location, and cohort where material.
+  - Separate accounting revenue from cash receipt and contribution from gross revenue.
+  - Validate contractual, tax, legal, and regulatory treatment with qualified specialists.
+provenance: CLAUDE-DERIVED

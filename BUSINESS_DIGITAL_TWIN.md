@@ -46,6 +46,16 @@ The purpose: let an agent ask "what happens to runway if we hire two people?" or
 | `Goal` | a target | metric, target, deadline | on-track status |
 | `Risk` | a threat | likelihood, impact | risk score |
 | `Decision` | a choice made | expected/actual outcome | variance |
+| `IndustryProfile` / `BusinessModelProfile` | active operating assumptions | version, overrides, evidence | fit confidence |
+| `ProductBet` / `DiscoveryEvidence` | product outcome and uncertainty | hypothesis, evidence, lifecycle | adoption, retention, contribution |
+| `CustomerSuccessPlan` | customer value realization | milestone, risk, owner | time-to-value, health |
+| `Supplier` / `InventoryItem` / `LogisticsNode` | supply network | lead time, capacity, policy | service, turns, landed cost |
+| `TechnologyService` / `DataProduct` | digital and analytical capability | owner, tier, lineage, SLO | availability, quality, cost |
+| `SecurityControl` / `PrivacyActivity` | protection and processing | coverage, owner, review | exposure, compliance |
+| `QualityControl` / `CorrectiveAction` | conformance and improvement | standard, evidence, status | yield, recurrence |
+| `Project` / `Program` / `Benefit` | change delivery | dependencies, resources, baseline | predictability, realized value |
+| `Policy` / `BoardAction` | governance mechanism | authority, version, due date | compliance, closure |
+| `Jurisdiction` / `SustainabilityImpact` | external context and effect | obligations, exposure, evidence | risk, intensity, outcome |
 
 ## 2. Relationships (edges)
 
@@ -103,6 +113,11 @@ The twin continuously recomputes cross-object views agents rely on:
 | **Founder load** | Founder, Processes, Employees | "What is only the founder doing?" |
 | **Health rollup** | all object health states | "What needs attention right now?" |
 | **Growth-plan progress** | Initiatives, Goals, metrics | "Are we executing the strategy?" |
+| **Context fit** | Profiles, overrides, maturity, jurisdictions | "Are we using the right operating logic?" |
+| **Product & customer value** | ProductBets, Customers, SuccessPlans | "Are customers adopting and realizing value?" |
+| **Supply resilience** | Suppliers, Items, Nodes, Risks | "Where can demand or supply fail?" |
+| **Technology, data & security** | Services, DataProducts, Controls | "Can the digital operating layer be trusted?" |
+| **Change portfolio** | Projects, Programs, Benefits, Capacity | "Are initiatives creating the promised value?" |
 
 ## 6. Simulation (the twin's superpower)
 

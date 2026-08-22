@@ -1,5 +1,9 @@
 # PROVENANCE_MAP (internal)
 
+## Advanced universal expansion
+
+All capabilities listed in `plugins/advanced-manifest.json`, all files in `industry-profiles/`, `business-model-profiles/`, and `references/domain-playbooks/`, and the universal adaptation architecture are **CLAUDE-DERIVED**. They close product, customer-success, supply-chain, technology, data, security/privacy, quality, project/program, governance, international, sustainability, and cross-industry adaptation gaps. They are operational hypotheses and must be validated against authoritative company, industry, jurisdiction, and specialist evidence before consequential use.
+
 **Deliverable 19 — provenance tracking.** Internal engineering artifact. Not user-facing. This maps every Vibe Managing capability back to where its knowledge originated, so source-grounded intelligence is never confused with model-added reasoning, and so no source-program branding leaks into shipped assets.
 
 ## Tags

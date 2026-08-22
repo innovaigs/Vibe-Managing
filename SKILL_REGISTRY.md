@@ -4,6 +4,8 @@
 
 A **Skill** is a discrete capability an AI agent can perform repeatedly, with typed inputs and a defined output. Skills are the atom of Vibe Managing — every agent action resolves to a skill call. Each skill has its own folder under `skills/<domain>/<skill-name>/` containing a `SKILL.md` built to the standard structure (see `skills/_TEMPLATE/SKILL.md`).
 
+The complete system now contains **160 skills across 22 domains**. This original registry documents the first 78 source-grounded capabilities; the 82 advanced cross-industry capabilities are indexed in [`ADVANCED_SKILL_REGISTRY.md`](ADVANCED_SKILL_REGISTRY.md).
+
 **Provenance tags:** `SOURCE` = grounded in the source material · `SYNTH` = source concepts recombined/extended · `CLAUDE` = model-added to fill a business-necessary gap (see `internal/PROVENANCE_MAP.md`).
 
 Legend for autonomy ceiling (max autonomy the skill's *actions* may reach; analysis is always allowed): **L0** observe · **L1** prepare · **L2** limited · **L3** supervised. No skill auto-executes irreversible actions.

@@ -20,8 +20,9 @@ Canonical machine-readable schemas live in `schemas/` (JSON Schema). This docume
 ## Top-level namespaces
 
 ```
-company · founders · customers · offerings · finance · team ·
-operations · market · strategy · metrics · decisions · goals · risks · integrations
+company · adaptation · founders · customers · offerings · product · customer_success · finance · team ·
+operations · supply_chain · technology · data · security_privacy · quality · projects · governance ·
+international · sustainability · market · strategy · metrics · decisions · goals · risks · integrations
 ```
 
 ---
@@ -49,6 +50,41 @@ company:
 ```
 
 ## 2. Founders & owners
+
+## Adaptation context
+
+```yaml
+adaptation:
+  primary_archetype: str
+  secondary_archetypes: [str]
+  industry_profiles: [ {id, version, verified_at, local_overrides:[...]} ]
+  business_model_profiles: [ {id, revenue_share, economic_unit, verified_at} ]
+  lifecycle_stage: enum(formation, validation, repeatability, scaling, mature, renewal, decline, exit)
+  functional_maturity: { domain: 0-5 }
+  jurisdictions: [ {country, region, local, activities, regulatory_intensity} ]
+  ownership_model: str
+  risk_appetite_ref: str
+  metric_overrides: [ {metric, profile_definition, local_definition, reason, evidence, review_date} ]
+  routing_overrides: [ {intent, required_skills, prohibited_actions, specialist_gate} ]
+```
+
+Profile files are routing defaults, not facts. Every override is versioned with evidence and review date.
+
+## Advanced operating namespaces
+
+The advanced domains use the same cross-cutting record envelope and append-only rules:
+
+- `product`: opportunities, product outcomes, roadmap bets, lifecycle, adoption, discovery evidence.
+- `customer_success`: success plans, health signals, value milestones, renewal/expansion, feedback themes.
+- `supply_chain`: demand plans, suppliers, item policies, inventory, logistics nodes, disruption scenarios.
+- `technology`: capabilities, applications, architecture, service levels, incidents, automation portfolio, technical debt.
+- `data`: data products, critical data elements, metric definitions, lineage, quality rules, models, experiments.
+- `security_privacy`: assets, identities, entitlements, threats, controls, incidents, processing activities, retention.
+- `quality`: standards, controls, audits, defects, root causes, corrective actions, effectiveness checks.
+- `projects`: projects, programs, dependencies, milestones, resources, risks, benefits, decisions.
+- `governance`: decision rights, policies, board calendar, stakeholder commitments, action registers.
+- `international`: markets, entities, currencies, localizations, cross-border flows, jurisdiction exposures.
+- `sustainability`: material topics, resource flows, impact chains, claims, evidence, resilience actions.
 
 ```yaml
 founders:

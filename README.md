@@ -4,7 +4,7 @@
 
 > **This repository contains two things:** the **thesis** (below) — the vision for why managing a business should become as intuitive as vibe coding — and the **Vibe Managing Business Intelligence system**: an AI-native business operating system that turns *founder intent → business execution*.
 >
-> ➡️ **Start with [MANIFEST.md](MANIFEST.md)** for the complete system map, or [VIBE_MANAGING_ARCHITECTURE.md](VIBE_MANAGING_ARCHITECTURE.md) for the architecture. The system is a library of [skills](skills/), [agents](agents/), and [workflows](workflows/) grounded in a [business memory](BUSINESS_MEMORY_SCHEMA.md) and [digital twin](BUSINESS_DIGITAL_TWIN.md), governed by an [autonomy & approval model](AUTONOMY_AND_APPROVAL_MODEL.md) — installable into AI coding agents.
+> ➡️ **Start with [MANIFEST.md](MANIFEST.md)** for the complete system map, or [VIBE_MANAGING_ARCHITECTURE.md](VIBE_MANAGING_ARCHITECTURE.md) for the architecture. The system now contains **160 skills across 22 domains, 23 agents, 32 workflows, 36 evaluations, 20 industry profiles, and 12 business-model profiles**—grounded in [business memory](BUSINESS_MEMORY_SCHEMA.md), a [digital twin](BUSINESS_DIGITAL_TWIN.md), and a governed [autonomy & approval model](AUTONOMY_AND_APPROVAL_MODEL.md).
 
 ---
 

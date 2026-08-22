@@ -1,0 +1,16 @@
+id: quality_projects
+category: quality_projects
+provider: "<bound at install: QMS / project / program platform>"
+transport: oauth_api
+reads:
+  - {entity: quality_record, fields: [standard, control, defect, audit, corrective_action], freshness: daily}
+  - {entity: initiative, fields: [scope, milestone, dependency, resource, risk, benefit], freshness: daily}
+writes:
+  - {entity: corrective_action_draft, fields: [containment, cause, action, verification], risk_tier: MEDIUM, approval: true}
+  - {entity: project_task, fields: [owner, due, dependency], risk_tier: LOW, approval: false}
+high_risk_actions:
+  - {action: change_quality_control, risk_tier: CRITICAL, approval: true, rollback: required}
+  - {action: change_project_baseline, risk_tier: HIGH, approval: true, rollback: versioned}
+audit: true
+maps_to_memory: [quality, projects, operations, decisions]
+maps_to_twin: [QualityControl, CorrectiveAction, Project, Program, Benefit]

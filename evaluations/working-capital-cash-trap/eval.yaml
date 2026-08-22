@@ -37,8 +37,7 @@ expected:
     - Compares each to its stated term / norm (DSO vs 30, DPO vs 45, DIO vs 60).
     - Computes the cash conversion cycle = DIO + DSO - DPO.
     - Quantifies the cash freed by each lever (days improvement x per-day $).
-    - Prescribes: tighten collections to terms; reduce inventory to the norm; extend
-      A/P out to (not beyond) supplier terms.
+    - "Prescribes: tighten collections to terms; reduce inventory to the norm; extend A/P out to (not beyond) supplier terms."
   numbers_must_compute:
     dso_days: 60          # 240,000 / (1,460,000/365)
     dio_days: 90          # 270,000 / (1,095,000/365)

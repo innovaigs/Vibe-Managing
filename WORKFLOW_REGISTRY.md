@@ -1,5 +1,7 @@
 # WORKFLOW_REGISTRY
 
+The complete system includes **32 orchestrated workflows**. This registry contains the original founder workflows; [`ADVANCED_WORKFLOW_REGISTRY.md`](ADVANCED_WORKFLOW_REGISTRY.md) indexes the 22 domain-wide optimization loops.
+
 **Deliverable 6 — Every end-to-end workflow.**
 
 A **Workflow** orchestrates skills and agents to take a major founder intent all the way from words to coordinated action: `Understand → Diagnose → Plan → Execute → Monitor → Adapt`. Workflows are what make Vibe Managing respond to "grow revenue 20%" with a coordinated plan and executed actions instead of advice.

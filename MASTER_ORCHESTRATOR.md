@@ -1,8 +1,8 @@
 # MASTER_ORCHESTRATOR
 
-**Deliverable 17 — The system responsible for: Intent → Understanding → Diagnosis → Planning → Execution → Monitoring → Learning.**
+**Deliverable 17 — The system responsible for: Intent → Adaptation → Understanding → Diagnosis → Planning → Execution → Monitoring → Learning.**
 
-The Orchestrator is the front door of Vibe Managing. It receives the founder's natural-language intent and drives it through the six layers, calling skills and agents, consulting memory and the twin, classifying and routing actions through the control plane, and closing the loop with monitoring and learning.
+The Orchestrator is the front door of Vibe Managing. It receives the founder's natural-language intent, configures the operating logic for the company's business archetype, industry, business model, lifecycle, maturity, geography, and regulatory intensity, then calls skills and agents, consults memory and the twin, routes actions through the control plane, and closes the loop with monitoring and learning.
 
 Implementation home: `core/orchestrator/`.
 
@@ -17,28 +17,34 @@ Anything the founder says:
 - a decision ("should we hire three salespeople?")
 - an outcome ("show me what needs my attention")
 
-## The 16-step orchestration loop
+## The 18-step orchestration loop
 
 ```
  1. CLASSIFY intent        → intent type + domain(s) + urgency (see INTENT_LIBRARY.md)
- 2. DETERMINE context      → which memory namespaces + twin views are required
- 3. INSPECT data           → load them; assess freshness & confidence
- 4. IDENTIFY gaps          → what required data is missing/stale/low-confidence
- 5. RESOLVE gaps           → pull via integrations, compute, or ask the founder ONE tight batch of questions
- 6. SELECT capabilities    → map intent → diagnostic skills + specialized agents
- 7. DIAGNOSE               → run diagnostics; form ranked hypotheses
- 8. VALIDATE hypotheses    → test each against business data in the twin
- 9. PLAN                   → convert validated diagnosis into a structured plan (initiatives, impact, owners, timeline, budget, KPIs)
-10. ENUMERATE actions      → break the plan into concrete executable actions
-11. CLASSIFY action risk   → risk-tier each action (AUTONOMY_AND_APPROVAL_MODEL.md)
-12. EXECUTE authorized     → auto-run low-risk reversible actions via agents/tools; log
-13. REQUEST approval       → bundle restricted actions into one clear approval request
-14. MONITOR               → register leading indicators + thresholds with the Health Engine
-15. REPORT                → tell the founder: what was found, done, and awaiting them
-16. REMEMBER              → write decision record(s); schedule the learning review
+ 2. ADAPT operating logic  → archetype + industry + model + stage + maturity + geography + regulation
+ 3. DETERMINE context      → memory namespaces + twin views + profiles required
+ 4. INSPECT data           → load them; assess lineage, freshness & confidence
+ 5. IDENTIFY gaps          → required data missing/stale/low-confidence
+ 6. RESOLVE gaps           → integrations, computation, or ONE tight founder question batch
+ 7. SELECT capabilities    → smallest sufficient skill + agent + tool sequence
+ 8. DIAGNOSE               → ranked, evidence-backed causal hypotheses
+ 9. VALIDATE hypotheses    → test against data, counterfactuals, and twin simulations
+10. OPTIMIZE options       → maximize confidence-weighted enterprise outcome inside hard constraints
+11. PLAN                   → initiatives, impact, owners, timeline, budget, dependencies, KPIs
+12. ENUMERATE actions      → concrete actions with reversibility, authority, and stop/scale rules
+13. CLASSIFY action risk   → risk-tier each action (AUTONOMY_AND_APPROVAL_MODEL.md)
+14. EXECUTE authorized     → low-risk reversible actions via agents/tools; log
+15. REQUEST approval       → bundle restricted actions into one decision-quality request
+16. MONITOR                → leading indicators, guardrails, thresholds, and profile cadence
+17. REPORT                 → found, decided, done, awaiting, and next best action
+18. REMEMBER & LEARN       → decision record, profile overrides, expected/actual, lessons
 ```
 
-Steps 7–9 may fan out to multiple agents in parallel; step 12 respects per-action autonomy; steps 14–16 hand off to the Monitoring, Cadence, and Learning components.
+Steps 8–11 may fan out to multiple agents in parallel; step 14 respects per-action autonomy; steps 16–18 hand off to the Monitoring, Cadence, and Learning components.
+
+## Universal adaptation gate
+
+Before domain reasoning, the Orchestrator invokes `dynamic-skill-routing` with the context produced by `business-archetype-classifier`, `industry-operating-profile`, `stage-and-maturity-assessment`, and `regulatory-intensity-classifier`. The resulting context determines metric definitions, formulas, benchmarks, cadence, required integrations, specialist gates, and autonomy ceilings. See `UNIVERSAL_BUSINESS_ADAPTATION.md`.
 
 ## Intent classification
 

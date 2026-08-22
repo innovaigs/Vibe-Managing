@@ -1,0 +1,16 @@
+id: product_customer
+category: product_customer
+provider: "<bound at install: product analytics / support / success platform>"
+transport: oauth_api
+reads:
+  - {entity: product_event, fields: [customer, user, event, offering, timestamp], freshness: hourly}
+  - {entity: customer_health, fields: [account, outcome, usage, support, relationship, renewal], freshness: daily}
+writes:
+  - {entity: success_plan_draft, fields: [milestones, risks, owner], risk_tier: LOW, approval: false}
+  - {entity: product_research_note, fields: [evidence, opportunity, confidence], risk_tier: LOW, approval: false}
+high_risk_actions:
+  - {action: change_customer_experience, risk_tier: HIGH, approval: true, rollback: required}
+  - {action: contact_customer, risk_tier: HIGH, approval: true, rollback: none}
+audit: true
+maps_to_memory: [product, customer_success, customers, offerings]
+maps_to_twin: [ProductBet, DiscoveryEvidence, CustomerSuccessPlan]

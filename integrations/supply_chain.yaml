@@ -1,0 +1,15 @@
+id: supply_chain
+category: supply_chain
+provider: "<bound at install: ERP / procurement / inventory / logistics platform>"
+transport: oauth_api
+reads:
+  - {entity: demand_supply, fields: [item, location, demand, inventory, supply, lead_time], freshness: daily}
+  - {entity: supplier_performance, fields: [supplier, quality, delivery, cost, risk], freshness: weekly}
+writes:
+  - {entity: replenishment_proposal, fields: [item, quantity, date, rationale], risk_tier: MEDIUM, approval: true}
+high_risk_actions:
+  - {action: issue_purchase_order, risk_tier: HIGH, approval: true, rollback: cancel_if_permitted}
+  - {action: change_supplier_or_route, risk_tier: HIGH, approval: true, rollback: required}
+audit: true
+maps_to_memory: [supply_chain, operations, finance]
+maps_to_twin: [Supplier, InventoryItem, LogisticsNode]

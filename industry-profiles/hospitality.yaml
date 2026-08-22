@@ -1,0 +1,17 @@
+id: hospitality
+type: industry_profile
+version: 1.0.0
+status: baseline_requires_local_validation
+business_archetype: "Accommodation and guest service"
+primary_metrics: ["occupancy", "ADR", "RevPAR", "guest score", "labor cost"]
+operating_constraints: ["revenue management", "service quality", "asset operations"]
+material_risks: ["seasonality", "safety", "platform dependency"]
+required_context: [geography, stage, scale, business_models, regulation, ownership, customer, value_chain]
+adaptation_rules:
+  - Local verified company data overrides profile defaults.
+  - Metrics require an exact definition, unit, grain, period, source, and owner.
+  - Regulated, safety, clinical, engineering, tax, employment, and legal judgments require qualified humans.
+  - Apply primary and secondary profiles when the company spans multiple value chains.
+  - Record every local override with evidence and review date.
+cadence: {daily: exceptions, weekly: flow_and_demand, monthly: economics_and_quality, quarterly: strategy_risk_capacity}
+provenance: CLAUDE-DERIVED

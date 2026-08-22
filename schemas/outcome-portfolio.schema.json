@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vibe-managing.local/schemas/outcome-portfolio.schema.json",
+  "title": "Outcome Optimization Portfolio",
+  "type": "object",
+  "required": ["objective", "counterfactual", "hard_constraints", "options", "selected_portfolio", "monitoring"],
+  "properties": {
+    "objective": {"type": "object", "required": ["metric", "target", "deadline"]},
+    "counterfactual": {"type": "object"},
+    "hard_constraints": {"type": "array", "items": {"type": "object", "required": ["type", "limit", "passed"]}},
+    "options": {"type": "array", "items": {"type": "object", "required": ["id", "risk_adjusted_value", "confidence", "reversibility", "dependencies"]}},
+    "selected_portfolio": {"type": "array", "items": {"type": "string"}},
+    "approval_queue": {"type": "array", "items": {"type": "object"}},
+    "monitoring": {"type": "object", "required": ["leading_indicators", "stop_conditions", "review_date"]},
+    "decision_record_id": {"type": ["string", "null"]}
+  }
+}

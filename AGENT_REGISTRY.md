@@ -1,5 +1,7 @@
 # AGENT_REGISTRY
 
+The system now includes **23 specialized agents**. This registry documents the original agent layer; [`ADVANCED_AGENT_REGISTRY.md`](ADVANCED_AGENT_REGISTRY.md) indexes the 12 cross-industry agents added for adaptation, product, customer success, supply chain, technology, data, security, quality, projects/programs, governance, international operations, and sustainability.
+
 **Deliverable 5 — Every agent and its responsibilities.**
 
 Skills are capabilities. **Agents** are specialized workers that own a business function, compose multiple skills over time, hold memory, run on a cadence, and act within granted autonomy. Each agent has a config at `agents/<agent-name>/agent.yaml` plus an `AGENT.md` spec.

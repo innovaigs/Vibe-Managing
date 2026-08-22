@@ -42,8 +42,7 @@ expected:
     roughly doubled. The profit is real but it is sitting in receivables, not cash.
   reasoning_must_show:
     - Distinguishes accrual profit from cash; states "profit is not cash".
-    - Builds the net-income -> operating-cash-flow bridge (indirect method):
-      NI + depreciation - change in A/R - change in inventory + change in A/P.
+    - "Builds the net-income -> operating-cash-flow bridge (indirect method): NI + depreciation - change in A/R - change in inventory + change in A/P."
     - Ranks the drivers and names rising A/R (the +220,000 change) as the dominant one.
     - Confirms the A/R story with DSO computed for both years (roughly 50 -> 100 days),
       i.e. a collections problem, not a profitability problem.

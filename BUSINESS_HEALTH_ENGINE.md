@@ -103,6 +103,27 @@ Thresholds below are sensible defaults; each is overridable per business in `cor
 
 ## Anomaly detection
 
+### Advanced domain health
+
+The active industry and business-model profiles select only the relevant indicators below and calibrate definitions and thresholds to the company. Profile defaults are hypotheses; verified company targets and control limits take precedence.
+
+| Domain | Core indicators | Typical root-cause branches |
+|---|---|---|
+| Product | adoption, activation, retention, product contribution, roadmap confidence | wrong problem · usability · reliability · pricing · onboarding · segment mismatch |
+| Customer success | time-to-value, health coverage, gross/net retention, repeat/expansion | value gap · poor onboarding · product issue · service failure · relationship risk |
+| Supply chain | forecast error/bias, fill rate, stockout, turns, supplier quality, landed cost | demand error · lead-time variation · policy · supplier · logistics · master data |
+| Technology | service availability, change failure, recovery time, technical debt, cost/capability | architecture · change control · capacity · vendor · support · skills |
+| Data & analytics | critical-data quality, freshness, lineage, metric certification, model drift | source process · definition · integration · ownership · access · transformation |
+| Security & privacy | critical exposure age, excess privilege, incident containment, high-risk processing | identity · vulnerability · configuration · third party · behavior · governance |
+| Quality | first-pass yield, defect escape, process capability, corrective-action effectiveness | design · material · method · machine · measurement · environment · training |
+| Projects & programs | benefit realization, schedule confidence, critical dependency age, portfolio throughput | scope · estimate · capacity · dependency · governance · adoption |
+| Governance | decision latency, policy coverage, control exceptions, board-action closure | rights · information · ownership · cadence · capability · enforcement |
+| International | local conversion, landed margin, cross-border cash cycle, jurisdiction exposure | localization · channel · currency · tax/duty · regulation · operations |
+| Sustainability | resource intensity, verified savings, material-impact progress, resilience readiness | process loss · asset · supplier · design · claim evidence · physical exposure |
+| Adaptation | context completeness, profile confidence, override freshness, routing accuracy | wrong archetype · stale profile · business-model mix · maturity mismatch · jurisdiction gap |
+
+---
+
 Beyond fixed thresholds, the engine flags:
 - **Trend breaks** — a metric that reverses a sustained direction.
 - **Velocity spikes** — change rate far above the metric's normal variation (e.g. expense line jumps > x% MoM).

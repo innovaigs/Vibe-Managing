@@ -1,0 +1,16 @@
+id: technology_security
+category: technology_security
+provider: "<bound at install: ITSM / observability / identity / security platform>"
+transport: oauth_api
+reads:
+  - {entity: technology_service, fields: [service, owner, tier, availability, incidents, cost], freshness: hourly}
+  - {entity: identity_and_exposure, fields: [identity, entitlement, asset, vulnerability, control], freshness: hourly}
+writes:
+  - {entity: internal_ticket, fields: [priority, owner, evidence, due], risk_tier: LOW, approval: false}
+high_risk_actions:
+  - {action: change_access, risk_tier: CRITICAL, approval: true, rollback: required}
+  - {action: production_change, risk_tier: CRITICAL, approval: true, rollback: required}
+  - {action: incident_notification, risk_tier: CRITICAL, approval: true, rollback: none}
+audit: true
+maps_to_memory: [technology, security_privacy, risks]
+maps_to_twin: [TechnologyService, SecurityControl, PrivacyActivity]
